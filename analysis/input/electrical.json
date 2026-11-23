@@ -1,5 +1,5 @@
 {
-  "basis": "R2J electrode-board plotted copper; R2H EB output trunks and plane extraction. Equal parallel AWG48 wires, 300 mm AWG26. Model at regulated EB input J1.",
+  "basis": "R2K electrode-board plotted copper; R2H EB output trunks and plane extraction. Equal parallel AWG48 wires, 300 mm AWG26. Model at regulated EB input J1.",
   "sha256": {
     "head/carrier/readback.json": "82507cbad7444abc4f744395712974e44848a7d6e9470073a32392fddd21cf6c",
     "eb/Output-copper.json": "76e388861b894078a49a64fa33b9b766241a53b442b92439cd7328ed95e798e7",

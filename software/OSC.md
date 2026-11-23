@@ -1,6 +1,6 @@
 # Sending commands to the pixel display
 
-The client application sends Open Sound Control (OSC) datagrams to UDP port 5054 on the XIAO. The XIAO replies to the IP address and UDP port that sent the request. A status query reads the instrument. A configuration request changes a setting. An actuation request starts one finite exposure and returns its measured and estimated delivery. On a physical display, confirm the installed wire count, calibrate the tactile array at ambient temperature and arm the driver over USB first. [Local commissioning](../firmware/Controller.md)
+The client application sends Open Sound Control (OSC) datagrams to UDP port 5054 on the XIAO. The XIAO replies to the IP address and UDP port that sent the request. A status query reads the instrument. A configuration request changes a setting. An actuation request starts one finite exposure and returns its measured and estimated delivery. On a physical R2K display, use USB to select the physical wire count, calibrate the assembled display and cable at measured ambient, confirm cold and arm. A full-image installation starts fresh. An application-only upgrade preserves setup keys but requires a new R2K cold calibration even on the same electrode board. [Local commissioning](../firmware/Controller.md)
 
 ## Try a four-wire display on one computer
 
@@ -63,7 +63,7 @@ A wire change returns `recalibration_required`. Other accepted settings return `
 |---|---|
 | `/actuate ,fi 20.0 22` | Apply the available power to P22 with a maximum envelope of 20 ms. The allowed maximum time is 1–100 ms. Append one `i` tag per additional selected site. Group drive inserts the isolated measurement pulses. The first thermal stop ends the whole request. |
 | `/TPP/TA1 ,ffii 0.5 30.0 21 22` | Equal calibrated dose at 1–3 sites. Arguments are normalized mean-power level, envelope in ms and unique IDs. Full scale is 4.36 W per selected site. The level for a 4.20 W target is 4.20/4.36. |
-| `/pattern ,fifif 1.0 21 0.25 22 0.5` | Calibrated dose with unequal levels. Give the duration in ms followed by 1–3 ID/level pairs. All levels are between 0 and 1. |
+| `/pattern ,fifif 1.0 11 0.25 33 0.5` | Calibrated dose with unequal levels. Give the duration in ms followed by 1–3 ID/level pairs. All levels are between 0 and 1. |
 
 For example, the following code runs in a client application on the display network. The timestamp records when the source observation was acquired. The driver accounts for elapsed communication time before admitting the command.
 
@@ -84,7 +84,7 @@ finally:
     display.close()
 ```
 
-Use `display.set_wires(4)`, `display.set_limit(450)`, `display.set_guard(True)` or `display.configure(4, 450, "simultaneous")` for the corresponding settings. `display.command(level, ms, pixels)` sends an equal calibrated-dose request. `display.pattern(ms, {21: 0.25, 22: 0.5})` sends unequal doses. Both accept an optional observation timestamp. For a stream of calibrated patterns, `Latest(display, callback)` maintains the newest pending observation while the preceding request is in progress. Call `submit(ms, levels, observed)` and finally `close()`. [Client implementation](client.py) · [Stream adapter](stream.py)
+Use `display.set_wires(4)`, `display.set_limit(450)`, `display.set_guard(True)` or `display.configure(4, 450, "simultaneous")` for the corresponding settings. `display.command(level, ms, pixels)` sends an equal calibrated-dose request. `display.pattern(ms, {11: 0.25, 33: 0.5})` sends unequal doses. Both accept an optional observation timestamp. For a stream of calibrated patterns, `Latest(display, callback)` maintains the newest pending observation while the preceding request is in progress. Call `submit(ms, levels, observed)` and finally `close()`. [Client implementation](client.py) · [Stream adapter](stream.py)
 
 ## Plain OSC clients and command age
 
@@ -134,3 +134,39 @@ The equal calibrated-dose message `/TPP/TA1 ,ffii 0.5 30.0 21 22` has 36 bytes. 
 2c 66 66 69 69 00 00 00
 3f 00 00 00 41 f0 00 00 00 00 00 15 00 00 00 16
 ```
+
+## Four-wire application examples
+
+A separate cold start at 25 °C precedes each example. The Python client sends UDP to the production controller code running with a numerical circuit, 5.8 V at J1, four wires and a 450 °C wire limit. In a continuous experiment, each command inherits the preceding thermal state.
+
+| Python on an open Client named display | Result |
+|---|---|
+| `display.status()` | Read the receiver clock, epoch, sequence, flags, rail and settings. The simulated unit reported armed, calibrated, cold-initialized and free of faults. |
+| `display.actuate(20, [22])` | `temperature_limit` after 937 µs. Four isolated observations, no group interval, 13.389 mJ at P22. |
+| `display.dose(4.20, 1, [22])` | `complete` after 1,000 µs. Target 4.200 mJ, receipt estimate 4.219 mJ. |
+| `display.pattern(1, {11: .25, 33: .5})` | `complete` after 1,000 µs. P11 reported 1.023 mJ and P33 2.184 mJ. |
+| `display.set_mode("rotate-group")`, then `display.actuate(20, [11,13,22,31,33])` | `configured`, then `temperature_limit` after 3,409 µs. Fifteen isolated observations and six group intervals served the pattern. |
+| `display.pattern(1, {21: .25, 22: .5})` | `current_limit` after 106 µs. An isolated P22 probe deposited 1.291 mJ before rejection of the shared group. A current stop in a command that already energized the array latches a fault. |
+
+The P22 available-power receipt starts with epoch, sequence, `temperature_limit`, simulated=1, mask=16, probe_count=4, group_slots=0, current_samples=4, elapsed_us=937, peak_estimated_C=285.4 and peak_sampled_A=3.338. Four nine-float energy vectors follow. P22 is element 4 when counting from zero. `probe_uJ` is included in `energy_uJ`. Each receipt records electrical delivery. Contact temperature, diaphragm temperature, gas pressure and fingertip force require independent measurements. [Compiled example receipts](../release/actuation-matrix.json)
+
+## Packet and session constraints
+
+Requests occupy at most 256 bytes, with length divisible by four. The physical board drops oversized UDP datagrams. OSC strings, including addresses, type tags and named modes, are NUL-terminated and zero-padded. Numeric words use big-endian byte order. A protected bundle with timetag 1 contains exactly two messages, each prefixed by its byte length. A status query must be sent as a plain message. An accepted positive sequence may skip values. The receiver consumes the sequence before display-state and load admission, so a well-formed request that returns disarmed or temperature_limit still advances the sequence.
+
+The signed deadline wire word encodes receiver milliseconds modulo 2³². The positive difference between deadline and receiver time must fit the configured age (100 ms for any setting). The final pre-edge check includes setup time. Once a command begins, local duration, electrical and thermal bounds govern the remaining slots. The state flag cold_initialized records the initialized thermal history and remains set during normal hot operation.
+
+## Python interface
+
+Use `Client(host, unit=1, port=5054, timeout=.30)`. Pixel inputs are distinct decimal integers or (row, column) pairs with coordinates 1–3. Invalid arguments can raise ValueError and status() can raise socket errors. Use one writer per unit and serialize calls sharing a socket.
+
+| Operation | Signature |
+|---|---|
+| Status and settings | `status()`, `configure(wires, limit_C, mode)`, `set_wires(wires)`, `set_limit(limit_C)`, `set_mode(mode)`, `set_guard(enabled)`, `set_max_age_ms(ms)`. Use a Python bool for the guard, integers for count and age. |
+| Available rail power | `actuate(ms, pixels, observed=None, raw=False)`. One to nine sites, at most three in simultaneous mode. |
+| Common dose | `command(level, ms, pixels, observed=None, raw=False)` or `dose(watts, ms, pixels, observed=None)`. One to three sites. |
+| Unequal calibrated dose | `pattern(ms, levels, observed=None)`. A mapping with one to three addresses and normalized levels. Always guarded. |
+| Observation stream | `Latest(client, report).submit(ms, levels, observed)` requires increasing monotonic acquisition times. A displaced pending observation reports superseded. close() drains accepted work and joins the worker. The caller closes the Client. |
+| Disconnection | `close()` closes the Client socket. |
+
+Status keys are `epoch, last_sequence, receiver_ms, flags, simulated, rail_V, wires, limit_C, mode, guard_enabled, max_age_ms, armed, calibrated, cold_initialized, fault`. Mode is a name. Arm, calibration, cold initialization, guard, simulation and fault are booleans. Receipt keys are `epoch, sequence, outcome, simulated, mask, probe_count, group_slots, current_samples, elapsed_us, peak_estimated_C, peak_sampled_A, energy_uJ, probe_uJ, unknown_upper_uJ, selected_timed_upper_uJ`. Host failures can contain only an outcome, or an outcome and sequence. A reply from another session fails guarded correlation. If the correct reply does not arrive, the delivery remains unconfirmed.

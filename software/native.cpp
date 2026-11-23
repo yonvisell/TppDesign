@@ -35,6 +35,10 @@ Fixture* make_fixture(int unit,const float* cal,float ceiling,int wires,Fire fir
 int commission(Fixture* b,uint64_t board,uint32_t head,float ambient,float r20){return enroll(b->st,*b,b->store,board,head,ambient,r20);}
 int restore(Fixture* b,uint64_t board,uint32_t head){b->st=State{};b->st.wires=b->persistedWires;b->server.reset(b->unit,b->server.epoch+1);return restoreCalibration(b->st,b->store,board,head);}
 void cold_arm(Fixture* b){if(b->st.calibrated&&b->quiet()){b->st.coldStart(b->now());b->st.armed=true;}}
+void set_record_version(Fixture* b,uint32_t version){
+    b->store.saved.version=version;
+    b->store.saved.checksum=checkRecord(b->store.saved);
+}
 void corrupt(Fixture* b){b->store.saved.checksum^=1;}
 void fail_write(Fixture* b,int v){b->store.fail=v;}
 float switch_ohm(Fixture* b){return b->st.cal.switchOhm;}

@@ -18,12 +18,13 @@ def main():
     data=json.loads((OUT/"seal-results.json").read_text())
     g=data["geometry"]
     fig,ax=plt.subplots(figsize=(6.15,4.45),layout="constrained")
-    gasket=cut("L10")
-    poly(ax,cut("L08"),"#d6dce1")
+    gasket=cut("L06")
+    for x,y in g["fastener_xy_mm"]:
+        ax.add_patch(Circle((x,y),.70,facecolor="#d6dce1",edgecolor="#536578",lw=.8))
     poly(ax,gasket,"#61ad9c","#338273")
-    for cell in holes(cut("L04")):
+    for cell in holes(cut("L03")):
         plot_polygon(cell,ax=ax,add_points=False,facecolor="#dae7f1",edgecolor="#6593af",linewidth=.8)
-    for cell in holes(cut("L11")):
+    for cell in holes(cut("L07")):
         plot_polygon(cell,ax=ax,add_points=False,facecolor="#1f526f",edgecolor="#1f526f",linewidth=.7)
     for p in g["gasket_enclosed_interstitial_pockets"]:
         ax.plot(*p["centroid_mm"],marker="+",mec="#6a4894",mew=1.6,ms=7)
@@ -31,10 +32,10 @@ def main():
         ax.add_patch(Circle((v["x"],v["y"]),.15,facecolor="#f9d5a0",edgecolor="#a54a27",lw=.7))
     for y in (-4.2,0,4.2):
         for a in (-.626,-.294,.294,.626):
-            ax.plot([-7.33,8.33],[y+a,y+a],c="#504434",lw=.35,alpha=.8)
-    ax.axis("equal"); ax.set(xlim=(-8.0,8.7),ylim=(-7.9,7.9),xlabel="Face x (mm)",ylabel="Face y (mm)")
+            ax.plot([-7.33,8.48],[y+a,y+a],c="#504434",lw=.35,alpha=.8)
+    ax.set_aspect("equal",adjustable="box"); ax.set(xlim=(-8.0,8.7),ylim=(-7.9,7.9),xlabel="Face x (mm)",ylabel="Face y (mm)")
     ax.spines[["right","top"]].set_visible(False)
-    legend=[Patch(facecolor="#61ad9c",label="Gasket land"),Patch(facecolor="#d6dce1",label="Bonded spacer"),
+    legend=[Patch(facecolor="#61ad9c",label="Gasket land"),Patch(facecolor="#d6dce1",label="Screw bore"),
         Patch(facecolor="#dae7f1",edgecolor="#6593af",label="Heater window"),Patch(facecolor="#1f526f",label="Roof bore"),
         Line2D([],[],marker="o",mfc="#f9d5a0",mec="#a54a27",ls="",ms=5,label="Plated via"),
         Line2D([],[],marker="+",c="#6a4894",ls="",ms=7,label="Blind pocket"),

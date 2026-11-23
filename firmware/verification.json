@@ -1,0 +1,221 @@
+{
+  "scope": "Compiled shared target code with numerical circuit and 12-bit synthetic ADC readings. No physical boards or thermal acceptance measurements.",
+  "sweep": {
+    "validated_group_register_words": 129,
+    "validated_isolated_words": 9,
+    "selections": 129,
+    "nominal_equal_rows": 3096,
+    "permuted_dose_rows": 747,
+    "quantized_request_levels_per_mask": 24,
+    "minimum_consecutive_oracle_energy_gap_uJ": 102.18940505799424,
+    "max_true_vs_requested_uJ": 77.25685278352148,
+    "max_true_vs_receipt_uJ": 46.421429478245045,
+    "max_single_inactive_true_uJ": 8.644312092870265,
+    "outcomes": {
+      "complete": 3843
+    },
+    "max_elapsed_us": 1000,
+    "largest_relative_request_error": 0.1740262992937793,
+    "electrical_source_sha256": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a"
+  },
+  "faults": {
+    "sample": {
+      "reason": "invalid_sample",
+      "started_slots": 1,
+      "later": "disarmed",
+      "first_unknown_upper_uJ": 1360.0
+    },
+    "hardware": {
+      "reason": "hardware_fault",
+      "started_slots": 1,
+      "later": "disarmed",
+      "first_unknown_upper_uJ": 1360.0
+    },
+    "current": {
+      "reason": "current_limit",
+      "started_slots": 1,
+      "later": "disarmed",
+      "first_unknown_upper_uJ": 1360.0
+    },
+    "resistance": {
+      "reason": "inconsistent_R",
+      "started_slots": 1,
+      "later": "disarmed",
+      "first_unknown_upper_uJ": 0.0
+    },
+    "no_cal": "calibration_required",
+    "no_arm": "disarmed",
+    "low_VM": "invalid_sample",
+    "slot_preparation_delay": {
+      "epoch": 881122,
+      "sequence": 0,
+      "outcome": "timing_limit",
+      "simulated": true,
+      "mask": 7,
+      "probe_count": 3,
+      "group_slots": 0,
+      "current_samples": 3,
+      "elapsed_us": 1047,
+      "peak_estimated_C": 76.37931823730469,
+      "peak_sampled_A": 1.9269684553146362,
+      "energy_uJ": [
+        862.947265625,
+        1292.6002197265625,
+        1070.0736083984375,
+        4.742539347346586e-11,
+        3.764225389724096e-11,
+        4.661733152278025e-11,
+        0.0,
+        3.333589654319624e-11,
+        0.0
+      ],
+      "probe_uJ": [
+        860.7260131835938,
+        1292.203369140625,
+        1070.0736083984375,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unknown_upper_uJ": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected_timed_upper_uJ": [
+        1360.0,
+        2096.0,
+        1760.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "repeated_short": {
+      "outcomes": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "probe_required",
+        "probe_required",
+        "probe_required",
+        "probe_required",
+        "probe_required",
+        "probe_required",
+        "probe_required",
+        "probe_required",
+        "probe_required",
+        "probe_required"
+      ],
+      "refresh": "complete"
+    }
+  },
+  "codec": {
+    "compact_hex": "2f5450502f544131000000002c666669690000003f00000041f000000000001500000016",
+    "bytes": 36,
+    "malformed_rejected": 9,
+    "expired_epoch_replay_checks": true,
+    "late_first_edge_rejected": true
+  },
+  "observer": {
+    "ambiguous": {
+      "code": 7,
+      "predicted_C": 600,
+      "measured_ratio": 1.0385,
+      "updated_C": 600.0,
+      "upper_C": 25.0
+    },
+    "inconsistent": {
+      "code": 8,
+      "predicted_C": 90,
+      "measured_ratio": 1.2,
+      "updated_C": 90.0,
+      "upper_C": 25.0
+    },
+    "shallow": {
+      "code": 0,
+      "predicted_C": 600,
+      "measured_ratio": 1.05,
+      "updated_C": 600.0,
+      "upper_C": 665.0
+    },
+    "cold_edge": {
+      "true_series_ohm": 0.16,
+      "recovered_ohm": 0.16000008583068848,
+      "uncompensated_ohm": 0.16280301800510832
+    }
+  },
+  "loopback": {
+    "units": 2,
+    "each_fresh_receipt": [
+      "complete",
+      "complete"
+    ],
+    "expired_before_drive": true
+  },
+  "short_dose_provenance": [
+    {
+      "request_uJ": 350,
+      "oracle_uJ": 350.14497134087765,
+      "estimated_uJ": 350.66461181640625,
+      "direct_probe_uJ": 0.0,
+      "shunt_samples": 0,
+      "probes": 0,
+      "timed_upper_uJ": 624.0
+    },
+    {
+      "request_uJ": 700,
+      "oracle_uJ": 700.1864776757275,
+      "estimated_uJ": 700.1301879882812,
+      "direct_probe_uJ": 0.0,
+      "shunt_samples": 1,
+      "probes": 0,
+      "timed_upper_uJ": 1168.0
+    },
+    {
+      "request_uJ": 1050,
+      "oracle_uJ": 1050.1310079115615,
+      "estimated_uJ": 1050.1953125,
+      "direct_probe_uJ": 0.0,
+      "shunt_samples": 1,
+      "probes": 0,
+      "timed_upper_uJ": 1712.0
+    },
+    {
+      "request_uJ": 4360.0,
+      "oracle_uJ": 4360.5895446542645,
+      "estimated_uJ": 4361.55126953125,
+      "direct_probe_uJ": 818.2915649414062,
+      "shunt_samples": 3,
+      "probes": 1,
+      "timed_upper_uJ": 7040.0
+    }
+  ],
+  "transport_adversarial": [
+    {
+      "reply_dropped": false,
+      "client_outcome": "complete",
+      "committed_commands": 1,
+      "native_slots": 2
+    },
+    {
+      "reply_dropped": true,
+      "client_outcome": "no_confirmed_receipt",
+      "committed_commands": 1,
+      "native_slots": 2
+    }
+  ]
+}

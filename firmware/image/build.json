@@ -1,8 +1,8 @@
 {
   "chip": "ESP32-C6",
   "target": "seeed_xiao_esp32c6",
-  "image": "R2J-ESP32C6.bin",
-  "sha256": "80a4c2db249dda77d2e20fd57d2208f988fef331efe0f3ad49557db32ae6e9ed",
+  "image": "R2K-ESP32C6.bin",
+  "sha256": "5a51c2f725a26fc151c087547b52590e3fdf8f56d76cbb9da3d3ee3872be3771",
   "bytes": 1102736,
   "flash_address": 0,
   "components": [
@@ -24,24 +24,24 @@
     {
       "offset": "0x10000",
       "name": "firmware.bin",
-      "sha256": "640034d1a287e5b2d292586c4f24960e1b73a6a4529ab9ff4003179b335a58dd"
+      "sha256": "a24582b9fcc033bfe54118b20e5e28815ffeb011b17dab72b6d952ed060bec88"
     }
   ],
   "source_sha256": {
-    "calibration.h": "1889b026050abc0691bef9653d277a6ec77d134fe1d88be4dbeb0f4cbc3edc61",
+    "calibration.h": "e17c4b664c83a6c04bc33221a7aa9ebdddbdb652d80cdb7f420f318a883d65da",
     "control.h": "8a1aa0f21d2b1a16032e667862019de4d5715e08f1ab09c3ca12794d4ce3d804",
-    "main.cpp": "6e0fb4a0a378434efc47589908fb610b64b3279ce6440bf723e1f34d8d4fc76c",
+    "main.cpp": "e50efa6c94ff05453c6d0355c8e9370194655ac85c728cf198cc8809eeeb890a",
     "osc.h": "c6be7f4e4beb1c2a3cf532e1f2ee93c5281e8cac030226579d16244832eab623",
     "path_limits.h": "dfcb926773d5a2525e47a718875bc79773e5a3dd96571eb79378dcff54b084b6"
   },
   "build_recipe_sha256": {
-    "platformio.ini": "4774d5ee5e36504e567a43f969f5d6a038b300a6e0d6b1716c0c00e9f6b01894",
-    "repro.py": "ef0fcd349d343bc83298966b384264ef8e3e0b6ba19cc42d10954ecedb01b0ee",
-    "package_image.py": "b8e3fd02fbdc25d40d946fe6da47832faf04672efe6cb4afec70f0359f5a5dfa"
+    "platformio.ini": "b8f481f169345ad24d025081ef22b8cb4b275103141eef3c9511ab119db2744e",
+    "repro.py": "098feccfefbac702b5dcc3ebbe0ef8c5f1cc2171cb57f23e59c45eed3771d295",
+    "package_image.py": "9414cb378fee9c89c64373a0a03874221372eedbdbe8dff15a693498d1973ca9"
   },
   "target_flashed": false,
   "application_identity_strings": [
-    "TPP-R2J",
+    "TPP-R2K",
     "/guard",
     "/receipt",
     "CAL COLD",
@@ -55,5 +55,7 @@
     "/config/guard",
     "WIRES"
   ],
-  "material_sha256": "ab7f37be6d9db86dc117256d195f9a222b0ddd1890411beb302526a3c8f9db7f"
+  "material_sha256": "ab7f37be6d9db86dc117256d195f9a222b0ddd1890411beb302526a3c8f9db7f",
+  "calibration_envelope_sha256": "c0c8f019e016745d53ebe0f80768982108eb4da0afedd67c2d6345a1554e93f8",
+  "electrical_source_sha256": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a"
 }

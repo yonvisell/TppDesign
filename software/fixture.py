@@ -33,7 +33,7 @@ Note=C.CFUNCTYPE(None,C.c_uint,C.c_uint,C.c_int,C.c_uint,C.c_float,C.c_float,C.c
 def load_native():
     files=[ROOT/"software/native.cpp",*sorted((ROOT/"firmware/src").glob("*.h"))]
     tag=hashlib.sha256(b"".join(f.read_bytes() for f in files)).hexdigest()[:16]
-    target=Path(tempfile.gettempdir())/f"tpp-r2j-{tag}.so"
+    target=Path(tempfile.gettempdir())/f"tpp-r2k-{tag}.so"
     if not target.exists():
         temp=target.with_suffix(f".{os.getpid()}.so")
         subprocess.run([os.environ.get("CXX","c++"),"-std=c++17","-O2","-fPIC","-shared",str(files[0]),"-o",str(temp)],check=True)
@@ -43,6 +43,7 @@ def load_native():
     lib.switch_ohm.argtypes=[C.c_void_p];lib.switch_ohm.restype=C.c_float;lib.set_switch.argtypes=[C.c_void_p,C.c_float]
     lib.commission.argtypes=[C.c_void_p,C.c_uint64,C.c_uint32,C.c_float,C.c_float]
     lib.restore.argtypes=[C.c_void_p,C.c_uint64,C.c_uint32];lib.get_series.argtypes=[C.c_void_p,PFloat]
+    lib.set_record_version.argtypes=[C.c_void_p,C.c_uint32]
     lib.cold_arm.argtypes=[C.c_void_p];lib.corrupt.argtypes=[C.c_void_p];lib.fail_write.argtypes=[C.c_void_p,C.c_int]
     lib.exchange.argtypes=[C.c_void_p,C.c_char_p,C.c_uint,C.POINTER(C.c_uint8)];lib.exchange.restype=C.c_uint
     lib.close_fixture.argtypes=[C.c_void_p]

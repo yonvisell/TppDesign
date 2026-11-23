@@ -1,0 +1,159 @@
+{
+  "nominal_5.7V": {
+    "calibration_pulses": 18,
+    "series_ohm": [
+      0.11246473342180252,
+      0.12688148021697998,
+      0.1358584761619568,
+      0.11224502325057983,
+      0.13009844720363617,
+      0.1386900097131729,
+      0.11604142934083939,
+      0.12710753083229065,
+      0.14233341813087463
+    ],
+    "driver_leg_ohm": 0.07205859571695328,
+    "max_offset_vs_cold_oracle_mohm": 2.8693159319077566,
+    "command_count": 387,
+    "outcomes": {
+      "complete": 387
+    },
+    "worst_receipt_vs_oracle_uJ": 41.21057339823983,
+    "worst_requested_vs_oracle_uJ": 67.86415167682378,
+    "largest_inactive_oracle_uJ": 8.59507698453626,
+    "least_at_full_scale_W": 4.3116879492022075,
+    "peak_source_A": 5.31977875382914
+  },
+  "nominal_6.3V": {
+    "calibration_pulses": 18,
+    "series_ohm": [
+      0.11303580552339554,
+      0.12519602477550507,
+      0.13891707360744476,
+      0.11647641658782959,
+      0.12615908682346344,
+      0.1395951807498932,
+      0.11524167656898499,
+      0.12991128861904144,
+      0.1436789333820343
+    ],
+    "driver_leg_ohm": 0.07208076864480972,
+    "max_offset_vs_cold_oracle_mohm": 2.0173310573228243,
+    "command_count": 387,
+    "outcomes": {
+      "complete": 387
+    },
+    "worst_receipt_vs_oracle_uJ": 45.94783294057561,
+    "worst_requested_vs_oracle_uJ": 57.925418883147586,
+    "largest_inactive_oracle_uJ": 8.70960972006809,
+    "least_at_full_scale_W": 4.3202503399296495,
+    "peak_source_A": 5.887980367112964
+  },
+  "hot_5.7V": {
+    "calibration_pulses": 18,
+    "series_ohm": [
+      0.1806744933128357,
+      0.19318433105945587,
+      0.21855877339839935,
+      0.1796969324350357,
+      0.2035566121339798,
+      0.21952469646930695,
+      0.1827448457479477,
+      0.201471209526062,
+      0.22351787984371185
+    ],
+    "driver_leg_ohm": 0.12701892852783203,
+    "max_offset_vs_cold_oracle_mohm": 2.1590253116272606,
+    "command_count": 387,
+    "outcomes": {
+      "complete": 387
+    },
+    "worst_receipt_vs_oracle_uJ": 97.44606998985819,
+    "worst_requested_vs_oracle_uJ": 141.39564332622103,
+    "largest_inactive_oracle_uJ": 21.99449487708257,
+    "least_at_full_scale_W": 4.252940243444382,
+    "peak_source_A": 5.050606018320263
+  },
+  "hot_6.3V": {
+    "calibration_pulses": 18,
+    "series_ohm": [
+      0.1795630007982254,
+      0.19519101083278656,
+      0.21912826597690582,
+      0.1818608045578003,
+      0.20449985563755035,
+      0.2199738621711731,
+      0.18557123839855194,
+      0.20153410732746124,
+      0.2224399745464325
+    ],
+    "driver_leg_ohm": 0.12706992030143738,
+    "max_offset_vs_cold_oracle_mohm": 2.500465191134893,
+    "command_count": 387,
+    "outcomes": {
+      "complete": 387
+    },
+    "worst_receipt_vs_oracle_uJ": 96.05073961720154,
+    "worst_requested_vs_oracle_uJ": 99.76021227345154,
+    "largest_inactive_oracle_uJ": 22.4128349742772,
+    "least_at_full_scale_W": 4.265285797348226,
+    "peak_source_A": 5.58892862099809
+  },
+  "old_record_migration": {
+    "valid_prior_checksum": true,
+    "matched_board_and_head": true,
+    "retained_wires": 4,
+    "before_enrollment": "calibration_required",
+    "energized_before_enrollment": 0,
+    "after_enrollment": "disarmed",
+    "after_cold_and_arm": "complete"
+  },
+  "persistence_and_rejection": {
+    "third_read_invalid": {
+      "issued_probes": 3,
+      "reload": "invalid",
+      "actuation": "calibration_required"
+    },
+    "last_read_invalid": {
+      "issued_probes": 18,
+      "reload": "invalid",
+      "actuation": "calibration_required"
+    },
+    "flash_write": {
+      "issued_probes": 18,
+      "reload": "invalid",
+      "actuation": "calibration_required"
+    },
+    "interrupted_recalibration": {
+      "issued_probes": 25,
+      "reload": "invalid",
+      "actuation": "calibration_required"
+    },
+    "existing_B11_0.1_ohm": {
+      "enrolled": true,
+      "reloaded": true,
+      "issued_probes": 18
+    },
+    "existing_B11_1_ohm": {
+      "enrolled": false,
+      "reloaded": false,
+      "issued_probes": 1
+    },
+    "existing_B11_4_ohm": {
+      "enrolled": false,
+      "reloaded": false,
+      "issued_probes": 1
+    },
+    "measured_wire_reference": {
+      "matched_R20_ohm": 3.15,
+      "saved": true,
+      "normal_pulse": "complete"
+    },
+    "wrong_reference_to_hide_defect": {
+      "incorrect_reference": 3.0635470183307043,
+      "accepted": false,
+      "probes": 3
+    }
+  },
+  "evidence": "Shared target enroll/restore C++ and exact sample order, simulated timed board operations, 12-bit numerical ADC and byte-store stand-in. All masked command tests use the calibration obtained at the same stable path and rail; a changed contact or switched cable requires separate fault assessment."
+}

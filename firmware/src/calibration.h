@@ -4,8 +4,10 @@
 #include "path_limits.h"
 #include <cstddef>
 namespace tpp {
+// The mechanical stack changed in Revision K; preserve setup but require a new cold acquisition.
+constexpr uint32_t CalibrationVersion=0x4b3031U;
 struct Record {
-    uint32_t version=0x493031U,boardLow=0,boardHigh=0,head=0,wireCount=0;
+    uint32_t version=CalibrationVersion,boardLow=0,boardHigh=0,head=0,wireCount=0;
     Calibration cal;uint32_t checksum=0;
 };
 inline bool validWireRef(int wires,float r20){
@@ -18,7 +20,7 @@ inline uint32_t checkRecord(const Record& rec){
 }
 template<class Store> bool restoreCalibration(State& st,Store& store,uint64_t board,uint32_t head){
     st.calibrated=false;Record r;
-    if(!store.read(r)||r.version!=0x493031U||r.boardLow!=uint32_t(board)||
+    if(!store.read(r)||r.version!=CalibrationVersion||r.boardLow!=uint32_t(board)||
        r.boardHigh!=uint32_t(board>>32)||r.head!=head||r.wireCount!=unsigned(st.wires)||r.checksum!=checkRecord(r))return false;
     if(!std::isfinite(r.cal.ambient)||r.cal.ambient<20||r.cal.ambient>40||
        !validWireRef(st.wires,r.cal.r20))return false;

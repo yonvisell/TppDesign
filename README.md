@@ -1,33 +1,40 @@
 # Thermopneumatic tactile pixel display
 
-**Revision J · 23 November 2026.** A 3 × 3 passive tactile array uses four straight nickel–chromium wires per row and a continuous silicone diaphragm. A ten-conductor cable connects its heater terminals to a 6 V electronic driver board. Compiled ESP32-C6 firmware adjusts pulse duration using measured resistance and a wire-temperature model.
+**Revision K · Yon Visell**. Four straight nickel–chromium wires per row heat nine individually addressable gas cavities. A continuous silicone diaphragm forms the tactile surface. Four M1.2 screws align and clamp the dry array layers into a tapped backing. A ten-conductor cable connects the passive array to a 6 V driver.
 
-**[Download the illustrated owner design book (PDF)](https://github.com/yonvisell/TppDesign/releases/download/R2J/Owner-design-book.pdf)** · [View the book on GitHub](Owner-design-book.pdf)
+**[Download the owner design book (PDF, main text)](https://github.com/yonvisell/TppDesign/releases/download/R2K/Owner-design-book.pdf)** · [Read the PDF on GitHub](Owner-design-book.pdf)
 
-| Design files | Contents |
+| Design material | Contents |
 |---|---|
-| [Tactile array drawings](head/TA-drawings.pdf) · [assembly instructions](head/Owner-assembly.md) · [full-size patterns](head/Lab-templates-1to1.pdf) | Numbered stack, heater layout, copper tab joint and lab fabrication. |
-| [Mechanical CAD](head/Mechanical-CAD.zip) · [board and sheet manufacturing packets](head/jobs) | Four-wire tactile array and winding fixture STEP models, plus fabrication files for the carrier, cap, tooling and cut sheets. Native PCB layouts are in the carrier, cap, jig and frame directories under head. |
-| [Driver schematic](eb/Schematic.pdf) · [editable driver design](eb/Controller.kicad_pro) · [assembly packet](eb/EB-supplier.zip) | 73 × 35 mm board with nine driven terminals, one return, current sensing and terminal voltage measurement. |
-| [Bill of materials](purchasing/Integrated-BOM.csv) · [editable build budget](purchasing/Build-budget.xlsx) | Stock and component identities, quantities, sources and estimated build costs. |
-| [Firmware and commissioning](firmware/Controller.md) · [robot API and OSC messages](software/OSC.md) | Target image, C++ control software, Python client and numerical receiver. |
-| [Direct pixel selection](release/four-wire-direct.json) · [pressure response](supplement/controlled-gas.json) · [seal assessment](analysis/seal/Seal-validation.md) | Command-level results from the compiled receiver and independent physical models. |
+| [Assembly drawings](head/TA-drawings.pdf) · [owner assembly](head/Owner-assembly.md) · [full-size patterns](head/Lab-templates-1to1.pdf) | Exploded view, component dimensions, screw seats, heated spans and foldable copper tabs. |
+| [Mechanical STEP files](head/Mechanical-CAD.zip) · [manufacturing packets](head/jobs) | Screwed array, winding fixture and clamp parts. Editable KiCad PCB layouts and sheet-cutting DXFs are under head. |
+| [Driver circuit](eb/Schematic.pdf) · [editable electronics](eb/Controller.kicad_pro) · [EB assembly files](eb/EB-supplier.zip) | 73 × 35 mm PCB. USB logic power, separate 6 V heater input, current and terminal voltage measurement. |
+| [Bill of materials](purchasing/Integrated-BOM.csv) · [editable budget](purchasing/Build-budget.xlsx) | Stock, machining and electronics, with first-lot and repeat-build costs. |
+| [Firmware and commissioning](firmware/Controller.md) · [OSC and Python API](software/OSC.md) | Compiled C++ on XIAO ESP32-C6, flash image, Python client, numerical receiver and message examples. |
+| [Address sweep](release/four-wire-direct.json) · [pressure replays](supplement/controlled-gas.json) · [seal and clearance analysis](analysis/seal/Seal-validation.md) | Reference operating settings, simulated output and mechanical limits. |
 
-## Operating evidence
+## Operating conditions
 
-With four wires, a nominal 5.8 V supply and a 25 °C start, all nine single-pixel addresses and 28 of the 36 two-pixel combinations were directly admitted in the simulation. The other pairs and all direct three-pixel combinations exceeded an electrical limit. A larger pattern is serviced in successive groups.
+The models use 5.8 V at the EB, nominal cold paths and a 25 °C start. All nine single addresses and 28 of 36 two-pixel selections can use direct available-power actuation on the four-wire reference. Larger patterns can use successive groups. A calibrated 1 ms full-scale sweep delivered at least 4.29 W per selected site for every completed single and pair. The center-pixel simulations predict 16.6 and 37.6 kPa at the 450 and 750 °C wire limits, equivalent to 169 and 381 mN over the 10.13 mm² aperture. The curves assume sealed, fixed-volume cells. Actual leakage, force under a finger, contact temperatures and surface temperature have yet to be measured. A deteriorated electrical contact can heat locally during its first measurement pulse.
 
-The simulated center pixel received 31.4 mJ under a 750 °C wire limit. Its predicted fixed-volume peak was 38.4 kPa, equivalent to 389 mN over the 10.13 mm² aperture. The smaller port transmitted the pressure rise within 0.012 kPa in the two center-pixel replays. Actual gas retention, loaded tactile force, diaphragm temperature and heat at a faulty contact remain unmeasured on Revision J.
+## Mechanical model readback
 
-## Local example
+The CAD download contains the two-, three- and four-wire assemblies, the separate clamp parts and winding fixture. To reproduce the seal geometry check, unpack the ZIP into head/mechanics from the checkout root. Use a Python environment with CadQuery/OCP, NumPy, SciPy, Shapely, ezdxf and Gerbonara.
 
-Run the receiver in one terminal from the repository root, using Python 3.10 or newer, NumPy and a C++17 compiler.
+```sh
+unzip -o head/Mechanical-CAD.zip -d head/mechanics
+python3 analysis/seal/step_chambers.py
+```
+
+## Local robot example
+
+From the checkout root, start the numerical receiver in one terminal. The fixture requires Python 3.10+, NumPy and a C++17 compiler. The client uses the Python standard library.
 
 ```sh
 python3 software/fixture.py --wires 4 --rail 5.8
 ```
 
-In a second terminal, run the following. The client uses only Python's standard library. For hardware, substitute the commissioned driver's IP address.
+In a second terminal, request status, select a wire-temperature limit and actuate the center pixel. For a commissioned physical board, substitute its IP address for the loopback address.
 
 ```sh
 python3 software/client.py 127.0.0.1 --status

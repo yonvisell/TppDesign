@@ -23,7 +23,7 @@ def decay(g, c, pg, t):
 def neighbor(g, c, pg, t):
     return -0.5*math.expm1(-2*t*g*(1+pg/(2*PA))/c)
 
-def leaks(v):
+def leaks(v, short_land_mm, shared_land_mm):
     # Reference volume flow at 1 atm, 25 °C. Temperature multiplies pressure change per lost mass.
     t=.055
     iso=v/PA
@@ -36,12 +36,12 @@ def leaks(v):
             limit=-math.log(f*(1+b)/(1+f*b))*c/t
             criteria.append(dict(case=label,pg_kPa=pg/1000,loss_limit_percent=5,ms=t*1000,
                         G_m3_Pa_s=limit,ambient_Q_uL_s=limit*pg*(1+b)*1e9,
-                        equiv_16flank_h_um=(limit/gap_conductance(16,40,1.,.245))**(1/3),
-                        slip_h_um=brentq(lambda h:gap_conductance(16,40,h,.245)*(1+.6/h)-limit,.01,20)))
+                        equiv_16flank_h_um=(limit/gap_conductance(16,40,1.,short_land_mm))**(1/3),
+                        slip_h_um=brentq(lambda h:gap_conductance(16,40,h,short_land_mm)*(1+.6/h)-limit,.01,20)))
     scenarios=[]
-    for typ,n,b,l in (("four strands; all exits, shortest land",16,40,.245),
-                      ("interpixel; eight wire flanks, shared land",8,40,.67),
-                      ("single broad unbonded seam",1,500,.245)):
+    for typ,n,b,l in (("four strands; all exits, shortest land",16,40,short_land_mm),
+                      ("interpixel; eight wire flanks, shared land",8,40,shared_land_mm),
+                      ("single broad dry interface channel",1,500,short_land_mm)):
         for h in (1,2,3,5,10,20,32):
             g=gap_conductance(n,b,h,l)
             data=[]
@@ -56,17 +56,12 @@ def leaks(v):
         temperature_of_60kPa_isochoric_charge_K=hot_isochore_temperature,practical_decay=criteria,gaps=scenarios)
 
 def ports(geom, v, traces):
-    a=geom["cut_area_by_layer_mm2"]
-    low=(a["L04"]*(.8+.0254+.0584*2)+a["L10"]*.2184)*1e-9
-    # Subtract 4 straight wire volumes on lower side. Split neck volume evenly.
-    neck=(a["L11"]*.0838+a["L13"]*.127)*1e-9
-    wire=4*np.pi*(.0315908500818/2)**2*3.45*1e-9
-    vl=low-wire+neck/2
+    vl=geom["lower_volume_4w_mm3"]*1e-9
     vu=v-vl
     assert min(vl,vu)>0
     rows=[]
     for name,d1,d2,e,cd in (("nominal",.425,.600,.85,.70),("low impedance",.435,.610,.60,.80),("high impedance",.415,.590,1.70,.55),("oscillatory wall sensitivity",.415,.590,1.70,.55)):
-        r=np.array([d1,d2])*0.5e-3; A=np.pi*r*r; l=np.array([.0838,.127])*1e-3
+        r=np.array([d1,d2])*0.5e-3; A=np.pi*r*r; l=np.array([geom["liner_thickness_mm"],geom["roof_thickness_mm"]])*1e-3
         # Effective length interval includes short-duct end effects and uncertain stepped transition.
         m=RHO*np.sum((l+e*r)/A)
         R=8*MU/np.pi*np.sum(l/r**4)+3*MU/r[0]**3
@@ -113,40 +108,42 @@ def ports(geom, v, traces):
             response=test))
     return dict(lower_volume_mm3=vl*1e9,upper_volume_mm3=vu*1e9,records=rows)
 
-def loads(geom):
-    a=geom["cut_area_by_layer_mm2"]
+def loads(geom, seats):
+    aperture=geom["cap_area_mm2"]
     rows=json.loads((ROOT/"supplement/controlled-gas.json").read_text())["cases"]
     r=max(rows,key=lambda o:o["sum_Fe_mN"])
-    entries=[("controller_replay",r["sum_Fe_mN"]/a["L15"],[r["wires"],r["ceiling"],r["mode"],r["ids"]])]
+    entries=[("controller_replay",r["sum_Fe_mN"]/aperture,[r["wires"],r["ceiling"],r["mode"],r["ids"]])]
     family=[]
     for path in sorted((ROOT/"supplement/envelope").glob("*-*.json")):
         rec=json.loads(path.read_text())
         if "interleave" in path.name:
             m=max(rec,key=lambda r:r["sum_Fe_mN"])
-            family.append((path.stem,m["sum_Fe_mN"]/a["L15"],[m["n"],m["k"],m["schedule"]]))
+            family.append((path.stem,m["sum_Fe_mN"]/aperture,[m["n"],m["k"],m["schedule"]]))
         else:
             m=max(rec,key=lambda r:r["best"]["peak_sum_pressure_kPa"])
             family.append((path.stem,m["best"]["peak_sum_pressure_kPa"],[m["strands"],m["pixels"]]))
     entries += family+[("9_uniform_60kPa",9*60,[]),("one_60kPa",60,[])]
     records=[]
     for name,sump,ref in entries:
-        face=sump*a["L16"]*.001
+        face=sump*geom["diaphragm_pressure_area_mm2"]*.001
         records.append(dict(case=name,reference=ref,sum_gauge_kPa=sump,face_opening_N=face,
-            gasket_opening_N=sump*a["L10"]*.001,floor_opening_N=sump*a["L04"]*.001,
-            spacer_mean_tensile_MPa_by_assumed_gasket_mean_MPa={str(q):(geom["gasket_land_area_mm2"]*q+face)/geom["spacer_area_mm2"] for q in (.05,.20,.50)}))
+            gasket_opening_N=sump*geom["gasket_opening_mm2"]*.001,
+            floor_opening_N=sump*geom["floor_opening_mm2"]*.001,
+            face_load_if_lift_reaches_grid_aperture_N=sump*seats["grid_opening_mm2"]*.001,
+            floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2=(geom["floor_gasket_area_mm2"]*.20+sump*geom["floor_opening_mm2"]*.001)/geom["fastener_count"],
+            face_plane_squeeze_and_pressure_per_screw_N_at_q0p2=(seats["diaphragm_to_grid_contact_area_mm2"]*.20+face)/geom["fastener_count"],
+            equal_share_face_opening_N=face/geom["fastener_count"],
+            equal_share_clamp_N_by_assumed_gasket_mean_MPa={str(q):(geom["gasket_land_area_mm2"]*q+face)/geom["fastener_count"] for q in (.05,.20,.50)}))
     return records
 
 def main():
     geom=read_geometry()
-    mech=json.loads((ROOT/"head/mechanical-readback.json").read_text())
-    volume=mech["gas_net_by_strands_mm3"]["4"]*1e-9
+    volume=geom["net_volume_mm3"]["4"]*1e-9
     traces=json.loads((ROOT/"supplement/equal-power.json").read_text())
-    assert "R2J" in traces["geometry"]["basis"]
-    # Two upper permeability screens at 25 °C. cm and bar from Parker table 3-24.
-    # Sidewall area deliberately overestimated by bounding rectangle perimeter, every wall at minimum path.
-    face_A,thick=geom["cut_area_by_layer_mm2"]["L16"]*.01,.0254
-    side_A,length=(2*(3.45+3.)*.2184)*.01,.0245
-    bulk=25.6e-8*(face_A/thick+side_A/length)*1e-6/1e5*(T0/273.15)
+    assert "R2K" in traces["geometry"]["basis"]
+    assert abs(traces["geometry"]["gas_volumes_by_strand_count_mm3"]["4"]-volume*1e9)<.0001
+    short_land=geom["gasket_outer_land_min_mm"]-.08
+    shared_land=geom["gasket_adjacent_horizontal_mm"]-.08
     thermal=list(traces["cases"])
     controlled=json.loads((ROOT/"supplement/controlled-gas.json").read_text())
     for case in controlled["cases"]:
@@ -154,9 +151,9 @@ def main():
         if tr:
             thermal.append(dict(strands=case["wires"],label=f'production_P22_{case["ceiling"]}C',
                 peak_gauge_kPa=case["weak_kPa"],trace=[dict(ms=row[0],gas_gauge_kPa=row[3]) for row in tr]))
-    data=dict(geometry=geom,mechanical_loads=loads(geom),leak=leaks(volume),
-        film_screen=dict(catalog_upper_permeability=25.6e-8,combined_upper_G_m3_Pa_s=bulk),
-        port=ports(geom,volume,thermal))
+    seat_check=json.loads((OUT/"step-readback.json").read_text())["fasteners_and_clearance"]
+    data=dict(geometry=geom,mechanical_loads=loads(geom,seat_check),leak=leaks(volume,short_land,shared_land),
+              port=ports(geom,volume,thermal))
     (OUT/"seal-results.json").write_text(json.dumps(data,indent=2)+"\n")
 if __name__=="__main__":
     main()

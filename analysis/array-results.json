@@ -1,0 +1,235 @@
+{
+  "diameter_um": 31.590850081773738,
+  "strand_R20_ohm": 5.787094036661409,
+  "conductor_counts": {
+    "2": {
+      "nominal": {
+        "min_W": 8.332530570516822,
+        "max_bus_A": 5.6076003496314,
+        "max_leg_A": 3.6276637766519126,
+        "max_idle_W": 0.019608306195813323,
+        "within_8A_5A_by_size": [
+          9,
+          36,
+          84
+        ]
+      },
+      "high": {
+        "min_W": 9.186614953994791,
+        "max_bus_A": 5.887980367112964,
+        "max_leg_A": 3.809046965484505,
+        "max_idle_W": 0.021618157580884145,
+        "within_8A_5A_by_size": [
+          9,
+          36,
+          84
+        ]
+      },
+      "hot": {
+        "min_W": 5.846329798889808,
+        "max_bus_A": 4.778937541115944,
+        "max_leg_A": 3.039944663587966,
+        "max_idle_W": 0.03356528762931849,
+        "within_8A_5A_by_size": [
+          9,
+          36,
+          84
+        ]
+      },
+      "P22": {
+        "on_W": 10.29990397236323,
+        "on_A": 1.887326273859154,
+        "duty_at_4p2": 0.4077707919675239
+      }
+    },
+    "3": {
+      "nominal": {
+        "min_W": 10.488049716811506,
+        "max_bus_A": 8.037014542102701,
+        "max_leg_A": 5.1348397089446935,
+        "max_idle_W": 0.05501222562382076,
+        "within_8A_5A_by_size": [
+          9,
+          28,
+          47
+        ]
+      },
+      "high": {
+        "min_W": 11.563074812784686,
+        "max_bus_A": 8.438865269207835,
+        "max_leg_A": 5.391581694391924,
+        "max_idle_W": 0.060650978750262305,
+        "within_8A_5A_by_size": [
+          9,
+          28,
+          0
+        ]
+      },
+      "hot": {
+        "min_W": 6.901943295029899,
+        "max_bus_A": 6.7610694476933535,
+        "max_leg_A": 4.219259073769892,
+        "max_idle_W": 0.08923715222217202,
+        "within_8A_5A_by_size": [
+          9,
+          36,
+          84
+        ]
+      },
+      "P22": {
+        "on_W": 14.251390561333988,
+        "on_A": 2.7185308178790835,
+        "duty_at_4p2": 0.29470808353222644
+      }
+    },
+    "4": {
+      "nominal": {
+        "min_W": 11.839485249035429,
+        "max_bus_A": 10.269222044746126,
+        "max_leg_A": 6.483589415696224,
+        "max_idle_W": 0.1119950402104454,
+        "within_8A_5A_by_size": [
+          9,
+          28,
+          0
+        ]
+      },
+      "high": {
+        "min_W": 13.053032487061564,
+        "max_bus_A": 10.78268314698344,
+        "max_leg_A": 6.807768886481018,
+        "max_idle_W": 0.1234745318320161,
+        "within_8A_5A_by_size": [
+          9,
+          28,
+          0
+        ]
+      },
+      "hot": {
+        "min_W": 7.358456679512075,
+        "max_bus_A": 8.54447956445001,
+        "max_leg_A": 5.240104851751083,
+        "max_idle_W": 0.1732516138039733,
+        "within_8A_5A_by_size": [
+          9,
+          28,
+          24
+        ]
+      },
+      "P22": {
+        "on_W": 17.6240348787143,
+        "on_A": 3.4905377250605962,
+        "duty_at_4p2": 0.2383109219258647
+      }
+    }
+  },
+  "probes": [
+    {
+      "site": "P11",
+      "cold_offset_ohm": 0.11206304572231707,
+      "raw_current_bias_percent": 0.08848235326850418,
+      "isolated_R_error_after_subtraction_mohm": -0.34086032442193215,
+      "group_worst_R_error_with_true_branch_I_mohm": 66.12189110374223
+    },
+    {
+      "site": "P12",
+      "cold_offset_ohm": 0.12246043010136098,
+      "raw_current_bias_percent": 0.08064947921950782,
+      "isolated_R_error_after_subtraction_mohm": -0.3071657508701975,
+      "group_worst_R_error_with_true_branch_I_mohm": 148.4905093476936
+    },
+    {
+      "site": "P13",
+      "cold_offset_ohm": 0.13577470306530115,
+      "raw_current_bias_percent": 0.07135909583801947,
+      "isolated_R_error_after_subtraction_mohm": -0.2717951917272643,
+      "group_worst_R_error_with_true_branch_I_mohm": 125.79473289952992
+    },
+    {
+      "site": "P21",
+      "cold_offset_ohm": 0.11387965322043492,
+      "raw_current_bias_percent": 0.040585682587446215,
+      "isolated_R_error_after_subtraction_mohm": -0.15465007660209196,
+      "group_worst_R_error_with_true_branch_I_mohm": 118.23243961575346
+    },
+    {
+      "site": "P22",
+      "cold_offset_ohm": 0.12661901524387353,
+      "raw_current_bias_percent": 0.05069653289850873,
+      "isolated_R_error_after_subtraction_mohm": -0.19309105700227036,
+      "group_worst_R_error_with_true_branch_I_mohm": 145.9291771911464
+    },
+    {
+      "site": "P23",
+      "cold_offset_ohm": 0.13799815572868335,
+      "raw_current_bias_percent": 0.06081022362649513,
+      "isolated_R_error_after_subtraction_mohm": -0.2317722609972428,
+      "group_worst_R_error_with_true_branch_I_mohm": 125.86921490321146
+    },
+    {
+      "site": "P31",
+      "cold_offset_ohm": 0.1160400688892822,
+      "raw_current_bias_percent": 0.03034728997761693,
+      "isolated_R_error_after_subtraction_mohm": -0.11571862901504915,
+      "group_worst_R_error_with_true_branch_I_mohm": 118.65059689854095
+    },
+    {
+      "site": "P32",
+      "cold_offset_ohm": 0.12833891445213608,
+      "raw_current_bias_percent": 0.020396999710925456,
+      "isolated_R_error_after_subtraction_mohm": -0.0777219179153299,
+      "group_worst_R_error_with_true_branch_I_mohm": 145.00876941654096
+    },
+    {
+      "site": "P33",
+      "cold_offset_ohm": 0.14153754915853334,
+      "raw_current_bias_percent": 0.01035417766517277,
+      "isolated_R_error_after_subtraction_mohm": -0.039448089973692646,
+      "group_worst_R_error_with_true_branch_I_mohm": 72.14413502579563
+    }
+  ],
+  "first_contact": [
+    {
+      "pickup_ohm": 0.01,
+      "loss_W": 0.009317724144051898,
+      "shunt_A": 1.9307607567402711,
+      "terminal_V": 5.8052089918737275,
+      "observed_ohm": 3.0066951441848957
+    },
+    {
+      "pickup_ohm": 0.1,
+      "loss_W": 0.08908582905446308,
+      "shunt_A": 1.9170944710136577,
+      "terminal_V": 5.8065877604735405,
+      "observed_ohm": 3.0288480031989895
+    },
+    {
+      "pickup_ohm": 1.0,
+      "loss_W": 0.5965624352890035,
+      "shunt_A": 1.8077432784989957,
+      "terminal_V": 5.817620018514046,
+      "observed_ohm": 3.2181671411576365
+    },
+    {
+      "pickup_ohm": 4.0,
+      "loss_W": 0.9256414246312884,
+      "shunt_A": 1.6219673882302712,
+      "terminal_V": 5.836362635873919,
+      "observed_ohm": 3.598323047815391
+    },
+    {
+      "pickup_ohm": 10.0,
+      "loss_W": 0.7518766996325319,
+      "shunt_A": 1.4900613402838032,
+      "terminal_V": 5.849670415373931,
+      "observed_ohm": 3.9257916820120835
+    },
+    {
+      "pickup_ohm": 10000.0,
+      "loss_W": 0.0014628088711151543,
+      "shunt_A": 1.315446422516638,
+      "terminal_V": 5.867287020974921,
+      "observed_ohm": 4.460301020660315
+    }
+  ]
+}

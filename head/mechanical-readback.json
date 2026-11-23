@@ -1,8 +1,13 @@
 {
   "dimensions_mm": [
     20.55,
-    15.5,
-    2.3508
+    17.0,
+    5.2724
+  ],
+  "body_excluding_flat_tabs_mm": [
+    17.8,
+    17.0,
+    5.2724
   ],
   "fixed_board_mm": [
     17.8,
@@ -13,22 +18,21 @@
     40.0,
     25.5
   ],
-  "gas_gross_mm3_per_site": 13.894135406282393,
-  "gas_net_straight_wire_estimate_mm3_per_site": 13.883318785781077,
+  "gas_gross_mm3_per_site": 15.468144387653735,
+  "gas_net_straight_wire_estimate_mm3_per_site": 15.45732776715242,
   "gas_net_by_strands_mm3": {
-    "2": 13.888727096031735,
-    "3": 13.886022940906406,
-    "4": 13.883318785781077
+    "2": 15.462736077403077,
+    "3": 15.460031922277748,
+    "4": 15.45732776715242
   },
-  "diaphragm_bond_opening_mm2": 11.718038769170581,
+  "diaphragm_clamp_window_mm2": 11.718038769170581,
   "cap_port_area_mm2": 10.130361288064513,
   "lower_window_area_mm2": 5.659431224361287,
   "foil_bore_mm": 0.6,
   "liner_bore_mm": 0.425,
-  "liner_to_foil_open_area_ratio": 0.5017361111111112,
   "dielectric_lip_mm": 0.0875,
   "wire_OD_mm": 0.03159085008177374,
-  "wire_crown_to_roof_mm": 0.15180914991822628,
+  "wire_crown_to_roof_mm": 0.48340914991822626,
   "wire_centres_from_row_mm": [
     -0.6257954250408869,
     -0.2942045749591131,
@@ -52,98 +56,69 @@
       0.6257954250408869
     ]
   },
-  "compressed_gasket_land_mm2": 58.75056329514851,
-  "bonded_spacer_area_mm2": 58.133792486971984,
+  "compressed_gasket_land_mm2": 63.39329597366415,
   "gasket_cross_bridges": 6,
-  "spacer_pieces": 6,
-  "installed_spacer_nominal_mm": 0.2184,
-  "nominal_flat_gasket_compression": 0.14015748031496056,
-  "local_bar_wire_compression_estimate": 0.402326181424306,
-  "nominal_spacer_gasket_min_clearance_mm": 0.15666808737810317,
+  "installed_gap_mm": 0.55,
+  "nominal_flat_gasket_compression": 0.08333333333333326,
+  "local_bar_wire_compression_estimate": 0.19431808346962287,
   "registered_points_mm": [
     [
-      -6.5,
-      6.85
+      -6.3,
+      6.65
     ],
     [
-      7.48,
-      -6.85
+      7.28,
+      -6.65
     ],
     [
-      7.48,
-      6.85
+      7.28,
+      6.65
     ],
     [
-      -6.5,
-      -6.85
+      -6.3,
+      -6.65
     ]
   ],
-  "registration_hole_mm": 0.55,
-  "gasket_datum_indices": [
-    1,
-    2
-  ],
-  "spacer_datum_indices": [
-    3,
-    4
-  ],
-  "jig_pin_mm": 0.45,
-  "frame_finished_PTH_mm": 0.4,
-  "winding_base_group_windows": 6,
+  "registration_hole_mm": 1.4,
+  "head_screw": "NBK SNZ-M1.2-4-TZB",
+  "screw_count": 4,
+  "head_recess_mm": 0.08,
+  "back_face_tip_clearance_mm": 0.6924000000000001,
+  "thread_engagement_envelope_mm": 1.3075999999999999,
+  "cap_stop_elevation_from_backing_floor_mm": 1.8474,
+  "grid_stop_elevation_from_backing_floor_mm": 2.4724000000000004,
+  "board_shelf_elevation_from_backing_floor_mm": 0.345,
+  "clamp_grid_field_thickness_mm": 0.35,
+  "field_recess_over_free_membrane_mm": 0.32099999999999995,
   "guide_diameter_mm": 0.3,
   "guide_count": 24,
   "guide_frame_short_axis_travel_mm": [
     -0.5,
     0.5
   ],
-  "guide_frame_nominal_short_edge_clearance_mm": 0.7,
   "foil_tabs": {
     "edge_x_mm": 8.3,
     "flat_tip_x_mm": 11.3,
-    "centre_y_mm": 0.0,
     "width_mm": 10.0,
     "flat_projection_mm": 3.0,
-    "inward_bondable_start_x_mm": 8.9,
-    "gap_between_bare_faces_mm": 1.2444
+    "gap_between_bare_faces_mm": 1.5934000000000001
   },
-  "reopened_DXF_gas_ports_per_layer": 9,
-  "reopened_DXF_equal_foil_outlines": true,
-  "retainer_size_mm": [
-    0.6,
-    1.48
-  ],
-  "retainer_min_gasket_clearance_mm": 0.3990818766399855,
-  "retainer_min_spacer_clearance_mm": 0.13999999999999965,
   "cut_file_closed_contours": {
-    "tool-spacer-transfer-liner": 5,
-    "L06-K-wire-exit-retainers": 3,
-    "fixture-caul": 5,
-    "L01-floor-C110": 5,
-    "L02-floor-lower-467MP": 14,
-    "L03-floor-insulator-PI": 14,
-    "L04-floor-upper-467MP": 14,
-    "L07-spacer-lower-467MP": 8,
-    "L08-spacer-core-PI": 8,
-    "L09-spacer-upper-467MP": 8,
-    "L10-connected-gasket-silicone": 16,
-    "L11-upper-insulator-PI": 14,
-    "L13-upper-C110-port-0p60mm": 14,
-    "L14-cap-bond-467MP": 14,
-    "L15-aperture-cap-FR4": 14,
-    "L16-face-bond-9731": 14,
-    "L17-diaphragm-silicone": 5
+    "tool-wire-hold-strip": 1,
+    "L02-floor-C110": 5,
+    "L03-windowed-floor-gasket": 14,
+    "L06-connected-contact-gasket": 18,
+    "L07-upper-dielectric-PI": 14,
+    "L08-upper-C110": 14,
+    "L09-aperture-cap-FR4": 14,
+    "L10-diaphragm": 5
   },
-  "jig_STEP_solids": 30,
-  "head_STEP_solids": 70,
-  "head_STEP_nichrome_cylinders": 12,
+  "head_STEP_solids": 48,
+  "jig_STEP_solids": 28,
   "wires_counted_in_three_STEP_files": {
+    "4": 12,
     "2": 6,
-    "3": 9,
-    "4": 12
+    "3": 9
   },
-  "STEP_gauges_passed": {
-    "power_pth_dia_0.624": 10,
-    "tooling_stack_dia_0.520": 4
-  },
-  "status": "CAD and fabrication data independently reopened. Physical performance awaits assembly."
+  "status": "CAM and STEP reopened; installed dimensions, restraint and leakage require bench measurements."
 }

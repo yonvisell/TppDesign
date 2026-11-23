@@ -1,0 +1,472 @@
+{
+  "four_strand_cells": [
+    {
+      "site_xy_mm": [
+        -4.2,
+        4.2
+      ],
+      "free_volume_mm3": 15.457327767154302,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.37499999999962297
+    },
+    {
+      "site_xy_mm": [
+        0.0,
+        4.2
+      ],
+      "free_volume_mm3": 15.457327767154306,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.3749999999996234
+    },
+    {
+      "site_xy_mm": [
+        4.2,
+        4.2
+      ],
+      "free_volume_mm3": 15.457327767154297,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.37499999999962297
+    },
+    {
+      "site_xy_mm": [
+        -4.2,
+        0.0
+      ],
+      "free_volume_mm3": 15.457327767154304,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.37499999999962297
+    },
+    {
+      "site_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "free_volume_mm3": 15.457327767154306,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.3749999999996234
+    },
+    {
+      "site_xy_mm": [
+        4.2,
+        0.0
+      ],
+      "free_volume_mm3": 15.457327767154304,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.37499999999962297
+    },
+    {
+      "site_xy_mm": [
+        -4.2,
+        -4.2
+      ],
+      "free_volume_mm3": 15.457327767154304,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.37499999999962297
+    },
+    {
+      "site_xy_mm": [
+        0.0,
+        -4.2
+      ],
+      "free_volume_mm3": 15.457327767154297,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.3749999999996234
+    },
+    {
+      "site_xy_mm": [
+        4.2,
+        -4.2
+      ],
+      "free_volume_mm3": 15.4573277671543,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.37499999999962297
+    }
+  ],
+  "fasteners_and_clearance": {
+    "grid_opening_mm2": 11.718038769170816,
+    "diaphragm_to_grid_contact_area_mm2": 125.39250650757539,
+    "contacts": {
+      "board": {
+        "z_mm": -0.8,
+        "nominal_four_pad_area_mm2": 3.12,
+        "interior_witnesses": 20
+      },
+      "cap": {
+        "z_mm": 0.7024,
+        "nominal_four_pad_area_mm2": 3.0,
+        "interior_witnesses": 20
+      },
+      "grid": {
+        "z_mm": 1.3274,
+        "nominal_four_pad_area_mm2": 3.0,
+        "interior_witnesses": 20
+      }
+    },
+    "screw_records": [
+      {
+        "xy_mm": [
+          -6.3,
+          6.65
+        ],
+        "underhead_z_mm": 1.5474,
+        "underhead_length_mm": 4.0,
+        "head_diameter_mm": 1.8000000000000007,
+        "pitch_mm": 0.25,
+        "head_height_mm": 0.5,
+        "thread_engagement_envelope_mm": 1.3075999999999999,
+        "engagement_pitches": 5.2303999999999995,
+        "tip_to_back_mm": 0.6924000000000001,
+        "head_recess_from_island_top_mm": 0.08000000000000007
+      },
+      {
+        "xy_mm": [
+          7.279999999999999,
+          -6.65
+        ],
+        "underhead_z_mm": 1.5474,
+        "underhead_length_mm": 4.0,
+        "head_diameter_mm": 1.7999999999999998,
+        "pitch_mm": 0.25,
+        "head_height_mm": 0.5,
+        "thread_engagement_envelope_mm": 1.3075999999999999,
+        "engagement_pitches": 5.2303999999999995,
+        "tip_to_back_mm": 0.6924000000000001,
+        "head_recess_from_island_top_mm": 0.08000000000000007
+      },
+      {
+        "xy_mm": [
+          7.279999999999999,
+          6.65
+        ],
+        "underhead_z_mm": 1.5474,
+        "underhead_length_mm": 4.0,
+        "head_diameter_mm": 1.7999999999999998,
+        "pitch_mm": 0.25,
+        "head_height_mm": 0.5,
+        "thread_engagement_envelope_mm": 1.3075999999999999,
+        "engagement_pitches": 5.2303999999999995,
+        "tip_to_back_mm": 0.6924000000000001,
+        "head_recess_from_island_top_mm": 0.08000000000000007
+      },
+      {
+        "xy_mm": [
+          -6.3,
+          -6.65
+        ],
+        "underhead_z_mm": 1.5474,
+        "underhead_length_mm": 4.0,
+        "head_diameter_mm": 1.8000000000000007,
+        "pitch_mm": 0.25,
+        "head_height_mm": 0.5,
+        "thread_engagement_envelope_mm": 1.3075999999999999,
+        "engagement_pitches": 5.2303999999999995,
+        "tip_to_back_mm": 0.6924000000000001,
+        "head_recess_from_island_top_mm": 0.08000000000000007
+      }
+    ],
+    "gas_floor_continuous_over_backing_windows": 9,
+    "cold_wire_crown_to_dielectric_mm": 0.48340914991822004,
+    "diaphragm_recess_at_active_field_mm": 0.32099999999999995,
+    "wire_thermal_screen": {
+      "contact_chord_mm": 4.2,
+      "nominal_cold_crown_clearance_mm": 0.48340914991822004,
+      "minimum_installed_gap_mm": 0.54,
+      "land_max_mm": 0.04,
+      "wire_max_mm": 0.034,
+      "combined_roof_inward_mm": 0.05,
+      "alpha_per_K": 1.72e-05,
+      "pinned_Euler_critical_strain": 4.042397494210353e-05,
+      "rows": [
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.0,
+          "upper_clearance_mm": 0.416,
+          "max_cold_excess_for_noncontact_mm": 0.08161464870438806
+        },
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.10249999999999891,
+          "upper_clearance_mm": 0.31350000000000106,
+          "max_cold_excess_for_noncontact_mm": 0.08161464870438806
+        },
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.14499999999999846,
+          "upper_clearance_mm": 0.2710000000000015,
+          "max_cold_excess_for_noncontact_mm": 0.08161464870438806
+        },
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.20518284528682973,
+          "upper_clearance_mm": 0.21081715471317025,
+          "max_cold_excess_for_noncontact_mm": 0.08161464870438806
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.25438131456732344,
+          "upper_clearance_mm": 0.16137014543267658,
+          "max_cold_excess_for_noncontact_mm": 0.05044731440606842
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.2745364565754879,
+          "upper_clearance_mm": 0.1412150034245121,
+          "max_cold_excess_for_noncontact_mm": 0.05044731440606842
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.29333148858416347,
+          "upper_clearance_mm": 0.12241997141583655,
+          "max_cold_excess_for_noncontact_mm": 0.05044731440606842
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.327761506069288,
+          "upper_clearance_mm": 0.08798995393071202,
+          "max_cold_excess_for_noncontact_mm": 0.05044731440606842
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.29607625936741394,
+          "upper_clearance_mm": 0.11958748063258606,
+          "max_cold_excess_for_noncontact_mm": 0.039554818811550874
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.31364987266755723,
+          "upper_clearance_mm": 0.10201386733244278,
+          "max_cold_excess_for_noncontact_mm": 0.039554818811550874
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.3303090709629405,
+          "upper_clearance_mm": 0.08535466903705952,
+          "max_cold_excess_for_noncontact_mm": 0.039554818811550874
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.36138346289005585,
+          "upper_clearance_mm": 0.05428027710994415,
+          "max_cold_excess_for_noncontact_mm": 0.039554818811550874
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.33267275056577866,
+          "upper_clearance_mm": 0.08290326943422133,
+          "max_cold_excess_for_noncontact_mm": 0.028717843079493655
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.34848395741458454,
+          "upper_clearance_mm": 0.06709206258541545,
+          "max_cold_excess_for_noncontact_mm": 0.028717843079493655
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.3636258954962123,
+          "upper_clearance_mm": 0.051950124503787665,
+          "max_cold_excess_for_noncontact_mm": 0.028717843079493655
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.39220871937896645,
+          "upper_clearance_mm": 0.023367300621033538,
+          "max_cold_excess_for_noncontact_mm": 0.028717843079493655
+        }
+      ]
+    },
+    "wire_outer_pad_edge_sensitivity": {
+      "contact_chord_mm": 4.55,
+      "nominal_cold_crown_clearance_mm": 0.48340914991822004,
+      "minimum_installed_gap_mm": 0.54,
+      "land_max_mm": 0.04,
+      "wire_max_mm": 0.034,
+      "combined_roof_inward_mm": 0.05,
+      "alpha_per_K": 1.72e-05,
+      "pinned_Euler_critical_strain": 3.4444096992088214e-05,
+      "rows": [
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.0,
+          "upper_clearance_mm": 0.416,
+          "max_cold_excess_for_noncontact_mm": 0.07544311390811487
+        },
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.1066829414667582,
+          "upper_clearance_mm": 0.30931705853324176,
+          "max_cold_excess_for_noncontact_mm": 0.07544311390811487
+        },
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.15091388272786407,
+          "upper_clearance_mm": 0.26508611727213593,
+          "max_cold_excess_for_noncontact_mm": 0.07544311390811487
+        },
+        {
+          "wire_C": 25.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.21354156504062394,
+          "upper_clearance_mm": 0.20245843495937604,
+          "max_cold_excess_for_noncontact_mm": 0.07544311390811487
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.2755797574479343,
+          "upper_clearance_mm": 0.14017170255206574,
+          "max_cold_excess_for_noncontact_mm": 0.041787759139637615
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.2957912350960978,
+          "upper_clearance_mm": 0.11996022490390224,
+          "max_cold_excess_for_noncontact_mm": 0.041787759139637615
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.3147274856478838,
+          "upper_clearance_mm": 0.10102397435211624,
+          "max_cold_excess_for_noncontact_mm": 0.041787759139637615
+        },
+        {
+          "wire_C": 450.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.3495902049560607,
+          "upper_clearance_mm": 0.06616125504393933,
+          "max_cold_excess_for_noncontact_mm": 0.041787759139637615
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.3207492809813627,
+          "upper_clearance_mm": 0.09491445901863732,
+          "max_cold_excess_for_noncontact_mm": 0.030025737370436012
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.33836014185927,
+          "upper_clearance_mm": 0.07730359814073001,
+          "max_cold_excess_for_noncontact_mm": 0.030025737370436012
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.35511662650548864,
+          "upper_clearance_mm": 0.06054711349451136,
+          "max_cold_excess_for_noncontact_mm": 0.030025737370436012
+        },
+        {
+          "wire_C": 600.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.3865055361593431,
+          "upper_clearance_mm": 0.029158203840656927,
+          "max_cold_excess_for_noncontact_mm": 0.030025737370436012
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.0,
+          "bow_upper_mm": 0.36039547977959163,
+          "upper_clearance_mm": 0.05518054022040836,
+          "max_cold_excess_for_noncontact_mm": 0.01832366648556416
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.005,
+          "bow_upper_mm": 0.37623366411736825,
+          "upper_clearance_mm": 0.03934235588263174,
+          "max_cold_excess_for_noncontact_mm": 0.01832366648556416
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.01,
+          "bow_upper_mm": 0.3914478916516967,
+          "upper_clearance_mm": 0.0241281283483033,
+          "max_cold_excess_for_noncontact_mm": 0.01832366648556416
+        },
+        {
+          "wire_C": 750.0,
+          "cold_excess_mm": 0.02,
+          "bow_upper_mm": 0.4202728360084696,
+          "upper_clearance_mm": -0.0046968160084696065,
+          "max_cold_excess_for_noncontact_mm": 0.01832366648556416
+        }
+      ]
+    }
+  },
+  "center_other_strands": {
+    "2": {
+      "site_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "free_volume_mm3": 15.462736077404971,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.3749999999996234
+    },
+    "3": {
+      "site_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "free_volume_mm3": 15.460031922279638,
+      "z_extent_mm": [
+        -1.018,
+        1.1024
+      ],
+      "min_distance_to_cut_plane_mm": 0.3749999999996234
+    }
+  }
+}

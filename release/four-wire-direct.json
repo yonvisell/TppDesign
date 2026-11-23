@@ -5,7 +5,7 @@
   "maximum_ms": 20,
   "mode": "simultaneous",
   "method": "Independent cold trials after all-nine calibration, using Client.actuate over UDP with the compiled production controller. Each proposed parity group's cold currents come from the independent intact-wire circuit, whether or not it was energized. For declined requests the recorded number of electrical exposures and deposited energy were both zero. The energized trials include finite measurement pulses and shunt-monitored joint intervals.",
-  "electrical_input_sha256": "621b175f3ba5c4aa6121a9bcf331bf01c0a8a4a185f8256690ddf0d85f2fe561",
+  "electrical_input_sha256": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a",
   "current_admission_agrees_with_independent_circuit": true,
   "counts": {
     "1": {
@@ -193,14 +193,14 @@
       "peak_plant_C": 285.11468565601166,
       "peak_upper_C": 351.74090576171875,
       "selected_mJ": [
-        13.47507703515442
+        13.475077035154449
       ],
-      "min_mean_over_elapsed_W": 14.504926840855134,
+      "min_mean_over_elapsed_W": 14.504926840855166,
       "max_inactive_mJ": 0.002030912592279492,
       "probes": 4,
       "group_slots": 0,
       "joint_masks": [],
-      "max_receipt_error_uJ": 0.1727382794197183,
+      "max_receipt_error_uJ": 0.17273827944882214,
       "proposed_cold_parity_source_A": 3.398238628557618,
       "proposed_cold_parity_max_tap_A": 3.1763061313170886
     },
@@ -218,14 +218,14 @@
       "peak_plant_C": 306.9320805427227,
       "peak_upper_C": 372.3118896484375,
       "selected_mJ": [
-        14.672590719672298
+        14.672590719672327
       ],
-      "min_mean_over_elapsed_W": 14.027333384007934,
+      "min_mean_over_elapsed_W": 14.027333384007962,
       "max_inactive_mJ": 0.00228427876799833,
       "probes": 5,
       "group_slots": 0,
       "joint_masks": [],
-      "max_receipt_error_uJ": 4.159079047298292,
+      "max_receipt_error_uJ": 4.1590790473273955,
       "proposed_cold_parity_source_A": 3.371963881951158,
       "proposed_cold_parity_max_tap_A": 3.1120680756232595
     },
@@ -369,7 +369,7 @@
       "peak_plant_C": 297.72724160150415,
       "peak_upper_C": 363.36285400390625,
       "selected_mJ": [
-        14.178014280147734,
+        14.178014280147792,
         12.838225633549154
       ],
       "min_mean_over_elapsed_W": 9.944404053872312,
@@ -585,7 +585,7 @@
       "peak_plant_C": 308.23338569639577,
       "peak_upper_C": 369.1193542480469,
       "selected_mJ": [
-        14.760304960571695,
+        14.760304960571666,
         13.618686289959879
       ],
       "min_mean_over_elapsed_W": 9.570404982403288,
@@ -743,7 +743,7 @@
       "peak_plant_C": 304.7731616065573,
       "peak_upper_C": 369.35845947265625,
       "selected_mJ": [
-        14.571647988907266,
+        14.571647988907323,
         13.6040569969535
       ],
       "min_mean_over_elapsed_W": 9.566847395888537,
@@ -772,10 +772,10 @@
       "peak_plant_C": 308.15042106008934,
       "peak_upper_C": 371.74127197265625,
       "selected_mJ": [
-        14.683882583321159,
+        14.68388258332113,
         14.767817400694067
       ],
-      "min_mean_over_elapsed_W": 9.566047285551244,
+      "min_mean_over_elapsed_W": 9.566047285551225,
       "max_inactive_mJ": 0.06800008846604032,
       "probes": 8,
       "group_slots": 3,
@@ -802,9 +802,9 @@
       "peak_upper_C": 374.7367248535156,
       "selected_mJ": [
         14.718349139114144,
-        14.542217424857402
+        14.542217424857371
       ],
-      "min_mean_over_elapsed_W": 9.46142968435745,
+      "min_mean_over_elapsed_W": 9.461429684357432,
       "max_inactive_mJ": 0.0680644390223315,
       "probes": 8,
       "group_slots": 3,
@@ -885,7 +885,7 @@
       "peak_plant_C": 287.4570656103149,
       "peak_upper_C": 352.6849365234375,
       "selected_mJ": [
-        13.619591044640227,
+        13.619591044640197,
         13.352208325403218
       ],
       "min_mean_over_elapsed_W": 10.11530933742668,
@@ -956,10 +956,10 @@
       "peak_plant_C": 305.63091478498063,
       "peak_upper_C": 372.81024169921875,
       "selected_mJ": [
-        14.61865099847992,
-        13.5441042297385
+        14.618650998479978,
+        13.544104229738558
       ],
-      "min_mean_over_elapsed_W": 9.511309150097262,
+      "min_mean_over_elapsed_W": 9.511309150097302,
       "max_inactive_mJ": 0.06235291159528424,
       "probes": 7,
       "group_slots": 3,
@@ -985,7 +985,7 @@
       "peak_plant_C": 308.92277975878375,
       "peak_upper_C": 375.31097412109375,
       "selected_mJ": [
-        14.79896899078958,
+        14.798968990789493,
         14.775136878081453
       ],
       "min_mean_over_elapsed_W": 9.619229738334278,
@@ -1015,9 +1015,9 @@
       "peak_upper_C": 375.5905456542969,
       "selected_mJ": [
         14.808639137411431,
-        14.524809949039946
+        14.52480994903986
       ],
-      "min_mean_over_elapsed_W": 9.456256477239549,
+      "min_mean_over_elapsed_W": 9.456256477239492,
       "max_inactive_mJ": 0.06359245356536121,
       "probes": 8,
       "group_slots": 3,
@@ -1044,9 +1044,9 @@
       "peak_upper_C": 364.3056335449219,
       "selected_mJ": [
         14.50237664945767,
-        13.597797190266515
+        13.597797190266487
       ],
-      "min_mean_over_elapsed_W": 9.562445281481375,
+      "min_mean_over_elapsed_W": 9.562445281481354,
       "max_inactive_mJ": 0.05605837177060312,
       "probes": 7,
       "group_slots": 3,
@@ -1072,17 +1072,17 @@
       "peak_plant_C": 308.1496628080415,
       "peak_upper_C": 371.7750244140625,
       "selected_mJ": [
-        14.620422923647276,
+        14.620422923647245,
         14.767776036636205
       ],
-      "min_mean_over_elapsed_W": 9.524705487718094,
+      "min_mean_over_elapsed_W": 9.524705487718075,
       "max_inactive_mJ": 0.06049963806453161,
       "probes": 8,
       "group_slots": 3,
       "joint_masks": [
         160
       ],
-      "max_receipt_error_uJ": 23.42585333477473,
+      "max_receipt_error_uJ": 23.425853334745625,
       "proposed_cold_parity_source_A": 6.61353160933253,
       "proposed_cold_parity_max_tap_A": 3.084765163241942
     },
@@ -1102,9 +1102,9 @@
       "peak_upper_C": 375.14007568359375,
       "selected_mJ": [
         14.686422300763253,
-        14.573487843191572
+        14.5734878431916
       ],
-      "min_mean_over_elapsed_W": 9.469452789598162,
+      "min_mean_over_elapsed_W": 9.469452789598181,
       "max_inactive_mJ": 0.06129644536681007,
       "probes": 8,
       "group_slots": 3,

@@ -1,8 +1,8 @@
 {
-  "image": "R2J-ESP32C6.bin",
+  "image": "R2K-ESP32C6.bin",
   "fresh_build_identical": true,
   "merged_bytes": 1102736,
-  "sha256": "80a4c2db249dda77d2e20fd57d2208f988fef331efe0f3ad49557db32ae6e9ed",
+  "sha256": "5a51c2f725a26fc151c087547b52590e3fdf8f56d76cbb9da3d3ee3872be3771",
   "source_hashes_identical": true,
   "flash_application_bytes": {
     "used": 1012840,
@@ -12,5 +12,6 @@
     "used": 44928,
     "available": 327680
   },
-  "physical_flash": false
+  "physical_flash": false,
+  "electrical_source_sha256": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a"
 }

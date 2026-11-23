@@ -1,20 +1,12 @@
-# Driver installation and commissioning
+# Driving the nine-pixel display
 
-The XIAO ESP32-C6 runs compiled C++ firmware. A separate regulated 6 V input powers the heaters. This revision supports two, three or four straight NiCr wires per row. The owner design book describes the four-wire configuration.
-
-From the root of this repository, with esptool v5 and the board connected by USB, substitute the serial port for PORT.
-
-```sh
-python3 -m esptool --chip esp32c6 --port PORT write-flash 0x0 firmware/image/R2J-ESP32C6.bin
-```
-
-The merged image includes the bootloader, partitions and application and spans the calibration storage. Configure and calibrate after a full-image installation. Ordinary reboots retain the stored count and calibration. [Compiled image and digest](image/build.json) · [Owner design book](../Owner-design-book.pdf)
+J1 supplies a regulated 6.0 V heater rail. USB-C powers the XIAO ESP32-C6 logic. Connect the ten equally named T0–T9 pads on J2 and the array. Every row uses the same installed count of two, three or four parallel AWG48 Ni80Cr20 wires. One XIAO ESP32-C6 image supports all three counts. A guarded one-shot command selects a site pattern and the maximum allowed time. The controller uses the available rail power in admissible measured slots and stops the entire request at the first thermal guard. The calibrated-energy interface remains available for one to three sites. [Network operation](../software/OSC.md)
 
 ## How the driver applies heater power
 
-J1 supplies the heater power and return. Current from J1+ crosses the 10 mΩ shunt R1 into the common heater supply VM. Three TI DRV8962 devices each contain four independently controlled half bridges, each formed by high-side and low-side MOSFETs. The board uses three channels per device to drive J2 taps T1 through T9. Its fourth channel is disabled. T0 is permanently connected to the J1 return. The three package pins bonded to a used OUT channel share one copper net and drive the same tap.  [TI DRV8962, §7.4 and Table 7-2](https://www.ti.com/lit/ds/symlink/drv8962.pdf#page=15)
+J1 supplies the heater power and return. Current from J1+ crosses the 10 mΩ shunt R1 into the common heater supply VM. Three TI DRV8962 devices each contain four independently controlled half bridges, each formed by high-side and low-side MOSFETs. The board uses three channels per device to drive J2 taps T1 through T9. Its fourth channel is disabled. T0 is permanently connected to the J1 return. The three package pins bonded to a used OUT channel share one copper net and drive the same tap. [Circuit connections](../eb/Schematic.pdf) · [TI DRV8962, §7.4 and Table 7-2](https://www.ti.com/lit/ds/symlink/drv8962.pdf#page=15)
 
-With the bridge awake, EN = 0 leaves that tap at high impedance. With EN = 1 and IN = 1, the high-side transistor sources current from VM. With EN = 1 and IN = 0, the low-side transistor connects the tap to return. A selected resistive segment heats when a voltage difference appears between its adjacent electrode bars. Electrical current can reverse between neighboring active segments; dissipated heat depends on I²R. The controller blanks the enables before latching a different direction pattern. R1 and U8 measure aggregate supply current. Per-tap operating limits are checked with a calibrated electrical model and the measured aggregate. The board grounds IPROPI and applies positive VREF, the TI configuration that disables the internal current chopper. The independent hardware fault gate remains active.  [TI DRV8962, §7.5.3](https://www.ti.com/lit/ds/symlink/drv8962.pdf#page=17)
+With the bridge awake, EN = 0 leaves that tap at high impedance. With EN = 1 and IN = 1, the high-side transistor sources current from VM. With EN = 1 and IN = 0, the low-side transistor connects the tap to return. A selected resistive segment heats when a voltage difference appears between its adjacent electrode bars. Electrical current can reverse between neighboring active segments; dissipated heat depends on I²R. The controller blanks the enables before latching a different direction pattern. R1 and U8 measure aggregate supply current. Per-tap operating limits are checked with a calibrated electrical model and the measured aggregate. The board grounds IPROPI and applies positive VREF, the TI configuration that disables the internal current chopper. The independent hardware fault gate remains active. [Board circuit](../eb/Schematic.pdf) · [TI DRV8962, §7.5.3](https://www.ti.com/lit/ds/symlink/drv8962.pdf#page=17)
 
 ## Commission a cold display
 
@@ -39,5 +31,90 @@ With heater power off, complete continuity and absence-of-short checks. Commissi
 
 On first installation label the TA and enter `ARRAY n` (or retain label 1), set `WIRES n` to the physical wire count, then use `CAL COLD 25`, wait for thermal equilibrium, then `COLD` and `ARM`. After a power cycle the board reads the versioned checksummed calibration but remains disarmed and requires explicit local cold confirmation. Use the measured ambient in place of 25. Recalibrate after changing the TA, wire, solder joints, cabling, reference resistance or operating ambient. The record binds the physical board eFuse identity, operator-selected TA label and wire count. The passive TA has no electronic identity. Starting an accepted calibration retires the old NVS record before taking samples. A failed sweep inhibits operation. A handling, cable or contact fault calls for inspection before cold reinitialization.
 
+## Board-side resistance and cold subtraction
 
-The Python client sends requests to the commissioned board and reports delivered energy per site. [Open Sound Control protocol and client](../software/OSC.md)
+For pixel k between chain taps j−1 and j, make only j high and j−1 low. Leave the remaining controllable taps high impedance. T0 is permanently grounded. The grounded low-side tail can carry some return current. The isolated active span still lies in the principal high-side source path. Subtract the blank supply reading and the small divider load of the high-side suffix. Using the measured terminal potentials, the firmware evaluates
+
+```text
+I_k ≈ I_shunt − I_blank − (10−j) V(Tj)/30,000 Ω
+V_bk = V(Tj) − V(Tj−1)
+R_bk = V_bk/I_k = R_series,k + R_NiCr,k
+R_series,k = R_bk,cold − R_NiCr(T_ambient)
+R_NiCr,k(t) = V_bk(t)/I_k(t) − R_series,k
+P_NiCr,k(t) = I_k(t)² R_NiCr,k(t)
+```
+
+The divider correction approximates floating suffix voltages by V(Tj). Each J2 tap has a 30 kΩ divider. The cable, TA copper and contacts between J2 and the wire lie inside the measurement. Driver-FET voltage is outside the differential J2 measurement. Contact or copper resistance that changes since calibration appears as wire resistance. A spatially concentrated contact defect, unequal wire current or hot spot has no unique temperature in this observation. Numerical residuals and group-load cross-coupling are tabulated in [the independent circuit analysis](../analysis/array-results.json).
+
+For 4.2 mm pitch, 31.591 µm round wires, installed count N and resistivity 1.08 µΩ·m, R20 = 5.78709/N Ω. The accepted wire-only 20 °C reference range is 90–110% of this estimate subject to 6.3 V/R20 ≤ 5 A. Gauge and alloy errors outside this range require a newly characterized material model. The firmware scales it by the manufacturer’s normalized q(T). Nominal volume includes the entire between-station length. The free 2.9 mm segments account for 2.9/4.2 of the room-temperature electrical resistance. The balance sees the environment/support state in the reduced model. The isolated probe itself heats the wires. During cold enrollment the firmware extrapolates the in-pulse NiCr resistance to the zero-energy edge using the ADC aperture time, current and wire heat capacity. Each site is energized for 96 µs per sweep. Successive samples of the same site are separated by at least 2.25 s. Repeated series estimates must agree within 35 mΩ. Each result must also fall within that pixel’s calculated cable/copper/contact envelope. The bounds include nominal and elevated path resistance plus 45 mΩ allowance, rounded outward. Example commissioning allocations at a 1.5 A probe and 3.2 Ω terminal resistance are 12 mV differential error (8 mΩ), 8 mA current error (17 mΩ) and 15 mΩ cold NiCr reference error, leaving about 5 mΩ for residuals. These are budgets to verify on the installed board. A measured cold reference replaces the supplier estimate without shifting the allowed non-NiCr interval. Large asymmetric contact faults fail this check. Smaller defects can fall inside the healthy electrical envelope. [Per-pixel cold series bounds](calibration-envelope.json)
+
+## Temperature and pulse energy
+
+The production target uses the original Rev08 manufacturer resistance knots, including the maximum at 600 °C and minimum near 800 °C. The project’s archived controller simulation identifies this curve as AWS180 Rev.1. It contains no resistance measurements from the installed lot. Specific heat follows the Kanthal Nikrothal 80 table. The parameter file, implementation and primary sources are linked here. [Material values](material.json) · [Controller](src/control.h) · [AWS180](https://www.alloywire.com/wp-content/uploads/2021/04/AW_Datasheet_80_20-NI-CR.pdf) · [Nikrothal 80](https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-80/)
+
+With nominal suspended fraction f, free-wire temperature T, surrounding temperature S and ambient A, the resistance model and dynamics are
+
+```text
+R_wire/R20 = f q(T) + (1−f) q(S)
+C(T) dT/dt = P_wire f q(T) / [f q(T) + (1−f)q(S)] − G(T−S)
+dS/dt = β(T−S) − γ(S−A)
+```
+
+Wire volume and heat capacity scale with installed count. Whole-pitch heat capacities at 20 °C are 25.14, 37.71 and 50.28 µJ/K for N = 2, 3 and 4. Corresponding free-span capacities are 17.36, 26.04 and 34.71 µJ/K. Effective total wire conductance G and the support heating term β scale with N/2 from their two-wire reference fits, while the ambient-loss term γ stays fixed. This assumes comparable thermal contacts and a fixed support heat capacity. Fit the assembled winding and supports experimentally. Short updates use the midpoint method. Longer gaps use the exact linear two-state solution with heat capacity frozen over the interval. Heating and cooling evolve continuously. The support retains heat into subsequent requests. The model describes an effective free-wire temperature. Axial maxima, contact temperature, gas heating and tactile pressure require separate evidence.
+
+Each isolated sample constrains the measured normalized wire resistance to ±0.008 within a provisional ±65 K model window. The code intersects the exact piecewise-linear q(T) segments with both constraints. An empty intersection or more than one disconnected interval stops the drive and latches a fault. On one connected interval the correction minimizes squared normalized model and resistance residuals. A shallow slope weights the thermal prediction more strongly. At 25 °C a 0.008 whole-pair normalized error alone corresponds to about 155 K in free-wire temperature at fixed S. The model window narrows the search conditionally. Its upper endpoint supplies the next-pulse guard. These error and model widths and the 25 K stopping margin require fitting and independent verification.
+
+For a calibrated dose, the nominal normalized level of 1.0 requests 4.36 W mean NiCr power per active pixel, so E_req[µJ] = 4.36 × level × duration[µs]. A 0.5, 30 ms command requests 65.4 mJ per site. The command ends when its budget, temperature guard or wall-time limit is reached. The network receipt reports the result, including partial delivery. Stronger requests cannot override local limits.
+
+* **During an isolated probe**, bracket the two sequential terminal voltages with current readings, require consistent ADC channel IDs, no saturation, current agreement within 50 mA and a settled RUN-high interval. The direct site-energy estimate uses de-embedded I²R at its mid-pulse sample, multiplied by its complete energized duration. Calibrated-dose probe lengths are 80–160 µs, while available-power single-site slots can last up to 256 µs. A group-weak branch can absorb extra energy during its existing diagnostic interval, which reduces later single-site transitions. Cold calibration always uses 96 µs. The difference between this quadrature and actual energy depends on switching, temperature slope and sampling skew.
+* **During group drive**, all nine taps receive chain-parity directions. This creates simultaneous voltage differences on selected segments. A passive nodal chain predicts branch powers from the latest observer state and calibrated series resistance. Cold commissioning estimates mean active EB switch-path resistance from idle rail minus isolated J2 differential, corrected for common feed and divided across the two conducting legs. A shared-current sample rescales those powers by squared observed/predicted bus-current ratio on slots ≥64 µs. Shorter slots reuse the last measured scaling for the same pattern within the command when available. Group-terminal voltage divided by shared current would mix several branches.
+* **For a small calibrated-energy request**, use finite 8–256 µs parity slots when the calibrated cold state or recent isolated observation is available. At the baseline, dose below 64 µJ returns `below_resolution`. A request below approximately 1.07 mJ at 6.0 V with nominal wire can complete without its own resistance probe. Accumulated unobserved selected-slot allowance is 3.00 mJ, with a 100 ms age limit after an unobserved burst. When the credit is exhausted, `probe_required` asks for an explicitly budgeted pulse large enough for a fresh measurement, or a new, physically confirmed cold state. No extra measurement pulse is silently added to the requested energy. Installed-R20 values requiring a higher power bound increase these thresholds.
+* **Before every pulse**, project the upper temperature through the complete proposed slot and a 5 µs opening allowance, using at least 16 W/site and the whole-bundle room-temperature heat capacity for calibrated doses. Available-power pulses additionally charge the full upper power allowance to the smaller free-span heat capacity. The bound increases for smaller specified wire resistance. Add the 25 K stopping margin. Deny a slot if the result reaches the selected ceiling. The RMT drives a finite high pulse independently of software timing. Driver nFAULT asynchronously clears the hardware arm latch. The ADC, model and timing safeguards depend on the intact-wire assumptions and qualified rail. A fault during an energized slot reports a timed upper allowance on unresolved selected-site energy. Thermal and timing stops keep the energy already accounted for.
+
+The ADC sequence needs six 16-bit frames. At 4 MHz with 3 µs CS-high intervals and an 8 µs edge settling delay, the nominal wire-time budget is 50 µs before software overhead. A minimum 80 µs heating probe leaves about 30 µs for GPIO, SPI and scheduling overhead. Fault on an incomplete plateau. Verify the timing on hardware.
+
+The current model screens 8 A source and 5 A per tap. Runtime shunt comparisons reject a discrepancy exceeding max(0.25 A, 22% of predicted source current). The divider and INA180 nominal scalings alone do not establish the ±0.008 resistance tolerance. Commission their residuals, SPI aperture and independent thermal reference across the intended load, temperature and duty range.
+
+## Available-power pulse timing
+
+Each available-power slot requires a fresh shunt aperture. Individual exposures use a differential J2 voltage measurement to update R(T). On a multiple-site request the driver measures each selected branch individually before a joint drive interval. Group duration can shorten as thermal headroom decreases. The XIAO hardware timer bounds every exposure and the network deadline bounds the complete request. The controller returns immediately at the first thermal cutoff; it does not maintain a temperature plateau for the rest of the envelope.
+
+Write U for the current upper endpoint of the R(T)-compatible free-wire temperature. For an available-power slot the scheduler reserves the 25 K margin and uses the room-temperature free-span heat capacity. With the per-site bound B = max(16 W, 1.08 × 6.3²/R20), the candidate energized time is at most (T_limit − U − 25 K) C_free,20/B − 6 µs. The next slot requires at least 80 µs for acquisition. Consequently a low set limit can admit zero energy and the peak point estimate can remain well below a higher limit. Temperature is inferred from the integrated wire resistance. A local contact or wire midpoint can be hotter than this effective estimate.
+
+At 5.8 V, a 20 ms request to the centre pixel of a cold four-wire display stopped after 0.937 ms at the 450 °C setting. Four isolated measurements accounted for 0.833 ms energized time and 13.39 mJ. The point estimate peaked at 285.4 °C and the independent effective-wire model at 283.5 °C. At 750 °C the same request stopped after 2.206 ms with 31.37 mJ. Driving P22 and P32 together stopped after 1.536 or 3.059 ms at those two limits, respectively. [Four-wire single- and dual-pixel traces](actuation-trace.json)
+
+At 5.8 V, a cold, three-wire P11/P12/P13 shot with a 20 ms maximum and 450 °C setting stopped after 1.618 ms. The point estimate peaked at 295.6 °C and the independently integrated wire plant peaked at 293.1 °C. An immediate identical request started no slot. A +0.25% synthetic perturbation of the measured probe voltage moved the cutoff to 1.595 ms. A −0.25% perturbation moved it to 1.958 ms. The change in duration shows the resistance measurement contributes to the stopping decision. These times depend on simulated slot overheads, the resistance curve and the thermal fit. [Measured-path trace](actuation-trace.json) · [Faults and retained heat](../release/actuation-matrix.json)
+
+For four wires at the same 5.8 V, all 9 direct singles and 28 of 36 direct pairs reached normal thermal cutoff at 450 °C. The other 8 pairs and all 84 direct triples were declined before any heating. Cold-circuit current predictions for the eight declined pairs exceed 5 A at their common tap. All declined triples exceed 8 A at the source. Use a rotation mode for those addresses. [All 129 direct four-wire selections](../release/four-wire-direct.json)
+
+Across all 84 three-wire triples at 5.8 V, simulated peak source and tap currents reached 7.759 A and 4.895 A. At the 450 °C setting the first thermal stop fell between 1.591 and 1.961 ms, with 5.17–6.48 W at the weakest selected site averaged over elapsed time. At 750 °C it fell between 3.359 and 3.808 ms, with 5.49–6.65 W at the weakest site. These are controller-level free-span and delivery results. The separate pressure appendix uses an axial model and different control laws. A current predicted above the limit before a command starts declines the requested simultaneous group. Choosing a rotating mode allows the same addresses to be visited in admissible subsets. [All triples, individual sites and nine-site schedules](../release/actuation-matrix.json)
+
+## Calibrated-dose results
+
+
+The public OSC receiver on the two-wire configuration completed 3,843 cold-start 1 ms cases at the nominal 6 V rail, including all 129 admissible selections at 24 equal levels and all 747 placements of the 350, 700 and 1,050 µJ unequal doses. The smallest adjacent energy change among the 24 levels was 102 µJ. Against the separate nodal/thermal plant, maximum selected-site request error was 77.3 µJ, maximum receipt error was 46.5 µJ and the largest single inactive-site energy was 8.65 µJ. These differences include finite-slot resolution. The decoded receipt identifies whether a site received an isolated measurement during that request.
+
+| Stable access path used at enrollment and during drive | J1 | Lowest selected average at level 1 over a 1 ms envelope | Completed at three levels |
+|---|---:|---:|---:|
+| Nominal | 5.7 V | 4.312 W | 387/387 |
+| Nominal | 6.3 V | 4.320 W | 387/387 |
+| Elevated resistance | 5.7 V | 4.253 W | 387/387 |
+| Elevated resistance | 6.3 V | 4.265 W | 387/387 |
+
+The 4.36 W requested level produced at least 4.20 W at each selected site for all 516 full-scale, cold-start cases in those simulations. The fixture allows 18 µs for slot preparation and 8 µs for post-slot blanking in addition to the hardware on-time. If firmware scheduling or acquisition misses an edge, the controller returns a partial or zero receipt. Sustained wireless update rate, actual averaging accuracy and repeatable physical output need target-board timing and thermal measurements. [All selections](selection-sweep.csv) · [Four installation corners](commissioning-results.json) · [Temperature-limited repeated pulses](temperature-cases.json)
+
+## Build and verify
+
+PlatformIO configuration pins the XIAO ESP32-C6 Arduino platform. From the release root, with the matching PlatformIO cache available, run the following. `PIOPY` is the cache’s Python with esptool installed. `CORE` is the PlatformIO cache and `BUILD` is an external empty build directory.
+
+```sh
+PLATFORMIO_CORE_DIR="$CORE" PLATFORMIO_BUILD_DIR="$BUILD" pio run -d firmware
+"$PIOPY" firmware/package_image.py "$BUILD/r2k" --core "$CORE"
+python3 firmware/verify.py
+python3 firmware/commission_test.py
+python3 firmware/thermal_cases.py
+python3 firmware/actuation_trace.py
+python3 release/actuation_matrix.py
+```
+
+Verification needs Python 3.10+, NumPy and a C++17 compiler. The client sender uses only the Python standard library. To flash an attached owner board, use `python3 -m esptool --chip esp32c6 --port PORT write-flash 0x0 firmware/image/R2K-ESP32C6.bin` from the release root with esptool v5 installed. Replace PORT with the attached XIAO USB serial port. The merged image spans the NVS storage region; after a full-image installation, select the installed wire count, calibrate and arm locally. An ordinary reboot retains the stored calibration and wire count. An application-only update that preserves NVS retains the unit number, array label and installed wire count. Revision K rejects Revision I and J cold electrical calibrations even when the same electrode board is used. After assembling or replacing the stack, repeat CAL COLD, COLD and ARM locally. The new record is compatible only with the enrolled Revision K board, array label and wire count. The released build record reports cross-compilation and byte readback. [Image and hashes](image/build.json) · [Acquisition and target firmware](src/main.cpp) · [Numerical and loopback results](verification.json) · [Commissioning and rail corners](commissioning-results.json) · [All mask/level combinations](selection-sweep.csv) · [Repeated exposure trace](example-trace.json) · [450, 550 and 750 °C cases](temperature-cases.json)

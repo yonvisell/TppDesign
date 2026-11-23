@@ -118,7 +118,7 @@ bool calibrate(float ambient,float r20){
     disarm();return enroll(control,hw,storage,ESP.getEfuseMac(),headID,ambient,r20);
 }
 void info(){
-    Serial.printf("TPP-R2J %s array_label=%lu port=5054 AP=%s key=%s station=%s rail=%.3f Ablank=%.4f cal=%d cold=%d armed=%d fault=%d Tmax=%.1f wires=%d mode=%d\n",
+    Serial.printf("TPP-R2K %s array_label=%lu port=5054 AP=%s key=%s station=%s rail=%.3f Ablank=%.4f cal=%d cold=%d armed=%d fault=%d Tmax=%.1f wires=%d mode=%d\n",
         server.addr,(unsigned long)headID,ap,pass,WiFi.localIP().toString().c_str(),hw.rail,hw.blankA,control.calibrated,control.cold,control.armed,control.fault,control.ceiling,control.wires,int(control.mode));
     if(control.calibrated){Serial.printf("A=%.2f R20=%.5f G=%.5f beta=%.3f gamma=%.3f Rseries ohm row-major",control.cal.ambient,control.cal.r20,control.tuning.g_W_K,control.tuning.beta,control.tuning.gamma);for(float r:control.cal.series)Serial.printf(" %.5f",r);Serial.println();}
 }
@@ -168,10 +168,10 @@ void setup(){
     pinMode(CS,OUTPUT);digitalWrite(CS,HIGH);pinMode(FAULT,INPUT);pinMode(Q_ARM,INPUT);
     SPI.begin(SCLK_PIN,MISO_ADC,MOSI_PIN,-1);SPI.beginTransaction(SPISettings(4000000,MSBFIRST,SPI_MODE0));latch({0,0});
     timerReady=rmtInit(RUN,RMT_TX_MODE,RMT_MEM_NUM_BLOCKS_1,1000000)&&rmtSetEOT(RUN,0)&&gpio_input_enable(static_cast<gpio_num_t>(RUN))==ESP_OK;
-    Serial.begin(115200);nv.begin("tpp-r2i",false) /* compatible calibration storage */;unitID=std::clamp(int(nv.getUInt("unit",1)),1,999);
+    Serial.begin(115200);nv.begin("tpp-r2i",false) /* retain setup keys; validate the separate calibration record version */;unitID=std::clamp(int(nv.getUInt("unit",1)),1,999);
     control.wires=int(nv.getUInt("wires",2));
     headID=nv.getUInt("array",1);restoreCalibration(control,storage,ESP.getEfuseMac(),headID);newEpoch();
-    snprintf(ap,sizeof(ap),"TPP-R2J-%06x",unsigned(ESP.getEfuseMac()&0xffffff));
+    snprintf(ap,sizeof(ap),"TPP-R2K-%06x",unsigned(ESP.getEfuseMac()&0xffffff));
     snprintf(pass,sizeof(pass),"%08x%08x",unsigned(esp_random()),unsigned(esp_random()));
     WiFi.persistent(false);WiFi.mode(WIFI_AP_STA);WiFi.softAP(ap,pass);udpReady=udp.begin(5054)!=0;
 }
