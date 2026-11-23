@@ -1,0 +1,259 @@
+{
+  "basis": "Production C++ handler, 12-bit sampled electrical plant, numerically healthy nominal calibration. A single pickup on one intact strand changes at bar B11 between P11 and P12. Heat in that pickup is integrated from endpoint samples, before any allocation to adjoining metal.",
+  "cases": [
+    {
+      "case": "Passing control",
+      "volts": 6.0,
+      "site": 11,
+      "requested_ms": 1,
+      "level": 1,
+      "contact_model": null,
+      "disposition": "complete",
+      "first_slot_us": 80,
+      "slots": 3,
+      "max_contact_W": 0.0,
+      "first_contact_uJ_upper_quadrature": 0.0,
+      "contact_uJ_upper_quadrature": 0.0,
+      "wire_energy_uJ": [
+        4363.24,
+        6.12,
+        0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": true
+    },
+    {
+      "case": "Healthy elevated access paths after nominal calibration",
+      "volts": 5.7,
+      "site": 11,
+      "requested_ms": 1,
+      "level": 1,
+      "contact_model": null,
+      "disposition": "inconsistent_R",
+      "first_slot_us": 80,
+      "slots": 1,
+      "max_contact_W": 0.0,
+      "first_contact_uJ_upper_quadrature": 0.0,
+      "contact_uJ_upper_quadrature": 0.0,
+      "wire_energy_uJ": [
+        717.46,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": false
+    },
+    {
+      "case": "Passing control for historical center",
+      "volts": 6.0,
+      "site": 22,
+      "requested_ms": 1,
+      "level": 0.5,
+      "contact_model": null,
+      "disposition": "complete",
+      "first_slot_us": 80,
+      "slots": 2,
+      "max_contact_W": 0.0,
+      "first_contact_uJ_upper_quadrature": 0.0,
+      "contact_uJ_upper_quadrature": 0.0,
+      "wire_energy_uJ": [
+        0.11,
+        0.11,
+        0.11,
+        2.35,
+        2185.9,
+        2.71,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": true
+    },
+    {
+      "case": "Warm rail at upper endpoint",
+      "volts": 6.3,
+      "site": 13,
+      "requested_ms": 1,
+      "level": 1,
+      "contact_model": null,
+      "disposition": "complete",
+      "first_slot_us": 80,
+      "slots": 3,
+      "max_contact_W": 0.0,
+      "first_contact_uJ_upper_quadrature": 0.0,
+      "contact_uJ_upper_quadrature": 0.0,
+      "wire_energy_uJ": [
+        0.47,
+        6.77,
+        4360.55,
+        0.0,
+        0.01,
+        4.14,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": true
+    },
+    {
+      "case": "P11 contact at shared internal bar",
+      "volts": 6.0,
+      "site": 11,
+      "requested_ms": 1,
+      "level": 1,
+      "contact_model": [
+        1,
+        0,
+        1.0
+      ],
+      "disposition": "inconsistent_R",
+      "first_slot_us": 80,
+      "slots": 1,
+      "max_contact_W": 0.5965624352890035,
+      "first_contact_uJ_upper_quadrature": 47.724994823120284,
+      "contact_uJ_upper_quadrature": 47.724994823120284,
+      "wire_energy_uJ": [
+        759.18,
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": false
+    },
+    {
+      "case": "P11 weak contact, short model-only dose",
+      "volts": 6.0,
+      "site": 11,
+      "requested_ms": 1,
+      "level": 0.125,
+      "contact_model": [
+        1,
+        0,
+        1.0
+      ],
+      "disposition": "complete",
+      "first_slot_us": 50,
+      "slots": 1,
+      "max_contact_W": 0.4906232695581787,
+      "first_contact_uJ_upper_quadrature": 24.531163477908933,
+      "contact_uJ_upper_quadrature": 24.531163477908933,
+      "wire_energy_uJ": [
+        484.31,
+        7.08,
+        0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": true
+    },
+    {
+      "case": "P12 same internal contact",
+      "volts": 6.0,
+      "site": 12,
+      "requested_ms": 1,
+      "level": 1,
+      "contact_model": [
+        1,
+        0,
+        1.0
+      ],
+      "disposition": "inconsistent_R",
+      "first_slot_us": 80,
+      "slots": 1,
+      "max_contact_W": 0.4651919500626586,
+      "first_contact_uJ_upper_quadrature": 37.21535600501269,
+      "contact_uJ_upper_quadrature": 37.21535600501269,
+      "wire_energy_uJ": [
+        11.13,
+        738.45,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": false
+    },
+    {
+      "case": "P11 moderate shift",
+      "volts": 6.0,
+      "site": 11,
+      "requested_ms": 1,
+      "level": 1,
+      "contact_model": [
+        1,
+        0,
+        0.1
+      ],
+      "disposition": "complete",
+      "first_slot_us": 80,
+      "slots": 3,
+      "max_contact_W": 0.08908582905446308,
+      "first_contact_uJ_upper_quadrature": 7.126866324357046,
+      "contact_uJ_upper_quadrature": 33.59312618650132,
+      "wire_energy_uJ": [
+        4348.89,
+        8.46,
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": true
+    },
+    {
+      "case": "P11 high contact resistance",
+      "volts": 6.0,
+      "site": 11,
+      "requested_ms": 1,
+      "level": 1,
+      "contact_model": [
+        1,
+        0,
+        4.0
+      ],
+      "disposition": "inconsistent_R",
+      "first_slot_us": 80,
+      "slots": 1,
+      "max_contact_W": 0.9256414246312884,
+      "first_contact_uJ_upper_quadrature": 74.05131397050307,
+      "contact_uJ_upper_quadrature": 74.05131397050307,
+      "wire_energy_uJ": [
+        633.16,
+        25.18,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "subsequent_drive_authorized": false
+    }
+  ]
+}

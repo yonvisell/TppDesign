@@ -1,0 +1,59 @@
+{
+  "chip": "ESP32-C6",
+  "target": "seeed_xiao_esp32c6",
+  "image": "R2J-ESP32C6.bin",
+  "sha256": "80a4c2db249dda77d2e20fd57d2208f988fef331efe0f3ad49557db32ae6e9ed",
+  "bytes": 1102736,
+  "flash_address": 0,
+  "components": [
+    {
+      "offset": "0x0000",
+      "name": "bootloader.bin",
+      "sha256": "56a3805cfced2f85934bd5c930bc2c32d0b535fcea451f944aaf603b6d85d11e"
+    },
+    {
+      "offset": "0x8000",
+      "name": "partitions.bin",
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    },
+    {
+      "offset": "0xe000",
+      "name": "boot_app0.bin",
+      "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+    },
+    {
+      "offset": "0x10000",
+      "name": "firmware.bin",
+      "sha256": "640034d1a287e5b2d292586c4f24960e1b73a6a4529ab9ff4003179b335a58dd"
+    }
+  ],
+  "source_sha256": {
+    "calibration.h": "1889b026050abc0691bef9653d277a6ec77d134fe1d88be4dbeb0f4cbc3edc61",
+    "control.h": "8a1aa0f21d2b1a16032e667862019de4d5715e08f1ab09c3ca12794d4ce3d804",
+    "main.cpp": "6e0fb4a0a378434efc47589908fb610b64b3279ce6440bf723e1f34d8d4fc76c",
+    "osc.h": "c6be7f4e4beb1c2a3cf532e1f2ee93c5281e8cac030226579d16244832eab623",
+    "path_limits.h": "dfcb926773d5a2525e47a718875bc79773e5a3dd96571eb79378dcff54b084b6"
+  },
+  "build_recipe_sha256": {
+    "platformio.ini": "4774d5ee5e36504e567a43f969f5d6a038b300a6e0d6b1716c0c00e9f6b01894",
+    "repro.py": "ef0fcd349d343bc83298966b384264ef8e3e0b6ba19cc42d10954ecedb01b0ee",
+    "package_image.py": "b8e3fd02fbdc25d40d946fe6da47832faf04672efe6cb4afec70f0359f5a5dfa"
+  },
+  "target_flashed": false,
+  "application_identity_strings": [
+    "TPP-R2J",
+    "/guard",
+    "/receipt",
+    "CAL COLD",
+    "/status",
+    "/config",
+    "/actuate",
+    "temperature_limit",
+    "recalibration_required",
+    "guard_required",
+    "/config/max_age_ms",
+    "/config/guard",
+    "WIRES"
+  ],
+  "material_sha256": "ab7f37be6d9db86dc117256d195f9a222b0ddd1890411beb302526a3c8f9db7f"
+}

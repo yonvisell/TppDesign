@@ -1,0 +1,96 @@
+{
+  "q_temperature_C": [
+    20.0,
+    100.0,
+    200.0,
+    300.0,
+    400.0,
+    500.0,
+    600.0,
+    700.0,
+    800.0,
+    900.0,
+    1000.0,
+    1100.0,
+    1200.0
+  ],
+  "q_values": [
+    1.0,
+    1.006,
+    1.015,
+    1.028,
+    1.045,
+    1.065,
+    1.068,
+    1.057,
+    1.051,
+    1.052,
+    1.062,
+    1.071,
+    1.08
+  ],
+  "cp_temperature_C": [
+    20.0,
+    100.0,
+    200.0,
+    300.0,
+    400.0,
+    500.0,
+    600.0,
+    700.0,
+    800.0,
+    900.0,
+    1000.0,
+    1100.0
+  ],
+  "cp_J_per_kgK": [
+    460.0,
+    460.0,
+    480.0,
+    500.0,
+    520.0,
+    540.0,
+    560.0,
+    600.0,
+    630.0,
+    650.0,
+    670.0,
+    700.0
+  ],
+  "resistance_source": "Alloy Wire International AWS180 Rev.1, p2; archived in the October 2026 Rev08 controller simulation",
+  "resistance_url": "https://www.alloywire.com/wp-content/uploads/2021/04/AW_Datasheet_80_20-NI-CR.pdf",
+  "heat_capacity_source": "Kanthal Nikrothal 80, representative heat capacity",
+  "heat_capacity_url": "https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-80/",
+  "diameter_um": 31.59085008177374,
+  "resistivity_20_ohm_m": 1.08e-06,
+  "density_kg_m3": 8300,
+  "pitch_mm": 4.2,
+  "free_mm": 2.9,
+  "strands": 2,
+  "pair_R20_ohm": 2.8935470183307044,
+  "whole_C20_uJ_K": 25.137826045060244,
+  "lot_measurements": 0,
+  "supported_strands": [
+    2,
+    3,
+    4
+  ],
+  "per_count": {
+    "2": {
+      "nominal_bundle_R20_ohm": 2.8935470183307044,
+      "whole_C20_uJ_K": 25.137826045060244,
+      "free_C20_uJ_K": 17.357070364446358
+    },
+    "3": {
+      "nominal_bundle_R20_ohm": 1.9290313455538028,
+      "whole_C20_uJ_K": 37.70673906759036,
+      "free_C20_uJ_K": 26.035605546669533
+    },
+    "4": {
+      "nominal_bundle_R20_ohm": 1.4467735091653522,
+      "whole_C20_uJ_K": 50.27565209012049,
+      "free_C20_uJ_K": 34.714140728892716
+    }
+  },
+  "strand_note": "The two-strand reference scales as 2/N for electrical resistance and N/2 for heat capacity. Equal intact AWG48 wires at all sites. Measured diameter, alloy and attached thermal mass require physical qualification."
+}

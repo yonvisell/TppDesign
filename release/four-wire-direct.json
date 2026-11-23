@@ -1,0 +1,2350 @@
+{
+  "wires": 4,
+  "rail_V": 5.8,
+  "wire_limit_C": 450,
+  "maximum_ms": 20,
+  "mode": "simultaneous",
+  "method": "Independent cold trials after all-nine calibration, using Client.actuate over UDP with the compiled production controller. Each proposed parity group's cold currents come from the independent intact-wire circuit, whether or not it was energized. For declined requests the recorded number of electrical exposures and deposited energy were both zero. The energized trials include finite measurement pulses and shunt-monitored joint intervals.",
+  "electrical_input_sha256": "621b175f3ba5c4aa6121a9bcf331bf01c0a8a4a185f8256690ddf0d85f2fe561",
+  "current_admission_agrees_with_independent_circuit": true,
+  "counts": {
+    "1": {
+      "examined": 9,
+      "outcomes": {
+        "temperature_limit": 9
+      }
+    },
+    "2": {
+      "examined": 36,
+      "outcomes": {
+        "current_limit": 8,
+        "temperature_limit": 28
+      }
+    },
+    "3": {
+      "examined": 84,
+      "outcomes": {
+        "current_limit": 84
+      }
+    }
+  },
+  "records": [
+    {
+      "ids": [
+        11
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 901,
+      "energized_us": 797,
+      "peak_source_A": 3.499876601808053,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 3.4956791400909424,
+      "peak_point_C": 297.1040954589844,
+      "peak_plant_C": 295.7037678371609,
+      "peak_upper_C": 363.2156677246094,
+      "selected_mJ": [
+        14.046244851449272
+      ],
+      "min_mean_over_elapsed_W": 15.589616927246695,
+      "max_inactive_mJ": 2.2536193719133734e-06,
+      "probes": 4,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 4.636453011771664,
+      "proposed_cold_parity_source_A": 3.5211350438472184,
+      "proposed_cold_parity_max_tap_A": 3.5194337502377793
+    },
+    {
+      "ids": [
+        12
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1043,
+      "energized_us": 913,
+      "peak_source_A": 3.3574389545722645,
+      "peak_tap_A": 3.3574389545723133,
+      "peak_sampled_A": 3.3524224758148193,
+      "peak_point_C": 305.6864013671875,
+      "peak_plant_C": 309.4206358433519,
+      "peak_upper_C": 371.82147216796875,
+      "selected_mJ": [
+        14.808218922607223
+      ],
+      "min_mean_over_elapsed_W": 14.19771708783051,
+      "max_inactive_mJ": 0.09324075183598325,
+      "probes": 5,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 19.255323979537934,
+      "proposed_cold_parity_source_A": 3.377721133772635,
+      "proposed_cold_parity_max_tap_A": 3.114540140224936
+    },
+    {
+      "ids": [
+        13
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1046,
+      "energized_us": 916,
+      "peak_source_A": 3.3357071741813775,
+      "peak_tap_A": 3.3357071741813606,
+      "peak_sampled_A": 3.331239938735962,
+      "peak_point_C": 309.54364013671875,
+      "peak_plant_C": 306.8587972888506,
+      "peak_upper_C": 374.1145935058594,
+      "selected_mJ": [
+        14.668589689812245
+      ],
+      "min_mean_over_elapsed_W": 14.02350830765989,
+      "max_inactive_mJ": 0.026988957016583298,
+      "probes": 5,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 7.031096062244615,
+      "proposed_cold_parity_source_A": 3.358371392468746,
+      "proposed_cold_parity_max_tap_A": 3.1417810845919805
+    },
+    {
+      "ids": [
+        21
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 928,
+      "energized_us": 824,
+      "peak_source_A": 3.3744739165378426,
+      "peak_tap_A": 3.3744739165378537,
+      "peak_sampled_A": 3.3714616298675537,
+      "peak_point_C": 290.07257080078125,
+      "peak_plant_C": 285.85488487571894,
+      "peak_upper_C": 353.0120544433594,
+      "selected_mJ": [
+        13.515053225930082
+      ],
+      "min_mean_over_elapsed_W": 14.563634941735002,
+      "max_inactive_mJ": 0.003943399793002755,
+      "probes": 4,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 0.8164817155338824,
+      "proposed_cold_parity_source_A": 3.4033832391504295,
+      "proposed_cold_parity_max_tap_A": 3.1814565257575356
+    },
+    {
+      "ids": [
+        22
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 937,
+      "energized_us": 833,
+      "peak_source_A": 3.340249176338763,
+      "peak_tap_A": 3.34024917633875,
+      "peak_sampled_A": 3.3377108573913574,
+      "peak_point_C": 285.435546875,
+      "peak_plant_C": 283.486848508094,
+      "peak_upper_C": 352.0915222167969,
+      "selected_mJ": [
+        13.387665834964661
+      ],
+      "min_mean_over_elapsed_W": 14.287797049055134,
+      "max_inactive_mJ": 0.006740465102659072,
+      "probes": 4,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 1.952196536527481,
+      "proposed_cold_parity_source_A": 3.3741864675585727,
+      "proposed_cold_parity_max_tap_A": 3.1172984514752735
+    },
+    {
+      "ids": [
+        23
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1059,
+      "energized_us": 929,
+      "peak_source_A": 3.323876323965041,
+      "peak_tap_A": 3.323876323965054,
+      "peak_sampled_A": 3.319218635559082,
+      "peak_point_C": 299.901123046875,
+      "peak_plant_C": 308.748577696085,
+      "peak_upper_C": 366.9137268066406,
+      "selected_mJ": [
+        14.772918343999045
+      ],
+      "min_mean_over_elapsed_W": 13.949875678941497,
+      "max_inactive_mJ": 0.008591168184881098,
+      "probes": 5,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 11.706429936544737,
+      "proposed_cold_parity_source_A": 3.3532463406214816,
+      "proposed_cold_parity_max_tap_A": 3.1366504107163573
+    },
+    {
+      "ids": [
+        31
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 929,
+      "energized_us": 825,
+      "peak_source_A": 3.3671883001514997,
+      "peak_tap_A": 3.3671883001514837,
+      "peak_sampled_A": 3.36554217338562,
+      "peak_point_C": 286.4455871582031,
+      "peak_plant_C": 285.11468565601166,
+      "peak_upper_C": 351.74090576171875,
+      "selected_mJ": [
+        13.47507703515442
+      ],
+      "min_mean_over_elapsed_W": 14.504926840855134,
+      "max_inactive_mJ": 0.002030912592279492,
+      "probes": 4,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 0.1727382794197183,
+      "proposed_cold_parity_source_A": 3.398238628557618,
+      "proposed_cold_parity_max_tap_A": 3.1763061313170886
+    },
+    {
+      "ids": [
+        32
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1046,
+      "energized_us": 916,
+      "peak_source_A": 3.335274845877425,
+      "peak_tap_A": 3.3352748458774344,
+      "peak_sampled_A": 3.3321549892425537,
+      "peak_point_C": 308.02911376953125,
+      "peak_plant_C": 306.9320805427227,
+      "peak_upper_C": 372.3118896484375,
+      "selected_mJ": [
+        14.672590719672298
+      ],
+      "min_mean_over_elapsed_W": 14.027333384007934,
+      "max_inactive_mJ": 0.00228427876799833,
+      "probes": 5,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 4.159079047298292,
+      "proposed_cold_parity_source_A": 3.371963881951158,
+      "proposed_cold_parity_max_tap_A": 3.1120680756232595
+    },
+    {
+      "ids": [
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1048,
+      "energized_us": 918,
+      "peak_source_A": 3.3179883428773422,
+      "peak_tap_A": 3.3179883428773733,
+      "peak_sampled_A": 3.317077875137329,
+      "peak_point_C": 307.857666015625,
+      "peak_plant_C": 304.787441730775,
+      "peak_upper_C": 373.36285400390625,
+      "selected_mJ": [
+        14.555718231775128
+      ],
+      "min_mean_over_elapsed_W": 13.889044114289245,
+      "max_inactive_mJ": 0.0018740405530843418,
+      "probes": 5,
+      "group_slots": 0,
+      "joint_masks": [],
+      "max_receipt_error_uJ": 6.426299474871485,
+      "proposed_cold_parity_source_A": 3.335388255184951,
+      "proposed_cold_parity_max_tap_A": 3.3353882551849505
+    },
+    {
+      "ids": [
+        11,
+        12
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.267469768506307,
+      "proposed_cold_parity_max_tap_A": 6.267469768506337
+    },
+    {
+      "ids": [
+        11,
+        13
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1294,
+      "energized_us": 1060,
+      "peak_source_A": 6.713699034067437,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.7108154296875,
+      "peak_point_C": 298.1466369628906,
+      "peak_plant_C": 296.81090243460693,
+      "peak_upper_C": 362.55810546875,
+      "selected_mJ": [
+        14.128157263610222,
+        12.836874474733865
+      ],
+      "min_mean_over_elapsed_W": 9.920304849098812,
+      "max_inactive_mJ": 0.03679480839628377,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        5
+      ],
+      "max_receipt_error_uJ": 41.95162317136419,
+      "proposed_cold_parity_source_A": 6.721558166037536,
+      "proposed_cold_parity_max_tap_A": 3.4418370868577868
+    },
+    {
+      "ids": [
+        11,
+        21
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1291,
+      "energized_us": 1057,
+      "peak_source_A": 6.79759363894739,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.793212890625,
+      "peak_point_C": 298.6182556152344,
+      "peak_plant_C": 297.7496367236246,
+      "peak_upper_C": 363.4398498535156,
+      "selected_mJ": [
+        14.179231760804106,
+        13.232904666555784
+      ],
+      "min_mean_over_elapsed_W": 10.250119803683798,
+      "max_inactive_mJ": 0.05868254343708395,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        9
+      ],
+      "max_receipt_error_uJ": 43.64880718078348,
+      "proposed_cold_parity_source_A": 6.805722988558923,
+      "proposed_cold_parity_max_tap_A": 3.4608298358920977
+    },
+    {
+      "ids": [
+        11,
+        22
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1291,
+      "energized_us": 1057,
+      "peak_source_A": 6.7689851675970045,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.7657470703125,
+      "peak_point_C": 298.5230407714844,
+      "peak_plant_C": 297.80636699151773,
+      "peak_upper_C": 363.3143615722656,
+      "selected_mJ": [
+        14.18233061712014,
+        12.995229369105248
+      ],
+      "min_mean_over_elapsed_W": 10.06601810155325,
+      "max_inactive_mJ": 0.05895881913849735,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        17
+      ],
+      "max_receipt_error_uJ": 31.370970667747315,
+      "proposed_cold_parity_source_A": 6.776975942054821,
+      "proposed_cold_parity_max_tap_A": 3.461245708346876
+    },
+    {
+      "ids": [
+        11,
+        23
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1291,
+      "energized_us": 1057,
+      "peak_source_A": 6.746146405546756,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.7413330078125,
+      "peak_point_C": 298.5621337890625,
+      "peak_plant_C": 297.72724160150415,
+      "peak_upper_C": 363.36285400390625,
+      "selected_mJ": [
+        14.178014280147734,
+        12.838225633549154
+      ],
+      "min_mean_over_elapsed_W": 9.944404053872312,
+      "max_inactive_mJ": 0.05702094626121106,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        33
+      ],
+      "max_receipt_error_uJ": 51.932664799154736,
+      "proposed_cold_parity_source_A": 6.754052014985948,
+      "proposed_cold_parity_max_tap_A": 3.4604440128937726
+    },
+    {
+      "ids": [
+        11,
+        31
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1291,
+      "energized_us": 1057,
+      "peak_source_A": 6.793028894585712,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.787109375,
+      "peak_point_C": 298.58184814453125,
+      "peak_plant_C": 297.7486098608455,
+      "peak_upper_C": 363.37884521484375,
+      "selected_mJ": [
+        14.179173604824406,
+        13.189790536999556
+      ],
+      "min_mean_over_elapsed_W": 10.216723886134435,
+      "max_inactive_mJ": 0.05817068188311532,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        65
+      ],
+      "max_receipt_error_uJ": 43.787607312056934,
+      "proposed_cold_parity_source_A": 6.801131061024747,
+      "proposed_cold_parity_max_tap_A": 3.460919202273922
+    },
+    {
+      "ids": [
+        11,
+        32
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1292,
+      "energized_us": 1058,
+      "peak_source_A": 6.768138856288021,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.7626953125,
+      "peak_point_C": 298.7563171386719,
+      "peak_plant_C": 298.1077220023473,
+      "peak_upper_C": 363.659912109375,
+      "selected_mJ": [
+        14.19883194538561,
+        12.992449741000891
+      ],
+      "min_mean_over_elapsed_W": 10.056075650929483,
+      "max_inactive_mJ": 0.05829529940063367,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        129
+      ],
+      "max_receipt_error_uJ": 40.43509256339166,
+      "proposed_cold_parity_source_A": 6.77611548561456,
+      "proposed_cold_parity_max_tap_A": 3.461365950422598
+    },
+    {
+      "ids": [
+        11,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1291,
+      "energized_us": 1057,
+      "peak_source_A": 6.7332867528904465,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.7291259765625,
+      "peak_point_C": 298.6999816894531,
+      "peak_plant_C": 297.8564132631497,
+      "peak_upper_C": 363.5531005859375,
+      "selected_mJ": [
+        14.18505612387904,
+        12.74364563614229
+      ],
+      "min_mean_over_elapsed_W": 9.871143017925863,
+      "max_inactive_mJ": 0.05810824949768721,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        257
+      ],
+      "max_receipt_error_uJ": 40.48157364228973,
+      "proposed_cold_parity_source_A": 6.741150710275343,
+      "proposed_cold_parity_max_tap_A": 3.4619897467828844
+    },
+    {
+      "ids": [
+        12,
+        13
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.123055213302353,
+      "proposed_cold_parity_max_tap_A": 6.123055213302375
+    },
+    {
+      "ids": [
+        12,
+        21
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1420,
+      "energized_us": 1160,
+      "peak_source_A": 6.659398951765905,
+      "peak_tap_A": 3.3744727913109505,
+      "peak_sampled_A": 6.6558837890625,
+      "peak_point_C": 303.2266845703125,
+      "peak_plant_C": 307.3651208592393,
+      "peak_upper_C": 368.38604736328125,
+      "selected_mJ": [
+        14.712586588421429,
+        13.614416255886812
+      ],
+      "min_mean_over_elapsed_W": 9.58761708161043,
+      "max_inactive_mJ": 0.09374773406074383,
+      "probes": 7,
+      "group_slots": 3,
+      "joint_masks": [
+        10
+      ],
+      "max_receipt_error_uJ": 32.358638699311996,
+      "proposed_cold_parity_source_A": 6.666868351173359,
+      "proposed_cold_parity_max_tap_A": 3.1285780551493123
+    },
+    {
+      "ids": [
+        12,
+        22
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1537,
+      "energized_us": 1251,
+      "peak_source_A": 6.628586091323512,
+      "peak_tap_A": 3.3574389545723133,
+      "peak_sampled_A": 6.6253662109375,
+      "peak_point_C": 309.5520324707031,
+      "peak_plant_C": 310.4608553623832,
+      "peak_upper_C": 375.2342834472656,
+      "selected_mJ": [
+        14.883463616400608,
+        14.813069622394018
+      ],
+      "min_mean_over_elapsed_W": 9.637651023027988,
+      "max_inactive_mJ": 0.09622178025735775,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        18
+      ],
+      "max_receipt_error_uJ": 22.498333331517642,
+      "proposed_cold_parity_source_A": 6.635911704987704,
+      "proposed_cold_parity_max_tap_A": 3.0787222005037744
+    },
+    {
+      "ids": [
+        12,
+        23
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1541,
+      "energized_us": 1255,
+      "peak_source_A": 6.578691972337558,
+      "peak_tap_A": 3.3574389545723133,
+      "peak_sampled_A": 6.573486328125,
+      "peak_point_C": 304.9796447753906,
+      "peak_plant_C": 310.08366033235734,
+      "peak_upper_C": 371.0778503417969,
+      "selected_mJ": [
+        14.863632116995548,
+        14.621035155191814
+      ],
+      "min_mean_over_elapsed_W": 9.488017621798711,
+      "max_inactive_mJ": 0.09646392216836103,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        34
+      ],
+      "max_receipt_error_uJ": 42.34081925431383,
+      "proposed_cold_parity_source_A": 6.585873355710032,
+      "proposed_cold_parity_max_tap_A": 3.3265481588952266
+    },
+    {
+      "ids": [
+        12,
+        31
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1423,
+      "energized_us": 1163,
+      "peak_source_A": 6.654993828723981,
+      "peak_tap_A": 3.367187721634326,
+      "peak_sampled_A": 6.6497802734375,
+      "peak_point_C": 303.70452880859375,
+      "peak_plant_C": 308.23338569639577,
+      "peak_upper_C": 369.1193542480469,
+      "selected_mJ": [
+        14.760304960571695,
+        13.618686289959879
+      ],
+      "min_mean_over_elapsed_W": 9.570404982403288,
+      "max_inactive_mJ": 0.09349353245744714,
+      "probes": 7,
+      "group_slots": 3,
+      "joint_masks": [
+        66
+      ],
+      "max_receipt_error_uJ": 32.104258709878195,
+      "proposed_cold_parity_source_A": 6.6624363891675955,
+      "proposed_cold_parity_max_tap_A": 3.124065316798667
+    },
+    {
+      "ids": [
+        12,
+        32
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1536,
+      "energized_us": 1250,
+      "peak_source_A": 6.630079040499263,
+      "peak_tap_A": 3.3574389545723133,
+      "peak_sampled_A": 6.6253662109375,
+      "peak_point_C": 307.4239196777344,
+      "peak_plant_C": 310.2863586393745,
+      "peak_upper_C": 371.7311096191406,
+      "selected_mJ": [
+        14.873373180433642,
+        14.78177705548075
+      ],
+      "min_mean_over_elapsed_W": 9.62355277049528,
+      "max_inactive_mJ": 0.0944003022951656,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        130
+      ],
+      "max_receipt_error_uJ": 29.527055480750278,
+      "proposed_cold_parity_source_A": 6.637395736544255,
+      "proposed_cold_parity_max_tap_A": 3.0631219442996236
+    },
+    {
+      "ids": [
+        12,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1539,
+      "energized_us": 1253,
+      "peak_source_A": 6.5951781248635815,
+      "peak_tap_A": 3.3574389545723133,
+      "peak_sampled_A": 6.591796875,
+      "peak_point_C": 308.7425231933594,
+      "peak_plant_C": 311.20683931753763,
+      "peak_upper_C": 374.9122009277344,
+      "selected_mJ": [
+        14.92399705108651,
+        14.571267790852785
+      ],
+      "min_mean_over_elapsed_W": 9.468010260463148,
+      "max_inactive_mJ": 0.09457351831684355,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        258
+      ],
+      "max_receipt_error_uJ": 29.983611165283946,
+      "proposed_cold_parity_source_A": 6.602381758729393,
+      "proposed_cold_parity_max_tap_A": 3.2800184849084553
+    },
+    {
+      "ids": [
+        13,
+        21
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1420,
+      "energized_us": 1160,
+      "peak_source_A": 6.638493453728575,
+      "peak_tap_A": 3.3744728084069204,
+      "peak_sampled_A": 6.634521484375,
+      "peak_point_C": 301.8492126464844,
+      "peak_plant_C": 304.0866896077651,
+      "peak_upper_C": 368.7507019042969,
+      "selected_mJ": [
+        14.534042016799184,
+        13.609681128771598
+      ],
+      "min_mean_over_elapsed_W": 9.584282485050421,
+      "max_inactive_mJ": 0.06745063673576805,
+      "probes": 7,
+      "group_slots": 3,
+      "joint_masks": [
+        12
+      ],
+      "max_receipt_error_uJ": 16.319559923023917,
+      "proposed_cold_parity_source_A": 6.645870106293566,
+      "proposed_cold_parity_max_tap_A": 3.1278102945991133
+    },
+    {
+      "ids": [
+        13,
+        22
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1539,
+      "energized_us": 1253,
+      "peak_source_A": 6.579877238773476,
+      "peak_tap_A": 3.3402473025206163,
+      "peak_sampled_A": 6.5765380859375,
+      "peak_point_C": 309.3575439453125,
+      "peak_plant_C": 307.984293708316,
+      "peak_upper_C": 374.9355773925781,
+      "selected_mJ": [
+        14.654015023616143,
+        14.759322684117476
+      ],
+      "min_mean_over_elapsed_W": 9.52177714335032,
+      "max_inactive_mJ": 0.06957908106566174,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        20
+      ],
+      "max_receipt_error_uJ": 20.32361736614257,
+      "proposed_cold_parity_source_A": 6.587049387258519,
+      "proposed_cold_parity_max_tap_A": 3.3365178133571516
+    },
+    {
+      "ids": [
+        13,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.188361743623662,
+      "proposed_cold_parity_max_tap_A": 6.188361743623745
+    },
+    {
+      "ids": [
+        13,
+        31
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1422,
+      "energized_us": 1162,
+      "peak_source_A": 6.63622179542794,
+      "peak_tap_A": 3.367187730424242,
+      "peak_sampled_A": 6.6314697265625,
+      "peak_point_C": 302.24578857421875,
+      "peak_plant_C": 304.7731616065573,
+      "peak_upper_C": 369.35845947265625,
+      "selected_mJ": [
+        14.571647988907266,
+        13.6040569969535
+      ],
+      "min_mean_over_elapsed_W": 9.566847395888537,
+      "max_inactive_mJ": 0.06712418675271328,
+      "probes": 7,
+      "group_slots": 3,
+      "joint_masks": [
+        68
+      ],
+      "max_receipt_error_uJ": 16.109980820096098,
+      "proposed_cold_parity_source_A": 6.643576351976269,
+      "proposed_cold_parity_max_tap_A": 3.125474978146339
+    },
+    {
+      "ids": [
+        13,
+        32
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1535,
+      "energized_us": 1249,
+      "peak_source_A": 6.611439396810516,
+      "peak_tap_A": 3.3357071741813606,
+      "peak_sampled_A": 6.6070556640625,
+      "peak_point_C": 307.4303894042969,
+      "peak_plant_C": 308.15042106008934,
+      "peak_upper_C": 371.74127197265625,
+      "selected_mJ": [
+        14.683882583321159,
+        14.767817400694067
+      ],
+      "min_mean_over_elapsed_W": 9.566047285551244,
+      "max_inactive_mJ": 0.06800008846604032,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        132
+      ],
+      "max_receipt_error_uJ": 16.522827876440715,
+      "proposed_cold_parity_source_A": 6.61866834626398,
+      "proposed_cold_parity_max_tap_A": 3.089995244009678
+    },
+    {
+      "ids": [
+        13,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1537,
+      "energized_us": 1251,
+      "peak_source_A": 6.576542239575397,
+      "peak_tap_A": 3.3357071741813606,
+      "peak_sampled_A": 6.573486328125,
+      "peak_point_C": 308.6283874511719,
+      "peak_plant_C": 307.44095160840646,
+      "peak_upper_C": 374.7367248535156,
+      "selected_mJ": [
+        14.718349139114144,
+        14.542217424857402
+      ],
+      "min_mean_over_elapsed_W": 9.46142968435745,
+      "max_inactive_mJ": 0.0680644390223315,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        260
+      ],
+      "max_receipt_error_uJ": 16.528241359977983,
+      "proposed_cold_parity_source_A": 6.583658097542785,
+      "proposed_cold_parity_max_tap_A": 3.280334265333945
+    },
+    {
+      "ids": [
+        21,
+        22
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.175415535452355,
+      "proposed_cold_parity_max_tap_A": 6.175415535452429
+    },
+    {
+      "ids": [
+        21,
+        23
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1320,
+      "energized_us": 1086,
+      "peak_source_A": 6.5975179190620565,
+      "peak_tap_A": 3.3744739165378537,
+      "peak_sampled_A": 6.5948486328125,
+      "peak_point_C": 288.99981689453125,
+      "peak_plant_C": 287.13551104057905,
+      "peak_upper_C": 352.52685546875,
+      "selected_mJ": [
+        13.602234976909152,
+        13.198659712382504
+      ],
+      "min_mean_over_elapsed_W": 9.998984630592807,
+      "max_inactive_mJ": 0.041852849567017986,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        40
+      ],
+      "max_receipt_error_uJ": 12.76420457000495,
+      "proposed_cold_parity_source_A": 6.60477938855713,
+      "proposed_cold_parity_max_tap_A": 3.3387146869062203
+    },
+    {
+      "ids": [
+        21,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.265499048239566,
+      "proposed_cold_parity_max_tap_A": 6.265499048239559
+    },
+    {
+      "ids": [
+        21,
+        32
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1320,
+      "energized_us": 1086,
+      "peak_source_A": 6.622722551502075,
+      "peak_tap_A": 3.3744739165378537,
+      "peak_sampled_A": 6.6192626953125,
+      "peak_point_C": 289.1175537109375,
+      "peak_plant_C": 287.4570656103149,
+      "peak_upper_C": 352.6849365234375,
+      "selected_mJ": [
+        13.619591044640227,
+        13.352208325403218
+      ],
+      "min_mean_over_elapsed_W": 10.11530933742668,
+      "max_inactive_mJ": 0.05780846193671459,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        136
+      ],
+      "max_receipt_error_uJ": 15.451490195991937,
+      "proposed_cold_parity_source_A": 6.63006430011686,
+      "proposed_cold_parity_max_tap_A": 3.368056729316358
+    },
+    {
+      "ids": [
+        21,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1314,
+      "energized_us": 1080,
+      "peak_source_A": 6.617401371480962,
+      "peak_tap_A": 3.3744739165378537,
+      "peak_sampled_A": 6.6131591796875,
+      "peak_point_C": 290.5594787597656,
+      "peak_plant_C": 287.3357528230217,
+      "peak_upper_C": 355.532470703125,
+      "selected_mJ": [
+        13.612140095034498,
+        13.101627729876025
+      ],
+      "min_mean_over_elapsed_W": 9.970797359114174,
+      "max_inactive_mJ": 0.056066629043489226,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        264
+      ],
+      "max_receipt_error_uJ": 14.11259769211756,
+      "proposed_cold_parity_source_A": 6.624695927095851,
+      "proposed_cold_parity_max_tap_A": 3.278340393459691
+    },
+    {
+      "ids": [
+        22,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.104818519431663,
+      "proposed_cold_parity_max_tap_A": 6.104818519431576
+    },
+    {
+      "ids": [
+        22,
+        31
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1424,
+      "energized_us": 1164,
+      "peak_source_A": 6.620012825000331,
+      "peak_tap_A": 3.367187729313176,
+      "peak_sampled_A": 6.6162109375,
+      "peak_point_C": 307.9801330566406,
+      "peak_plant_C": 305.63091478498063,
+      "peak_upper_C": 372.81024169921875,
+      "selected_mJ": [
+        14.61865099847992,
+        13.5441042297385
+      ],
+      "min_mean_over_elapsed_W": 9.511309150097262,
+      "max_inactive_mJ": 0.06235291159528424,
+      "probes": 7,
+      "group_slots": 3,
+      "joint_masks": [
+        80
+      ],
+      "max_receipt_error_uJ": 17.20673239606549,
+      "proposed_cold_parity_source_A": 6.62734233467793,
+      "proposed_cold_parity_max_tap_A": 3.360055638014637
+    },
+    {
+      "ids": [
+        22,
+        32
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1536,
+      "energized_us": 1250,
+      "peak_source_A": 6.62428893509171,
+      "peak_tap_A": 3.34024917633875,
+      "peak_sampled_A": 6.6192626953125,
+      "peak_point_C": 309.60888671875,
+      "peak_plant_C": 308.92277975878375,
+      "peak_upper_C": 375.31097412109375,
+      "selected_mJ": [
+        14.79896899078958,
+        14.775136878081453
+      ],
+      "min_mean_over_elapsed_W": 9.619229738334278,
+      "max_inactive_mJ": 0.06367502918111859,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        144
+      ],
+      "max_receipt_error_uJ": 17.781600378628355,
+      "proposed_cold_parity_source_A": 6.631557460846606,
+      "proposed_cold_parity_max_tap_A": 3.0812432686207423
+    },
+    {
+      "ids": [
+        22,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1536,
+      "energized_us": 1250,
+      "peak_source_A": 6.591611899075389,
+      "peak_tap_A": 3.34024917633875,
+      "peak_sampled_A": 6.5887451171875,
+      "peak_point_C": 309.7911682128906,
+      "peak_plant_C": 309.10091554346866,
+      "peak_upper_C": 375.5905456542969,
+      "selected_mJ": [
+        14.808639137411431,
+        14.524809949039946
+      ],
+      "min_mean_over_elapsed_W": 9.456256477239549,
+      "max_inactive_mJ": 0.06359245356536121,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        272
+      ],
+      "max_receipt_error_uJ": 17.743843641044805,
+      "proposed_cold_parity_source_A": 6.598772235319051,
+      "proposed_cold_parity_max_tap_A": 3.279981540299953
+    },
+    {
+      "ids": [
+        23,
+        31
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1422,
+      "energized_us": 1162,
+      "peak_source_A": 6.628956002296273,
+      "peak_tap_A": 3.367187735325591,
+      "peak_sampled_A": 6.6253662109375,
+      "peak_point_C": 297.7827453613281,
+      "peak_plant_C": 303.501045884982,
+      "peak_upper_C": 364.3056335449219,
+      "selected_mJ": [
+        14.50237664945767,
+        13.597797190266515
+      ],
+      "min_mean_over_elapsed_W": 9.562445281481375,
+      "max_inactive_mJ": 0.05605837177060312,
+      "probes": 7,
+      "group_slots": 3,
+      "joint_masks": [
+        96
+      ],
+      "max_receipt_error_uJ": 15.699891645170283,
+      "proposed_cold_parity_source_A": 6.636270034298647,
+      "proposed_cold_parity_max_tap_A": 3.143059600955883
+    },
+    {
+      "ids": [
+        23,
+        32
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1535,
+      "energized_us": 1249,
+      "peak_source_A": 6.606338412387028,
+      "peak_tap_A": 3.3352742732023364,
+      "peak_sampled_A": 6.6009521484375,
+      "peak_point_C": 307.4521484375,
+      "peak_plant_C": 308.1496628080415,
+      "peak_upper_C": 371.7750244140625,
+      "selected_mJ": [
+        14.620422923647276,
+        14.767776036636205
+      ],
+      "min_mean_over_elapsed_W": 9.524705487718094,
+      "max_inactive_mJ": 0.06049963806453161,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        160
+      ],
+      "max_receipt_error_uJ": 23.42585333477473,
+      "proposed_cold_parity_source_A": 6.61353160933253,
+      "proposed_cold_parity_max_tap_A": 3.084765163241942
+    },
+    {
+      "ids": [
+        23,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1539,
+      "energized_us": 1253,
+      "peak_source_A": 6.571604615776794,
+      "peak_tap_A": 3.323876323965054,
+      "peak_sampled_A": 6.5673828125,
+      "peak_point_C": 308.890625,
+      "peak_plant_C": 306.8497953271378,
+      "peak_upper_C": 375.14007568359375,
+      "selected_mJ": [
+        14.686422300763253,
+        14.573487843191572
+      ],
+      "min_mean_over_elapsed_W": 9.469452789598162,
+      "max_inactive_mJ": 0.06129644536681007,
+      "probes": 8,
+      "group_slots": 3,
+      "joint_masks": [
+        288
+      ],
+      "max_receipt_error_uJ": 17.012917992542498,
+      "proposed_cold_parity_source_A": 6.578685063063036,
+      "proposed_cold_parity_max_tap_A": 3.2804109940316897
+    },
+    {
+      "ids": [
+        31,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.162511475955527,
+      "proposed_cold_parity_max_tap_A": 6.16251147595552
+    },
+    {
+      "ids": [
+        31,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 1319,
+      "energized_us": 1085,
+      "peak_source_A": 6.576409577585598,
+      "peak_tap_A": 3.3671883001514837,
+      "peak_sampled_A": 6.573486328125,
+      "peak_point_C": 288.0408020019531,
+      "peak_plant_C": 286.0616872288063,
+      "peak_upper_C": 353.4739685058594,
+      "selected_mJ": [
+        13.54412455086666,
+        13.07722980367014
+      ],
+      "min_mean_over_elapsed_W": 9.914503262828006,
+      "max_inactive_mJ": 0.041650146325933744,
+      "probes": 6,
+      "group_slots": 3,
+      "joint_masks": [
+        320
+      ],
+      "max_receipt_error_uJ": 6.707342732639518,
+      "proposed_cold_parity_source_A": 6.58359842977725,
+      "proposed_cold_parity_max_tap_A": 3.327295396199588
+    },
+    {
+      "ids": [
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 6.093524189237052,
+      "proposed_cold_parity_max_tap_A": 6.093524189237115
+    },
+    {
+      "ids": [
+        11,
+        12,
+        13
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 8.974763057459564,
+      "proposed_cold_parity_max_tap_A": 5.946084576888902
+    },
+    {
+      "ids": [
+        11,
+        12,
+        21
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.463232700675269,
+      "proposed_cold_parity_max_tap_A": 6.164418878464292
+    },
+    {
+      "ids": [
+        11,
+        12,
+        22
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.43369474058413,
+      "proposed_cold_parity_max_tap_A": 6.164265383931732
+    },
+    {
+      "ids": [
+        11,
+        12,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.387714948048771,
+      "proposed_cold_parity_max_tap_A": 6.151946803731107
+    },
+    {
+      "ids": [
+        11,
+        12,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.458560887592004,
+      "proposed_cold_parity_max_tap_A": 6.1646542790665695
+    },
+    {
+      "ids": [
+        11,
+        12,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.433885150203936,
+      "proposed_cold_parity_max_tap_A": 6.165454729777918
+    },
+    {
+      "ids": [
+        11,
+        12,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.39952207161509,
+      "proposed_cold_parity_max_tap_A": 6.166562244613337
+    },
+    {
+      "ids": [
+        11,
+        13,
+        21
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.900329384782063,
+      "proposed_cold_parity_max_tap_A": 3.3854725095253726
+    },
+    {
+      "ids": [
+        11,
+        13,
+        22
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.843995282859785,
+      "proposed_cold_parity_max_tap_A": 3.3865669736563935
+    },
+    {
+      "ids": [
+        11,
+        13,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.461205299808867,
+      "proposed_cold_parity_max_tap_A": 6.06519092906758
+    },
+    {
+      "ids": [
+        11,
+        13,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.897746952912954,
+      "proposed_cold_parity_max_tap_A": 3.385510977312917
+    },
+    {
+      "ids": [
+        11,
+        13,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.873317309471267,
+      "proposed_cold_parity_max_tap_A": 3.385943742256777
+    },
+    {
+      "ids": [
+        11,
+        13,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.839122012688517,
+      "proposed_cold_parity_max_tap_A": 3.386550126689136
+    },
+    {
+      "ids": [
+        11,
+        21,
+        22
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.4845570194631,
+      "proposed_cold_parity_max_tap_A": 6.07013853464756
+    },
+    {
+      "ids": [
+        11,
+        21,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.89684735010203,
+      "proposed_cold_parity_max_tap_A": 3.4044067436949836
+    },
+    {
+      "ids": [
+        11,
+        21,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.57177025635249,
+      "proposed_cold_parity_max_tap_A": 6.158820948721686
+    },
+    {
+      "ids": [
+        11,
+        21,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.923710589432634,
+      "proposed_cold_parity_max_tap_A": 3.4052061490091865
+    },
+    {
+      "ids": [
+        11,
+        21,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.918174180031054,
+      "proposed_cold_parity_max_tap_A": 3.4053048805755
+    },
+    {
+      "ids": [
+        11,
+        22,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.41424804530535,
+      "proposed_cold_parity_max_tap_A": 5.999672556422653
+    },
+    {
+      "ids": [
+        11,
+        22,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.920899119919,
+      "proposed_cold_parity_max_tap_A": 3.405161382674264
+    },
+    {
+      "ids": [
+        11,
+        22,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.924623029974267,
+      "proposed_cold_parity_max_tap_A": 3.4050944804056633
+    },
+    {
+      "ids": [
+        11,
+        22,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.892591805609378,
+      "proposed_cold_parity_max_tap_A": 3.4056658534967044
+    },
+    {
+      "ids": [
+        11,
+        23,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.926914643254586,
+      "proposed_cold_parity_max_tap_A": 3.403863227756275
+    },
+    {
+      "ids": [
+        11,
+        23,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.904590941158474,
+      "proposed_cold_parity_max_tap_A": 3.4042608528182305
+    },
+    {
+      "ids": [
+        11,
+        23,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.870566837135009,
+      "proposed_cold_parity_max_tap_A": 3.4048675648618922
+    },
+    {
+      "ids": [
+        11,
+        31,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.472269961979794,
+      "proposed_cold_parity_max_tap_A": 6.057536730887575
+    },
+    {
+      "ids": [
+        11,
+        31,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.878824126803902,
+      "proposed_cold_parity_max_tap_A": 3.4060142006853216
+    },
+    {
+      "ids": [
+        11,
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.405610169872292,
+      "proposed_cold_parity_max_tap_A": 5.989686793694296
+    },
+    {
+      "ids": [
+        12,
+        13,
+        21
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.321473669174587,
+      "proposed_cold_parity_max_tap_A": 6.021291789385432
+    },
+    {
+      "ids": [
+        12,
+        13,
+        22
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.26690747454107,
+      "proposed_cold_parity_max_tap_A": 6.0088032505575395
+    },
+    {
+      "ids": [
+        12,
+        13,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 8.908242662400284,
+      "proposed_cold_parity_max_tap_A": 5.8635086742996085
+    },
+    {
+      "ids": [
+        12,
+        13,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.318713537554801,
+      "proposed_cold_parity_max_tap_A": 6.022469512504469
+    },
+    {
+      "ids": [
+        12,
+        13,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.294125049711337,
+      "proposed_cold_parity_max_tap_A": 6.023312979679012
+    },
+    {
+      "ids": [
+        12,
+        13,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.259721159576499,
+      "proposed_cold_parity_max_tap_A": 6.02440039438047
+    },
+    {
+      "ids": [
+        12,
+        21,
+        22
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.347576976837694,
+      "proposed_cold_parity_max_tap_A": 6.073379016412461
+    },
+    {
+      "ids": [
+        12,
+        21,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.734247017727109,
+      "proposed_cold_parity_max_tap_A": 3.283529089476099
+    },
+    {
+      "ids": [
+        12,
+        21,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.436859664050251,
+      "proposed_cold_parity_max_tap_A": 6.1630810125214195
+    },
+    {
+      "ids": [
+        12,
+        21,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.789285931386672,
+      "proposed_cold_parity_max_tap_A": 3.312981049709784
+    },
+    {
+      "ids": [
+        12,
+        21,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.783740931471918,
+      "proposed_cold_parity_max_tap_A": 3.2251900394970496
+    },
+    {
+      "ids": [
+        12,
+        22,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.252934649710188,
+      "proposed_cold_parity_max_tap_A": 5.990920064387035
+    },
+    {
+      "ids": [
+        12,
+        22,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.78438218492381,
+      "proposed_cold_parity_max_tap_A": 3.3051486509678334
+    },
+    {
+      "ids": [
+        12,
+        22,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.788101062135947,
+      "proposed_cold_parity_max_tap_A": 3.0297706659007666
+    },
+    {
+      "ids": [
+        12,
+        22,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.756023208073925,
+      "proposed_cold_parity_max_tap_A": 3.2268419367146564
+    },
+    {
+      "ids": [
+        12,
+        23,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.764204285200865,
+      "proposed_cold_parity_max_tap_A": 3.270913816850383
+    },
+    {
+      "ids": [
+        12,
+        23,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.741832139001982,
+      "proposed_cold_parity_max_tap_A": 3.272401473518972
+    },
+    {
+      "ids": [
+        12,
+        23,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.707749197088027,
+      "proposed_cold_parity_max_tap_A": 3.2730694332344026
+    },
+    {
+      "ids": [
+        12,
+        31,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.337370464834287,
+      "proposed_cold_parity_max_tap_A": 6.061802204856738
+    },
+    {
+      "ids": [
+        12,
+        31,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.744496722745698,
+      "proposed_cold_parity_max_tap_A": 3.272954489323104
+    },
+    {
+      "ids": [
+        12,
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.27062624831162,
+      "proposed_cold_parity_max_tap_A": 5.993910643303485
+    },
+    {
+      "ids": [
+        13,
+        21,
+        22
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.302295866488818,
+      "proposed_cold_parity_max_tap_A": 6.060613637592987
+    },
+    {
+      "ids": [
+        13,
+        21,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.351756167177468,
+      "proposed_cold_parity_max_tap_A": 6.069350680645234
+    },
+    {
+      "ids": [
+        13,
+        21,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.416601018888723,
+      "proposed_cold_parity_max_tap_A": 6.162643087431564
+    },
+    {
+      "ids": [
+        13,
+        21,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.768968752755063,
+      "proposed_cold_parity_max_tap_A": 3.3122450728000254
+    },
+    {
+      "ids": [
+        13,
+        21,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.763412429373714,
+      "proposed_cold_parity_max_tap_A": 3.2255337215903483
+    },
+    {
+      "ids": [
+        13,
+        22,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 8.895719178980192,
+      "proposed_cold_parity_max_tap_A": 5.859086209697476
+    },
+    {
+      "ids": [
+        13,
+        22,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.737235986393399,
+      "proposed_cold_parity_max_tap_A": 3.30487586832216
+    },
+    {
+      "ids": [
+        13,
+        22,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.740823573470669,
+      "proposed_cold_parity_max_tap_A": 3.282246325687131
+    },
+    {
+      "ids": [
+        13,
+        22,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.70871968748999,
+      "proposed_cold_parity_max_tap_A": 3.282882039912264
+    },
+    {
+      "ids": [
+        13,
+        23,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.379754231851985,
+      "proposed_cold_parity_max_tap_A": 6.085683297224218
+    },
+    {
+      "ids": [
+        13,
+        23,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.357158283990548,
+      "proposed_cold_parity_max_tap_A": 6.087508494076783
+    },
+    {
+      "ids": [
+        13,
+        23,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.322927758566713,
+      "proposed_cold_parity_max_tap_A": 6.088681315604619
+    },
+    {
+      "ids": [
+        13,
+        31,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.319037649117584,
+      "proposed_cold_parity_max_tap_A": 6.062312512210579
+    },
+    {
+      "ids": [
+        13,
+        31,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.72623164490697,
+      "proposed_cold_parity_max_tap_A": 3.2731974205939904
+    },
+    {
+      "ids": [
+        13,
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.252404257852126,
+      "proposed_cold_parity_max_tap_A": 5.994475547526442
+    },
+    {
+      "ids": [
+        21,
+        22,
+        23
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 8.868781111415347,
+      "proposed_cold_parity_max_tap_A": 5.849580296671852
+    },
+    {
+      "ids": [
+        21,
+        22,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 8.99026827698787,
+      "proposed_cold_parity_max_tap_A": 5.944903147875875
+    },
+    {
+      "ids": [
+        21,
+        22,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.315887099704492,
+      "proposed_cold_parity_max_tap_A": 6.060605468163872
+    },
+    {
+      "ids": [
+        21,
+        22,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.3081455837385,
+      "proposed_cold_parity_max_tap_A": 6.074828977047561
+    },
+    {
+      "ids": [
+        21,
+        23,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.378959351641234,
+      "proposed_cold_parity_max_tap_A": 6.146634872768034
+    },
+    {
+      "ids": [
+        21,
+        23,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.729363294081228,
+      "proposed_cold_parity_max_tap_A": 3.2957430164888146
+    },
+    {
+      "ids": [
+        21,
+        23,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.723644429980268,
+      "proposed_cold_parity_max_tap_A": 3.2839099727191283
+    },
+    {
+      "ids": [
+        21,
+        31,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 8.982696026338607,
+      "proposed_cold_parity_max_tap_A": 5.9422724199227055
+    },
+    {
+      "ids": [
+        21,
+        31,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.36252105960434,
+      "proposed_cold_parity_max_tap_A": 6.14734437897004
+    },
+    {
+      "ids": [
+        21,
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.265940916434985,
+      "proposed_cold_parity_max_tap_A": 5.978938223212549
+    },
+    {
+      "ids": [
+        22,
+        23,
+        31
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.272827725364614,
+      "proposed_cold_parity_max_tap_A": 5.990601150978538
+    },
+    {
+      "ids": [
+        22,
+        23,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.274320464185026,
+      "proposed_cold_parity_max_tap_A": 6.004300980093478
+    },
+    {
+      "ids": [
+        22,
+        23,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.241898556029351,
+      "proposed_cold_parity_max_tap_A": 6.006365255117982
+    },
+    {
+      "ids": [
+        22,
+        31,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.305590159455335,
+      "proposed_cold_parity_max_tap_A": 6.047886853662664
+    },
+    {
+      "ids": [
+        22,
+        31,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.710691551154628,
+      "proposed_cold_parity_max_tap_A": 3.28832591300141
+    },
+    {
+      "ids": [
+        22,
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.265129474977426,
+      "proposed_cold_parity_max_tap_A": 5.9929451806596825
+    },
+    {
+      "ids": [
+        23,
+        31,
+        32
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.312105895744072,
+      "proposed_cold_parity_max_tap_A": 6.0614248791583885
+    },
+    {
+      "ids": [
+        23,
+        31,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.719169097725603,
+      "proposed_cold_parity_max_tap_A": 3.2722136672878843
+    },
+    {
+      "ids": [
+        23,
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 9.24741958891508,
+      "proposed_cold_parity_max_tap_A": 5.994547135268118
+    },
+    {
+      "ids": [
+        31,
+        32,
+        33
+      ],
+      "reason": "current_limit",
+      "elapsed_us": 0,
+      "energized_us": 0,
+      "probes": 0,
+      "group_slots": 0,
+      "proposed_cold_parity_source_A": 8.846306568757424,
+      "proposed_cold_parity_max_tap_A": 5.840771033938172
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "filename": "R2J-carrier.kicad_pro",
+    "version": 3
+  },
+  "board": {
+    "design_settings": {
+      "meta": {
+        "version": 2
+      },
+      "rules": {
+        "min_clearance": 0.15,
+        "min_track_width": 0.35,
+        "min_copper_edge_clearance": 0.2,
+        "min_hole_clearance": 0.18,
+        "min_hole_to_hole": 0.23,
+        "min_via_annular_width": 0.125,
+        "min_via_diameter": 0.56,
+        "min_through_hole_diameter": 0.3
+      }
+    }
+  },
+  "net_settings": {
+    "meta": {
+      "version": 4
+    },
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.15,
+        "track_width": 0.36,
+        "via_diameter": 0.56,
+        "via_drill": 0.3,
+        "priority": 2147483647
+      }
+    ]
+  }
+}

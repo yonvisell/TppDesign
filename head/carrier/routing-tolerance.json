@@ -1,0 +1,59 @@
+{
+  "datum": "Four copper Gerber layers and every routed centreline in Edge.Cuts; drawing mm with origin at P22.",
+  "nominal_Cu_clearance_to_nearest_window_mm": {
+    "F.Cu": 0.4749999999999978,
+    "In1.Cu": 0.22788023667171653,
+    "In2.Cu": 0.21999999999999886,
+    "B.Cu": 0.21999999999999886
+  },
+  "nominal_Cu_clearance_to_outer_profile_mm": {
+    "F.Cu": 0.2599999999999998,
+    "In1.Cu": 0.2599999999999998,
+    "In2.Cu": 0.2599999999999998,
+    "B.Cu": 0.2599999999999998
+  },
+  "seal_to_gasket_external_boundary_nominal_min_mm": 0.32472261784646494,
+  "cases": {
+    "ordinary": {
+      "contour_error_mm": 0.2,
+      "limiting_Cu_web_before_trace_growth_mm": 0.019999999999998852,
+      "limiting_Cu_web_at_plus20pct_symmetric_width_mm": -0.016000000000001145,
+      "lower_window_end_clearance_to_gasket_opening_mm": -0.0450000000000001,
+      "continuous_PCB_supported_gasket_land_lower_bound_mm": 0.24472261784646493,
+      "axial_unsupported_span_mm": [
+        2.5,
+        3.3
+      ],
+      "all_lane_span_bounds_with_lateral_error_mm": [
+        2.4360895774363502,
+        3.2999999999999994
+      ],
+      "finished_span_acceptance_mm": [
+        2.7,
+        3.1
+      ]
+    },
+    "precision_requested": {
+      "contour_error_mm": 0.1,
+      "limiting_Cu_web_before_trace_growth_mm": 0.11999999999999886,
+      "limiting_Cu_web_at_plus20pct_symmetric_width_mm": 0.08399999999999885,
+      "lower_window_end_clearance_to_gasket_opening_mm": 0.054999999999999896,
+      "continuous_PCB_supported_gasket_land_lower_bound_mm": 0.24472261784646493,
+      "axial_unsupported_span_mm": [
+        2.6999999999999997,
+        3.1
+      ],
+      "all_lane_span_bounds_with_lateral_error_mm": [
+        2.6587873974427287,
+        3.0999999999999996
+      ],
+      "finished_span_acceptance_mm": [
+        2.7,
+        3.1
+      ]
+    }
+  },
+  "basis": "Contour error apportioned independently at each edge relative to nominal copper/datum artwork. Symmetric growth of a 0.36 mm trace at +20% consumes 0.036 mm per side. Image registration beyond the contracted total contour-to-pattern allowance would consume additional clearance.",
+  "ordering": "Ask JLCPCB to panelize on sacrificial rails, 50 x 50 mm minimum, with at least three diameter 1.5 mm tooling holes in distinct rail corners. Confirm +/-0.10 mm total normal profile-to-pattern allowance for nine internal routed windows and R0.40 cutter before manufacture.",
+  "source": "https://jlcpcb.com/capabilities/pcb-capabilities/"
+}
