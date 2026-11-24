@@ -23,13 +23,10 @@ struct Request {
     bool guarded=false,status=false,weighted=false,available=false,train=false;
     int pulses=0;unsigned periodUs=0;Setting setting=Setting::None;int statusVersion=1,wires=0,mode=0,guard=0,age=0;float limit=0;int epoch=0,seq=0;uint32_t deadline=0;unsigned mask=0;float level=0,ms=0,levels[9]{};
 };
-inline bool unitPrefix(const char* path,const char* addr,size_t n){
-    return !strncmp(path,addr,n)||(!strncmp(path,"/tpp/",5)&&!strncmp(path+4,addr+4,n-4));
-}
 inline Outcome parseMessage(Cursor c,const char* addr,Request& req){
     const char* a=c.string(),*t=c.string();if(!a||!t)return Bad;
     const size_t base=strlen(addr);
-    if(!unitPrefix(a,addr,base)||(a[base]&&a[base]!='/'))return WrongUnit;
+    if(strncmp(a,addr,base)||(a[base]&&a[base]!='/'))return WrongUnit;
     const char* suffix=a+base;
     if(!strcmp(suffix,"/status")){
         req.status=true;
@@ -105,7 +102,7 @@ inline Outcome decode(const uint8_t* data,unsigned len,const char* addr,Request&
     unsigned n=word(data+16);if(n>len-24||n%4)return Bad;
     Cursor guard{data+20,n};const char* a=guard.string(),*t=guard.string();
     char path[48];snprintf(path,sizeof(path),"%s/guard",addr);
-    if(!a||!t||!unitPrefix(a,path,strlen(path))||a[strlen(path)]||strcmp(t,",iii")||guard.n!=12)return Bad;
+    if(!a||!t||strcmp(a,path)||strcmp(t,",iii")||guard.n!=12)return Bad;
     req.guarded=true;req.epoch=int(guard.integer());req.seq=int(guard.integer());req.deadline=guard.integer();
     unsigned m=word(data+20+n);if(m!=len-24-n)return Bad;
     auto result=parseMessage({data+24+n,m},addr,req);
@@ -149,9 +146,9 @@ template<class Hardware> Receipt runTrain(State& st,Hardware& hw,const Request& 
     return total;
 }
 struct Server {
-    char addr[32]="/TPP/TA1";int epoch=1,last=0;bool simulated=false,guardRequired=true;int maxAgeMs=100;
+    char addr[32]="/tpp/ta/1";int epoch=1,last=0;bool simulated=false,guardRequired=true;int maxAgeMs=100;
     struct Seen{bool available=false;unsigned mask=0;float ms=0,levels[9]{};uint32_t tick=0;};Seen recent[16]{};unsigned next=0;
-    void reset(int id,int serial){snprintf(addr,sizeof(addr),"/TPP/TA%d",id);epoch=std::max(1,serial&0x7fffffff);last=0;guardRequired=true;maxAgeMs=100;next=0;for(auto& s:recent)s=Seen{};}
+    void reset(int id,int serial){snprintf(addr,sizeof(addr),"/tpp/ta/%d",id);epoch=std::max(1,serial&0x7fffffff);last=0;guardRequired=true;maxAgeMs=100;next=0;for(auto& s:recent)s=Seen{};}
     template<class Hardware> unsigned handle(const uint8_t* pkt,unsigned n,uint8_t* reply,State& st,Hardware& hw){
         Request r;Receipt ans;int completed=0;uint32_t now=uint32_t(hw.now()/1000);
         ans.status=decode(pkt,n,addr,r);Writer w;

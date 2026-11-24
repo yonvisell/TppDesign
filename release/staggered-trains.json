@@ -1160,7 +1160,8 @@
       "pulses_requested": 32,
       "pulses_completed": 8
     },
-    "alias_duplicate_suppression": true,
+    "case_sensitive_unit_path": true,
+    "duplicate_suppression": true,
     "stale_first_edge": true,
     "guard_required_even_with_guard_disabled": true
   },

@@ -17,7 +17,7 @@ With heater power off, complete continuity and absence-of-short checks. Commissi
 | USB command (115200 baud) | Effect |
 |---|---|
 | `ID` | Read unit address, link information, rail, idle shunt reading, calibration, cold/armed/fault flags, thermal settings and per-pixel series offsets. |
-| `UNIT 1` | Persist ID 1–999. The default OSC path is `/TPP/TA1`. Local disarm and arm transitions begin a new receiver epoch. |
+| `UNIT 1` | Persist ID 1–999. The default OSC path is `/tpp/ta/1`. Local disarm and arm transitions begin a new receiver epoch. |
 | `ARRAY 821` | Select and persist the numeric label printed on the attached passive TA. Default 1. Changing it disarms the unit, resets cold confirmation and invalidates a mismatched calibration. |
 | `WIRES 4` | Set the physically installed count (2, 3 or 4). Default 2. A count change erases the calibration, clears cold/arm and persists the new count. The guarded network configuration supports the same count change. |
 | `CAL COLD 25` | Operator confirms an equilibrated intact TA at 25 °C. Measure all nine paths twice. Save the complete calibration in XIAO NVS only after both sweeps pass. |

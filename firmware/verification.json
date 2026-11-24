@@ -124,7 +124,7 @@
     }
   },
   "codec": {
-    "compact_hex": "2f5450502f544131000000002c666669690000003f00000041f000000000001500000016",
+    "compact_hex": "2f7470702f74612f310000002c666669690000003f00000041f000000000001500000016",
     "bytes": 36,
     "malformed_rejected": 9,
     "expired_epoch_replay_checks": true,

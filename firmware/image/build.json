@@ -2,8 +2,8 @@
   "chip": "ESP32-C6",
   "target": "seeed_xiao_esp32c6",
   "image": "R2L-ESP32C6.bin",
-  "sha256": "23edff9248b86b62772b2d074fd72c12178c844adc44c8886ceb9d5fe77d5d47",
-  "bytes": 1104640,
+  "sha256": "e7e018a5ce17858756accd25e3b188716c72572de5b52708155c8ebff74ecf29",
+  "bytes": 1104480,
   "flash_address": 0,
   "components": [
     {
@@ -24,14 +24,14 @@
     {
       "offset": "0x10000",
       "name": "firmware.bin",
-      "sha256": "5ec26d7db2c0b49fc34abd22d0b4390fd38ad17eaed381ecde02a119fc250f05"
+      "sha256": "e5f06b88a3510c764d2a5009565b01341094b144cb965f859fc7f93708660e1c"
     }
   ],
   "source_sha256": {
     "calibration.h": "e17c4b664c83a6c04bc33221a7aa9ebdddbdb652d80cdb7f420f318a883d65da",
     "control.h": "c40d1bf0e17775d8a9d651d8e571c66d390ab8acbf0597c875efef1aa250cf63",
     "main.cpp": "f98f6f836a2dbefbf213c65ac8e8309a30fd33aec0f840f250839e0382466eee",
-    "osc.h": "4194f716ca245727e10416eafa4e8e0125cd5eff2c6f1eab1ef4c8d9bdc692ac",
+    "osc.h": "ab75583876d3f840b7e1c3a318ee946da9777e64152a9405e634294a6f99142c",
     "path_limits.h": "dfcb926773d5a2525e47a718875bc79773e5a3dd96571eb79378dcff54b084b6"
   },
   "build_recipe_sha256": {

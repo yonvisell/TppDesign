@@ -1,11 +1,11 @@
 {
   "image": "R2L-ESP32C6.bin",
   "fresh_build_identical": true,
-  "merged_bytes": 1104640,
-  "sha256": "23edff9248b86b62772b2d074fd72c12178c844adc44c8886ceb9d5fe77d5d47",
+  "merged_bytes": 1104480,
+  "sha256": "e7e018a5ce17858756accd25e3b188716c72572de5b52708155c8ebff74ecf29",
   "source_hashes_identical": true,
   "flash_application_bytes": {
-    "used": 1014614,
+    "used": 1014504,
     "available": 1310720
   },
   "static_ram_bytes": {

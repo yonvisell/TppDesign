@@ -1,18 +1,14 @@
 # Thermopneumatic tactile pixel display
 
-A 3 × 3 tactile display produces localized pressure pulses at a fingertip. Each pixel contains nickel–chromium wires that heat a small air cavity. The expanding air deflects a continuous silicone membrane above the selected pixel.
+A 3 × 3 fingertip display uses electrically heated air cavities to deflect a silicone membrane at selected pixels. A 6 V driver controls the passive tactile array through ten conductors.
 
-**[Owner design book (PDF)](Owner-design-book.pdf)** · Revision L · Yon Visell
+Max Linnander, Yon Visell, “Thermopneumatic Pixels: Fast, Localized, Robust, Low-Voltage Touch Feedback,” *IEEE Transactions on Haptics*, 2026. [journal](https://ieeexplore.ieee.org/document/11771129) · [arxiv](https://arxiv.org/abs/2603.16750)
 
-The book covers the system design, dimensioned assembly, model-based temperature control, predicted tactile response and client interface. The appendices include the circuit schematics, complete OSC API and design file index.
+**[Owner design book (PDF)](Owner-design-book.pdf)** · Revision L. System specifications, assembly drawings, model-based temperature control, predicted pressure response and complete client API.
 
-| Subsystem | Design and files |
+| Subsystem | Design files |
 |---|---|
-| Tactile array | Nine pixels on a 4.2 mm pitch in a screw-clamped 17.8 × 15.9 mm body. [Assembly drawings](head/TA-drawings.pdf) · [Full-size templates](head/Lab-templates-1to1.pdf) · [STEP models](head/Mechanical-CAD.zip) |
-| Driver board | A nominal 6 V power stage drives the passive array through ten conductors. The ESP32-C6 runs the C++ controller and uses voltage and current measurements to estimate wire temperature. [Circuit schematic](eb/Schematic.pdf) · [Firmware and installation](firmware/Controller.md) |
-| Client interface | Open Sound Control (OSC) over Wi-Fi/UDP supports individual pulses, simultaneous or temporally staggered pixel patterns, pulse trains and configuration. [OSC API](software/OSC.md) · [Python client](software/client.py) |
-| Fabrication | [Tactile array fabrication files](head/jobs) · [Driver-board assembly package](eb/EB-supplier.zip) · [Bill of materials](purchasing/Integrated-BOM.csv) · [Build budget](purchasing/Build-budget.xlsx) |
-
-## Predicted response
-
-For the center pixel of the array starting at 25 °C, a 5.8 V drive request of up to 20 ms produces predicted peak gauge pressures of about 17 kPa and 38 kPa at the low and high NiCr temperature limits (450 °C and 750 °C). These values come from a sealed, fixed-volume gas model driven by the simulated controller. The book gives the corresponding pulse durations, wire temperatures and pressure histories. [Pressure response data](supplement/controlled-gas.json)
+| Tactile array | [Drawings](head/TA-drawings.pdf) · [Full-size templates](head/Lab-templates-1to1.pdf) · [STEP models](head/Mechanical-CAD.zip) · [Fabrication packages](head/jobs) |
+| Driver board | [Schematic](eb/Schematic.pdf) · [Assembly package](eb/EB-supplier.zip) · [Firmware and installation](firmware/Controller.md) |
+| Client interface | [OSC over UDP](software/OSC.md) · [Python client](software/client.py). Unit 1 uses the address prefix `/tpp/ta/1`. |
+| Purchasing | [Bill of materials](purchasing/Integrated-BOM.csv) · [Build budget](purchasing/Build-budget.xlsx) |

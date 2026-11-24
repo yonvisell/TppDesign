@@ -139,7 +139,7 @@ class Client:
     def __init__(self,host,unit=1,port=5054,timeout=.30):
         if type(unit) is not int or not 1<=unit<=999:
             raise ValueError("unit 1..999")
-        self.path=f"/TPP/TA{unit}"
+        self.path=f"/tpp/ta/{unit}"
         self._last_age_ms=100
         self.socket=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
         self.socket.settimeout(timeout)
