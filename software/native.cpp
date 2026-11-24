@@ -23,6 +23,8 @@ struct Fixture {
     }
     bool changeWires(int n){if(store.fail||!store.erase())return false;persistedWires=n;return true;}
     bool quiet(){return now()>=lastHeat+2000000;}bool readIdle(){return rail>=5.7f&&rail<=6.3f;}bool prepareCal(){return readIdle();}
+    uint64_t offAt=UINT64_MAX;
+    Outcome service(){if(now()>=offAt)st.armed=false;return st.armed?Done:Unarmed;}
     float voltage(){return rail;}uint64_t now(){return clock();}void waitUntil(uint64_t t){wait(t);}
 };
 Fixture* make_fixture(int unit,const float* cal,float ceiling,int wires,Fire fire,Clock clock,Wait wait,Note note){
@@ -47,6 +49,7 @@ void get_series(Fixture* b,float* out){std::copy(b->st.cal.series,b->st.cal.seri
 unsigned exchange(Fixture* b,const uint8_t* p,unsigned n,uint8_t* out){return b->server.handle(p,n,out,b->st,*b);}
 void close_fixture(Fixture* b){delete b;}
 float temperature(Fixture* b,unsigned i){return b->st.cell[i].t;}
+void stop_at(Fixture* b,uint64_t time){b->offAt=time;}
 void arm_flag(Fixture* b,int val){b->st.armed=val;}
 void cal_flag(Fixture* b,int val){b->st.calibrated=val;}
 void set_rail(Fixture* b,float v){b->rail=v;}

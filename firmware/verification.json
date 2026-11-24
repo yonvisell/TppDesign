@@ -16,7 +16,7 @@
     },
     "max_elapsed_us": 1000,
     "largest_relative_request_error": 0.1740262992937793,
-    "electrical_source_sha256": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a"
+    "electrical_source_sha256": "365500cdf2ad6a675f81475733589de27bd5ce6a68a890e87c9b2c5385ca817e"
   },
   "faults": {
     "sample": {

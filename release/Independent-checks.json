@@ -1,0 +1,228 @@
+{
+  "electrical_sha256": "365500cdf2ad6a675f81475733589de27bd5ce6a68a890e87c9b2c5385ca817e",
+  "image_sha256": "23edff9248b86b62772b2d074fd72c12178c844adc44c8886ceb9d5fe77d5d47",
+  "stable_contact": [
+    {
+      "contact_ohm": null,
+      "accepted": true,
+      "enrollment_slots": 18,
+      "enrollment_contact_uJ": 0.0,
+      "outcome": "complete",
+      "pulse_slots": 3,
+      "pulse_contact_uJ": 0.0
+    },
+    {
+      "contact_ohm": 0.1,
+      "accepted": true,
+      "enrollment_slots": 18,
+      "enrollment_contact_uJ": 31.832,
+      "outcome": "complete",
+      "pulse_slots": 3,
+      "pulse_contact_uJ": 33.673
+    },
+    {
+      "contact_ohm": 1.0,
+      "accepted": false,
+      "enrollment_slots": 1,
+      "enrollment_contact_uJ": 57.27,
+      "outcome": "calibration_required",
+      "pulse_slots": 0,
+      "pulse_contact_uJ": 0
+    },
+    {
+      "contact_ohm": 4.0,
+      "accepted": false,
+      "enrollment_slots": 1,
+      "enrollment_contact_uJ": 88.862,
+      "outcome": "calibration_required",
+      "pulse_slots": 0,
+      "pulse_contact_uJ": 0
+    }
+  ],
+  "changed_contact_and_retiming": {
+    "changed_B12": [
+      {
+        "selected": [
+          11,
+          12,
+          13
+        ],
+        "contact_ohm": 4.0,
+        "outcome": "inconsistent_R",
+        "events": [
+          {
+            "probed": 0,
+            "us": 80,
+            "contact_uJ": 0.0
+          },
+          {
+            "probed": 1,
+            "us": 126,
+            "contact_uJ": 112.034
+          }
+        ]
+      },
+      {
+        "selected": [
+          12,
+          13,
+          23
+        ],
+        "contact_ohm": 0.1,
+        "outcome": "complete",
+        "events": [
+          {
+            "probed": 1,
+            "us": 80,
+            "contact_uJ": 6.797
+          },
+          {
+            "probed": 2,
+            "us": 111,
+            "contact_uJ": 8.886
+          },
+          {
+            "probed": 5,
+            "us": 85,
+            "contact_uJ": 0.0
+          },
+          {
+            "probed": -1,
+            "us": 256,
+            "contact_uJ": 73.29
+          },
+          {
+            "probed": -1,
+            "us": 133,
+            "contact_uJ": 37.769
+          }
+        ]
+      }
+    ],
+    "formerly_late_triples": [
+      {
+        "selected": [
+          12,
+          13,
+          23
+        ],
+        "outcome": "complete",
+        "true_uJ": [
+          4281.08,
+          4280.35,
+          4405.63
+        ]
+      },
+      {
+        "selected": [
+          21,
+          22,
+          23
+        ],
+        "outcome": "complete",
+        "true_uJ": [
+          4428.04,
+          4273.94,
+          4392.73
+        ]
+      },
+      {
+        "selected": [
+          31,
+          32,
+          33
+        ],
+        "outcome": "complete",
+        "true_uJ": [
+          4412.06,
+          4252.94,
+          4392.58
+        ]
+      }
+    ]
+  },
+  "sustained_requests": {
+    "commands": 201,
+    "interval_ms": 10,
+    "level": 0.5,
+    "envelope_ms": 1,
+    "alternating": [
+      [
+        21,
+        22
+      ],
+      [
+        22,
+        23,
+        32
+      ]
+    ],
+    "outcomes": {
+      "complete": 4,
+      "temperature_limit": 197
+    },
+    "min_P22_uJ": 0.0,
+    "last_eleven_P22_uJ": [
+      0.1,
+      1783.3,
+      0.1,
+      1358.3,
+      0.1,
+      0.0,
+      1913.8,
+      0.0,
+      0.1,
+      1783.3,
+      0.1
+    ],
+    "peak_effective_plant_C": 353.29,
+    "peak_bus_A": 5.38
+  },
+  "switched_waveform_midpoint": [
+    {
+      "site": 21,
+      "boundary": "nominal",
+      "peak_C": 349.867,
+      "time_ms": 3.458,
+      "signed_margin_K": 100.133
+    },
+    {
+      "site": 21,
+      "boundary": "weak",
+      "peak_C": 363.571,
+      "time_ms": 20.348,
+      "signed_margin_K": 86.429
+    },
+    {
+      "site": 22,
+      "boundary": "nominal",
+      "peak_C": 349.266,
+      "time_ms": 3.458,
+      "signed_margin_K": 100.734
+    },
+    {
+      "site": 22,
+      "boundary": "weak",
+      "peak_C": 363.136,
+      "time_ms": 20.348,
+      "signed_margin_K": 86.864
+    }
+  ],
+  "lost_packets": {
+    "lost_receipt": "no_confirmed_receipt",
+    "energized_slots": 3,
+    "lost_status": "status_unavailable",
+    "additional_slots": 0,
+    "duplicate_sequence": "sequence"
+  },
+  "supplier_readback": {
+    "packets": {
+      "01-JLCPCB-tactile-carrier.zip": 4,
+      "02-JLCPCB-aperture-caps.zip": 4,
+      "03-lab-stock-and-assembly.zip": 24,
+      "EB-supplier.zip": 5
+    },
+    "distinct": 24,
+    "placements": 80
+  }
+}

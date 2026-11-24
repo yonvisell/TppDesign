@@ -5,7 +5,7 @@
   "maximum_ms": 20,
   "mode": "simultaneous",
   "method": "Independent cold trials after all-nine calibration, using Client.actuate over UDP with the compiled production controller. Each proposed parity group's cold currents come from the independent intact-wire circuit, whether or not it was energized. For declined requests the recorded number of electrical exposures and deposited energy were both zero. The energized trials include finite measurement pulses and shunt-monitored joint intervals.",
-  "electrical_input_sha256": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a",
+  "electrical_input_sha256": "365500cdf2ad6a675f81475733589de27bd5ce6a68a890e87c9b2c5385ca817e",
   "current_admission_agrees_with_independent_circuit": true,
   "counts": {
     "1": {
@@ -71,11 +71,11 @@
         14.808218922607223
       ],
       "min_mean_over_elapsed_W": 14.19771708783051,
-      "max_inactive_mJ": 0.09324075183598325,
+      "max_inactive_mJ": 0.09324075183609966,
       "probes": 5,
       "group_slots": 0,
       "joint_masks": [],
-      "max_receipt_error_uJ": 19.255323979537934,
+      "max_receipt_error_uJ": 19.25532397965435,
       "proposed_cold_parity_source_A": 3.377721133772635,
       "proposed_cold_parity_max_tap_A": 3.114540140224936
     },
@@ -143,9 +143,9 @@
       "peak_plant_C": 283.486848508094,
       "peak_upper_C": 352.0915222167969,
       "selected_mJ": [
-        13.387665834964661
+        13.387665834964718
       ],
-      "min_mean_over_elapsed_W": 14.287797049055134,
+      "min_mean_over_elapsed_W": 14.287797049055197,
       "max_inactive_mJ": 0.006740465102659072,
       "probes": 4,
       "group_slots": 0,
@@ -282,17 +282,17 @@
       "peak_plant_C": 296.81090243460693,
       "peak_upper_C": 362.55810546875,
       "selected_mJ": [
-        14.128157263610222,
-        12.836874474733865
+        14.128157263610163,
+        12.836874474733834
       ],
-      "min_mean_over_elapsed_W": 9.920304849098812,
+      "min_mean_over_elapsed_W": 9.920304849098791,
       "max_inactive_mJ": 0.03679480839628377,
       "probes": 6,
       "group_slots": 3,
       "joint_masks": [
         5
       ],
-      "max_receipt_error_uJ": 41.95162317136419,
+      "max_receipt_error_uJ": 41.951623171335086,
       "proposed_cold_parity_source_A": 6.721558166037536,
       "proposed_cold_parity_max_tap_A": 3.4418370868577868
     },
@@ -311,7 +311,7 @@
       "peak_plant_C": 297.7496367236246,
       "peak_upper_C": 363.4398498535156,
       "selected_mJ": [
-        14.179231760804106,
+        14.179231760804075,
         13.232904666555784
       ],
       "min_mean_over_elapsed_W": 10.250119803683798,
@@ -341,16 +341,16 @@
       "peak_upper_C": 363.3143615722656,
       "selected_mJ": [
         14.18233061712014,
-        12.995229369105248
+        12.99522936910519
       ],
-      "min_mean_over_elapsed_W": 10.06601810155325,
+      "min_mean_over_elapsed_W": 10.066018101553206,
       "max_inactive_mJ": 0.05895881913849735,
       "probes": 6,
       "group_slots": 3,
       "joint_masks": [
         17
       ],
-      "max_receipt_error_uJ": 31.370970667747315,
+      "max_receipt_error_uJ": 31.370970667689107,
       "proposed_cold_parity_source_A": 6.776975942054821,
       "proposed_cold_parity_max_tap_A": 3.461245708346876
     },
@@ -373,7 +373,7 @@
         12.838225633549154
       ],
       "min_mean_over_elapsed_W": 9.944404053872312,
-      "max_inactive_mJ": 0.05702094626121106,
+      "max_inactive_mJ": 0.057020946261298375,
       "probes": 6,
       "group_slots": 3,
       "joint_masks": [
@@ -399,16 +399,16 @@
       "peak_upper_C": 363.37884521484375,
       "selected_mJ": [
         14.179173604824406,
-        13.189790536999556
+        13.189790536999586
       ],
-      "min_mean_over_elapsed_W": 10.216723886134435,
+      "min_mean_over_elapsed_W": 10.216723886134458,
       "max_inactive_mJ": 0.05817068188311532,
       "probes": 6,
       "group_slots": 3,
       "joint_masks": [
         65
       ],
-      "max_receipt_error_uJ": 43.787607312056934,
+      "max_receipt_error_uJ": 43.78760731208604,
       "proposed_cold_parity_source_A": 6.801131061024747,
       "proposed_cold_parity_max_tap_A": 3.460919202273922
     },
@@ -499,16 +499,16 @@
       "peak_upper_C": 368.38604736328125,
       "selected_mJ": [
         14.712586588421429,
-        13.614416255886812
+        13.614416255886754
       ],
-      "min_mean_over_elapsed_W": 9.58761708161043,
+      "min_mean_over_elapsed_W": 9.58761708161039,
       "max_inactive_mJ": 0.09374773406074383,
       "probes": 7,
       "group_slots": 3,
       "joint_masks": [
         10
       ],
-      "max_receipt_error_uJ": 32.358638699311996,
+      "max_receipt_error_uJ": 32.35863869925379,
       "proposed_cold_parity_source_A": 6.666868351173359,
       "proposed_cold_parity_max_tap_A": 3.1285780551493123
     },
@@ -527,17 +527,17 @@
       "peak_plant_C": 310.4608553623832,
       "peak_upper_C": 375.2342834472656,
       "selected_mJ": [
-        14.883463616400608,
-        14.813069622394018
+        14.88346361640055,
+        14.813069622394105
       ],
-      "min_mean_over_elapsed_W": 9.637651023027988,
+      "min_mean_over_elapsed_W": 9.637651023028045,
       "max_inactive_mJ": 0.09622178025735775,
       "probes": 8,
       "group_slots": 3,
       "joint_masks": [
         18
       ],
-      "max_receipt_error_uJ": 22.498333331517642,
+      "max_receipt_error_uJ": 22.498333331604954,
       "proposed_cold_parity_source_A": 6.635911704987704,
       "proposed_cold_parity_max_tap_A": 3.0787222005037744
     },
@@ -556,17 +556,17 @@
       "peak_plant_C": 310.08366033235734,
       "peak_upper_C": 371.0778503417969,
       "selected_mJ": [
-        14.863632116995548,
-        14.621035155191814
+        14.863632116995635,
+        14.621035155191873
       ],
-      "min_mean_over_elapsed_W": 9.488017621798711,
+      "min_mean_over_elapsed_W": 9.488017621798749,
       "max_inactive_mJ": 0.09646392216836103,
       "probes": 8,
       "group_slots": 3,
       "joint_masks": [
         34
       ],
-      "max_receipt_error_uJ": 42.34081925431383,
+      "max_receipt_error_uJ": 42.340819254372036,
       "proposed_cold_parity_source_A": 6.585873355710032,
       "proposed_cold_parity_max_tap_A": 3.3265481588952266
     },
@@ -585,17 +585,17 @@
       "peak_plant_C": 308.23338569639577,
       "peak_upper_C": 369.1193542480469,
       "selected_mJ": [
-        14.760304960571666,
-        13.618686289959879
+        14.760304960571695,
+        13.618686289959761
       ],
-      "min_mean_over_elapsed_W": 9.570404982403288,
+      "min_mean_over_elapsed_W": 9.570404982403206,
       "max_inactive_mJ": 0.09349353245744714,
       "probes": 7,
       "group_slots": 3,
       "joint_masks": [
         66
       ],
-      "max_receipt_error_uJ": 32.104258709878195,
+      "max_receipt_error_uJ": 32.10425870976178,
       "proposed_cold_parity_source_A": 6.6624363891675955,
       "proposed_cold_parity_max_tap_A": 3.124065316798667
     },
@@ -644,16 +644,16 @@
       "peak_upper_C": 374.9122009277344,
       "selected_mJ": [
         14.92399705108651,
-        14.571267790852785
+        14.571267790852755
       ],
-      "min_mean_over_elapsed_W": 9.468010260463148,
+      "min_mean_over_elapsed_W": 9.468010260463128,
       "max_inactive_mJ": 0.09457351831684355,
       "probes": 8,
       "group_slots": 3,
       "joint_masks": [
         258
       ],
-      "max_receipt_error_uJ": 29.983611165283946,
+      "max_receipt_error_uJ": 29.983611165254842,
       "proposed_cold_parity_source_A": 6.602381758729393,
       "proposed_cold_parity_max_tap_A": 3.2800184849084553
     },
@@ -672,10 +672,10 @@
       "peak_plant_C": 304.0866896077651,
       "peak_upper_C": 368.7507019042969,
       "selected_mJ": [
-        14.534042016799184,
-        13.609681128771598
+        14.534042016799212,
+        13.609681128771626
       ],
-      "min_mean_over_elapsed_W": 9.584282485050421,
+      "min_mean_over_elapsed_W": 9.58428248505044,
       "max_inactive_mJ": 0.06745063673576805,
       "probes": 7,
       "group_slots": 3,
@@ -743,10 +743,10 @@
       "peak_plant_C": 304.7731616065573,
       "peak_upper_C": 369.35845947265625,
       "selected_mJ": [
-        14.571647988907323,
-        13.6040569969535
+        14.571647988907294,
+        13.604056996953382
       ],
-      "min_mean_over_elapsed_W": 9.566847395888537,
+      "min_mean_over_elapsed_W": 9.566847395888455,
       "max_inactive_mJ": 0.06712418675271328,
       "probes": 7,
       "group_slots": 3,
@@ -773,7 +773,7 @@
       "peak_upper_C": 371.74127197265625,
       "selected_mJ": [
         14.68388258332113,
-        14.767817400694067
+        14.767817400694126
       ],
       "min_mean_over_elapsed_W": 9.566047285551225,
       "max_inactive_mJ": 0.06800008846604032,
@@ -843,17 +843,17 @@
       "peak_plant_C": 287.13551104057905,
       "peak_upper_C": 352.52685546875,
       "selected_mJ": [
-        13.602234976909152,
-        13.198659712382504
+        13.602234976909182,
+        13.198659712382534
       ],
-      "min_mean_over_elapsed_W": 9.998984630592807,
+      "min_mean_over_elapsed_W": 9.99898463059283,
       "max_inactive_mJ": 0.041852849567017986,
       "probes": 6,
       "group_slots": 3,
       "joint_masks": [
         40
       ],
-      "max_receipt_error_uJ": 12.76420457000495,
+      "max_receipt_error_uJ": 12.764204570034053,
       "proposed_cold_parity_source_A": 6.60477938855713,
       "proposed_cold_parity_max_tap_A": 3.3387146869062203
     },
@@ -885,17 +885,17 @@
       "peak_plant_C": 287.4570656103149,
       "peak_upper_C": 352.6849365234375,
       "selected_mJ": [
-        13.619591044640197,
-        13.352208325403218
+        13.619591044640227,
+        13.35220832540316
       ],
-      "min_mean_over_elapsed_W": 10.11530933742668,
-      "max_inactive_mJ": 0.05780846193671459,
+      "min_mean_over_elapsed_W": 10.115309337426636,
+      "max_inactive_mJ": 0.05780846193683101,
       "probes": 6,
       "group_slots": 3,
       "joint_masks": [
         136
       ],
-      "max_receipt_error_uJ": 15.451490195991937,
+      "max_receipt_error_uJ": 15.451490196108352,
       "proposed_cold_parity_source_A": 6.63006430011686,
       "proposed_cold_parity_max_tap_A": 3.368056729316358
     },
@@ -915,9 +915,9 @@
       "peak_upper_C": 355.532470703125,
       "selected_mJ": [
         13.612140095034498,
-        13.101627729876025
+        13.101627729876084
       ],
-      "min_mean_over_elapsed_W": 9.970797359114174,
+      "min_mean_over_elapsed_W": 9.970797359114218,
       "max_inactive_mJ": 0.056066629043489226,
       "probes": 6,
       "group_slots": 3,
@@ -957,16 +957,16 @@
       "peak_upper_C": 372.81024169921875,
       "selected_mJ": [
         14.618650998479978,
-        13.544104229738558
+        13.544104229738645
       ],
-      "min_mean_over_elapsed_W": 9.511309150097302,
-      "max_inactive_mJ": 0.06235291159528424,
+      "min_mean_over_elapsed_W": 9.511309150097363,
+      "max_inactive_mJ": 0.06235291159519693,
       "probes": 7,
       "group_slots": 3,
       "joint_masks": [
         80
       ],
-      "max_receipt_error_uJ": 17.20673239606549,
+      "max_receipt_error_uJ": 17.20673239597818,
       "proposed_cold_parity_source_A": 6.62734233467793,
       "proposed_cold_parity_max_tap_A": 3.360055638014637
     },
@@ -986,16 +986,16 @@
       "peak_upper_C": 375.31097412109375,
       "selected_mJ": [
         14.798968990789493,
-        14.775136878081453
+        14.77513687808154
       ],
-      "min_mean_over_elapsed_W": 9.619229738334278,
-      "max_inactive_mJ": 0.06367502918111859,
+      "min_mean_over_elapsed_W": 9.619229738334335,
+      "max_inactive_mJ": 0.06367502918106038,
       "probes": 8,
       "group_slots": 3,
       "joint_masks": [
         144
       ],
-      "max_receipt_error_uJ": 17.781600378628355,
+      "max_receipt_error_uJ": 17.781600378570147,
       "proposed_cold_parity_source_A": 6.631557460846606,
       "proposed_cold_parity_max_tap_A": 3.0812432686207423
     },
@@ -1015,16 +1015,16 @@
       "peak_upper_C": 375.5905456542969,
       "selected_mJ": [
         14.808639137411431,
-        14.52480994903986
+        14.524809949039831
       ],
-      "min_mean_over_elapsed_W": 9.456256477239492,
-      "max_inactive_mJ": 0.06359245356536121,
+      "min_mean_over_elapsed_W": 9.456256477239473,
+      "max_inactive_mJ": 0.06359245356539031,
       "probes": 8,
       "group_slots": 3,
       "joint_masks": [
         272
       ],
-      "max_receipt_error_uJ": 17.743843641044805,
+      "max_receipt_error_uJ": 17.74384364107391,
       "proposed_cold_parity_source_A": 6.598772235319051,
       "proposed_cold_parity_max_tap_A": 3.279981540299953
     },
@@ -1072,17 +1072,17 @@
       "peak_plant_C": 308.1496628080415,
       "peak_upper_C": 371.7750244140625,
       "selected_mJ": [
-        14.620422923647245,
+        14.620422923647217,
         14.767776036636205
       ],
-      "min_mean_over_elapsed_W": 9.524705487718075,
+      "min_mean_over_elapsed_W": 9.524705487718057,
       "max_inactive_mJ": 0.06049963806453161,
       "probes": 8,
       "group_slots": 3,
       "joint_masks": [
         160
       ],
-      "max_receipt_error_uJ": 23.425853334745625,
+      "max_receipt_error_uJ": 23.42585333471652,
       "proposed_cold_parity_source_A": 6.61353160933253,
       "proposed_cold_parity_max_tap_A": 3.084765163241942
     },

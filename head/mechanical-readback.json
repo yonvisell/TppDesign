@@ -1,22 +1,18 @@
 {
   "dimensions_mm": [
-    20.55,
-    17.0,
-    5.2724
+    20.8,
+    15.9,
+    6.985
   ],
   "body_excluding_flat_tabs_mm": [
     17.8,
-    17.0,
-    5.2724
+    15.9,
+    3.5582000000000003
   ],
   "fixed_board_mm": [
     17.8,
     15.5,
     0.8
-  ],
-  "jig_outline_mm": [
-    40.0,
-    25.5
   ],
   "gas_gross_mm3_per_site": 15.468144387653735,
   "gas_net_straight_wire_estimate_mm3_per_site": 15.45732776715242,
@@ -25,7 +21,7 @@
     "3": 15.460031922277748,
     "4": 15.45732776715242
   },
-  "diaphragm_clamp_window_mm2": 11.718038769170581,
+  "diaphragm_clamp_window_mm2": 10.130361288064513,
   "cap_port_area_mm2": 10.130361288064513,
   "lower_window_area_mm2": 5.659431224361287,
   "foil_bore_mm": 0.6,
@@ -34,29 +30,29 @@
   "wire_OD_mm": 0.03159085008177374,
   "wire_crown_to_roof_mm": 0.48340914991822626,
   "wire_centres_from_row_mm": [
-    -0.6257954250408869,
-    -0.2942045749591131,
-    0.2942045749591131,
-    0.6257954250408869
+    -0.625795425,
+    -0.294204575,
+    0.294204575,
+    0.625795425
   ],
   "wire_installation_offsets_by_strands_mm": {
     "2": [
-      -0.6257954250408869,
-      0.6257954250408869
+      -0.625795425,
+      0.625795425
     ],
     "3": [
-      -0.6257954250408869,
-      -0.2942045749591131,
-      0.6257954250408869
+      -0.625795425,
+      -0.294204575,
+      0.625795425
     ],
     "4": [
-      -0.6257954250408869,
-      -0.2942045749591131,
-      0.2942045749591131,
-      0.6257954250408869
+      -0.625795425,
+      -0.294204575,
+      0.294204575,
+      0.625795425
     ]
   },
-  "compressed_gasket_land_mm2": 63.39329597366415,
+  "compressed_gasket_land_mm2": 77.78395163400207,
   "gasket_cross_bridges": 6,
   "installed_gap_mm": 0.55,
   "nominal_flat_gasket_compression": 0.08333333333333326,
@@ -80,45 +76,47 @@
     ]
   ],
   "registration_hole_mm": 1.4,
-  "head_screw": "NBK SNZ-M1.2-4-TZB",
   "screw_count": 4,
-  "head_recess_mm": 0.08,
-  "back_face_tip_clearance_mm": 0.6924000000000001,
-  "thread_engagement_envelope_mm": 1.3075999999999999,
-  "cap_stop_elevation_from_backing_floor_mm": 1.8474,
-  "grid_stop_elevation_from_backing_floor_mm": 2.4724000000000004,
-  "board_shelf_elevation_from_backing_floor_mm": 0.345,
-  "clamp_grid_field_thickness_mm": 0.35,
-  "field_recess_over_free_membrane_mm": 0.32099999999999995,
-  "guide_diameter_mm": 0.3,
-  "guide_count": 24,
-  "guide_frame_short_axis_travel_mm": [
-    -0.5,
-    0.5
+  "head_screw": "McMaster 90910A634",
+  "nut": "McMaster 90001A403",
+  "screw_length_mm": 6.35,
+  "screw_shank_mm": 1.1938,
+  "head_proud_mm": 0.635,
+  "nut_height_mm": 1.1906249999999998,
+  "nut_across_flats_mm": 1.984375,
+  "nut_thread_envelope_pitches": 4.21875,
+  "screw_tip_beyond_nut_mm": 1.6011749999999996,
+  "underside_hardware_projection_mm": 2.7917999999999994,
+  "clamped_material_thickness_mm": 3.5582000000000003,
+  "clamp_grid_field_thickness_mm": 0.4,
+  "field_recess_over_free_membrane_mm": 0.371,
+  "floor_plate_mm": 0.8128,
+  "spacer_strip_mm": [
+    11.26,
+    1.2,
+    0.55
   ],
-  "foil_tabs": {
-    "edge_x_mm": 8.3,
-    "flat_tip_x_mm": 11.3,
+  "upper_tab": {
+    "edge_x_mm": 8.549999999999999,
+    "flat_tip_x_mm": 11.549999999999999,
     "width_mm": 10.0,
-    "flat_projection_mm": 3.0,
-    "gap_between_bare_faces_mm": 1.5934000000000001
+    "flat_projection_mm": 3.0
   },
   "cut_file_closed_contours": {
-    "tool-wire-hold-strip": 1,
-    "L02-floor-C110": 5,
-    "L03-windowed-floor-gasket": 14,
-    "L06-connected-contact-gasket": 18,
+    "L01-copper-floor": 5,
+    "L02-floor-gasket": 14,
+    "L05-contact-gasket": 20,
+    "L06-gap-spacers": 2,
     "L07-upper-dielectric-PI": 14,
-    "L08-upper-C110": 14,
-    "L09-aperture-cap-FR4": 14,
+    "L08-upper-copper": 14,
+    "L09-aperture-cap": 14,
     "L10-diaphragm": 5
   },
-  "head_STEP_solids": 48,
-  "jig_STEP_solids": 28,
+  "head_STEP_solids": 53,
   "wires_counted_in_three_STEP_files": {
     "4": 12,
     "2": 6,
     "3": 9
   },
-  "status": "CAM and STEP reopened; installed dimensions, restraint and leakage require bench measurements."
+  "status": "Reopened fabrication solids and profiles; check installed heights, contact retention and leakage on the assembled instrument."
 }

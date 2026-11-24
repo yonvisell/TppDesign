@@ -12,20 +12,20 @@
     "In2.Cu": 0.2599999999999998,
     "B.Cu": 0.2599999999999998
   },
-  "seal_to_gasket_external_boundary_nominal_min_mm": 0.32499999999999835,
+  "seal_to_gasket_external_boundary_nominal_min_mm": 0.3248097815665486,
   "cases": {
     "ordinary": {
       "contour_error_mm": 0.2,
       "limiting_Cu_web_before_trace_growth_mm": 0.019999999999998852,
       "limiting_Cu_web_at_plus20pct_symmetric_width_mm": -0.016000000000001145,
       "lower_window_end_clearance_to_gasket_opening_mm": -0.0450000000000001,
-      "continuous_PCB_supported_gasket_land_lower_bound_mm": 0.24499999999999833,
+      "continuous_PCB_supported_gasket_land_lower_bound_mm": 0.2448097815665486,
       "axial_unsupported_span_mm": [
         2.5,
         3.3
       ],
       "all_lane_span_bounds_with_lateral_error_mm": [
-        2.4360895774363502,
+        2.4360895774800593,
         3.2999999999999994
       ],
       "finished_span_acceptance_mm": [
@@ -38,13 +38,13 @@
       "limiting_Cu_web_before_trace_growth_mm": 0.11999999999999886,
       "limiting_Cu_web_at_plus20pct_symmetric_width_mm": 0.08399999999999885,
       "lower_window_end_clearance_to_gasket_opening_mm": 0.054999999999999896,
-      "continuous_PCB_supported_gasket_land_lower_bound_mm": 0.24499999999999833,
+      "continuous_PCB_supported_gasket_land_lower_bound_mm": 0.2448097815665486,
       "axial_unsupported_span_mm": [
         2.6999999999999997,
         3.1
       ],
       "all_lane_span_bounds_with_lateral_error_mm": [
-        2.6587873974427287,
+        2.6587873974675347,
         3.0999999999999996
       ],
       "finished_span_acceptance_mm": [

@@ -8,7 +8,7 @@ import time
 
 
 FULL_SCALE_W=4.36
-MODES=("simultaneous","rotate-single","rotate-group","temperature-priority")
+MODES=("simultaneous","rotate-single","rotate-group","temperature-priority","staggered")
 
 
 def string(value):
@@ -65,16 +65,16 @@ def pixel_code(cell):
 
 def pulse(path,level,ms,pixels):
     ids=[pixel_code(k) for k in pixels]
-    if len(ids) not in (1,2,3) or len(set(ids))!=len(ids):
-        raise ValueError("select one to three distinct pixels")
+    if not 1<=len(ids)<=9 or len(set(ids))!=len(ids):
+        raise ValueError("select one to nine distinct pixels")
     if not(math.isfinite(level) and math.isfinite(ms) and 0<=level<=1 and 1<=ms<=100):
         raise ValueError("level 0..1; duration 1..100 ms")
     return message(path,"ff"+"i"*len(ids),level,ms,*ids)
 
 
 def pattern(path,ms,levels):
-    if not 1<=len(levels)<=3 or not math.isfinite(ms) or not 1<=ms<=100:
-        raise ValueError("select one to three pixels and 1..100 ms")
+    if not 1<=len(levels)<=9 or not math.isfinite(ms) or not 1<=ms<=100:
+        raise ValueError("select one to nine pixels and 1..100 ms")
     values=[ms];ids=set()
     for pixel,level in levels.items():
         code=pixel_code(pixel)
@@ -82,6 +82,19 @@ def pattern(path,ms,levels):
             raise ValueError("duplicate pixel or invalid level")
         ids.add(code);values.extend((code,level))
     return message(path+"/pattern","f"+"if"*len(ids),*values)
+
+
+def train(path,count,on_ms,duty,levels):
+    if type(count) is not int or not 1<=count<=32 or not math.isfinite(duty) or not .05<=duty<=1:
+        raise ValueError("use 1–32 windows and duty fraction 0.05–1")
+    # Let the same validated mapping and float32 wire values determine the schedule.
+    _,_,args=unpack(pattern(path,on_ms,levels))
+    duty=struct.unpack(">f",struct.pack(">f",duty))[0]
+    on_us=math.floor(args[0]*1000+.5)
+    period_us=math.floor(on_us/duty+.5)
+    elapsed=(count-1)*period_us+on_us
+    if elapsed>2_000_000:raise ValueError("train schedule exceeds two seconds")
+    return message(path+"/train","iff"+"if"*len(levels),count,args[0],duty,*args[1:])
 
 
 def configuration(path,wires,limit_C,mode):
@@ -106,17 +119,20 @@ def guarded(path,cmd,epoch,seq,deadline_ms):
     return b"#bundle\0"+struct.pack(">Q",1)+b"".join(struct.pack(">I",len(x))+x for x in (guard,cmd))
 
 
-def receipt(data,path,epoch=None,seq=None):
+def receipt(data,path,epoch=None,seq=None,train_reply=False):
     address,tags,args=unpack(data)
-    if address!=path+"/receipt" or tags!=",iisiiiiiiff"+"f"*36:
+    tail="ii" if train_reply else ""
+    expected=path+("/train/receipt" if train_reply else "/receipt")
+    if address!=expected or tags!=",iisiiiiiiff"+"f"*36+tail:
         raise ValueError("receipt identity or type mismatch")
     e,n,reason,sim,mask,probes,slots,samples,elapsed,t,i,*vectors=args
     if (epoch is not None and e!=epoch) or (seq is not None and n!=seq):
         raise ValueError("receipt epoch or sequence mismatch")
+    details=dict(pulses_requested=vectors[-2],pulses_completed=vectors[-1]) if train_reply else {}
     fields=("energy_uJ","probe_uJ","unknown_upper_uJ","selected_timed_upper_uJ")
     arrays={key:vectors[9*j:9*j+9] for j,key in enumerate(fields)}
     return dict(epoch=e,sequence=n,outcome=reason,simulated=bool(sim),mask=mask,probe_count=probes,
-                group_slots=slots,current_samples=samples,elapsed_us=elapsed,peak_estimated_C=t,peak_sampled_A=i,**arrays)
+                group_slots=slots,current_samples=samples,elapsed_us=elapsed,peak_estimated_C=t,peak_sampled_A=i,**arrays,**details)
 
 
 class Client:
@@ -186,7 +202,13 @@ class Client:
     def pattern(self,ms,levels,observed=None):
         return self._send(pattern(self.path,ms,levels),observed,False)
 
-    def _send(self,cmd,observed,raw,setting=False):
+    def train(self,count,on_ms,duty,levels,observed=None):
+        cmd=train(self.path,count,on_ms,duty,levels)
+        # Include the maximum scheduled span in the response timeout only.
+        span_s=((count-1)*on_ms/duty+on_ms)/1000
+        return self._send(cmd,observed,False,train_seconds=span_s)
+
+    def _send(self,cmd,observed,raw,setting=False,train_seconds=0.):
         t=time.monotonic()
         if observed is None:observed=t
         if not math.isfinite(observed) or observed>t:
@@ -205,24 +227,29 @@ class Client:
             epoch=status["epoch"];seq=status["last_sequence"]+1
             if seq>=2**31:return dict(outcome="sequence_exhausted")
             cmd=guarded(self.path,cmd,epoch,seq,status["receiver_ms"]+remaining)
-        if not raw:return self._exchange(self.socket,cmd,epoch,seq)
+        if not raw:return self._exchange(self.socket,cmd,epoch,seq,train_seconds)
         # Compact replies all carry sequence zero. Use a separate UDP endpoint so
         # a late reply to an earlier exchange on the main connection cannot match.
         with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as transport:
             transport.settimeout(self.socket.gettimeout());transport.connect(self.socket.getpeername())
             return self._exchange(transport,cmd,None,0)
 
-    def _exchange(self,transport,cmd,epoch,seq):
+    def _exchange(self,transport,cmd,epoch,seq,train_seconds=0.):
         try:transport.send(cmd)
         except OSError:return dict(outcome="no_confirmed_receipt",sequence=seq)
         # An unconfirmed pulse is never resent. Delayed earlier receipts are discarded.
-        deadline=time.monotonic()+self.socket.gettimeout()
-        while time.monotonic()<deadline:
-            try:
-                data=transport.recv(512)
-                return receipt(data,self.path,epoch,seq)
-            except OSError:break
-            except (ValueError,struct.error,UnicodeError):continue
+        timeout=transport.gettimeout()
+        deadline=time.monotonic()+timeout+train_seconds
+        try:
+            while True:
+                remaining=deadline-time.monotonic()
+                if remaining<=0:break
+                transport.settimeout(remaining)
+                try:return receipt(transport.recv(512),self.path,epoch,seq,train_reply=train_seconds>0)
+                except OSError:break
+                except (ValueError,struct.error,UnicodeError):continue
+        finally:
+            transport.settimeout(timeout)
         return dict(outcome="no_confirmed_receipt",sequence=seq)
 
 if __name__=="__main__":
@@ -231,6 +258,9 @@ if __name__=="__main__":
     action=p.add_mutually_exclusive_group()
     action.add_argument("--status",action="store_true");action.add_argument("--configure",action="store_true")
     action.add_argument("--actuate",action="store_true");action.add_argument("--dose",action="store_true")
+    action.add_argument("--train",type=int,metavar="COUNT")
+    p.add_argument("--duty",type=float)
+    p.add_argument("--levels",type=float,nargs="+",help="one normalized power per --pixels entry")
     p.add_argument("--wires",type=int,choices=(2,3,4));p.add_argument("--limit",type=float)
     p.add_argument("--guard",choices=("on","off"));p.add_argument("--max-age-ms",type=int)
     p.add_argument("--mode",choices=MODES);scale=p.add_mutually_exclusive_group();scale.add_argument("--level",type=float);scale.add_argument("--watts",type=float)
@@ -243,6 +273,11 @@ if __name__=="__main__":
     if not a.configure and changes:p.error("use --configure to change settings")
     if (a.watts is not None or a.level is not None) and (a.configure or a.actuate or a.status):p.error("power applies only to a calibrated dose")
     if a.raw and (a.configure or a.status):p.error("--raw applies to actuation and calibrated doses")
+    if a.train is not None:
+        if a.duty is None or a.raw or a.watts is not None:p.error("--train requires --duty and guarded normalized levels")
+    elif a.duty is not None:p.error("--duty requires --train")
+    if a.levels is not None and (a.raw or a.actuate or a.status or a.configure or a.level is not None or a.watts is not None or len(a.levels)!=len(a.pixels) or len(set(a.pixels))!=len(a.pixels)):
+        p.error("--levels requires one value per distinct pixel and a calibrated command")
     r=Client(a.host,a.unit,a.port)
     try:
         if a.status:result=r.status()
@@ -251,6 +286,10 @@ if __name__=="__main__":
             else:
                 name,value=next(iter(changes.items()))
                 result=getattr(r,"set_"+name)(value=="on" if name=="guard" else value)
+        elif a.train is not None or a.levels is not None:
+            if len(set(a.pixels))!=len(a.pixels):p.error("duplicate pixel")
+            levels=dict(zip(a.pixels,a.levels if a.levels is not None else [a.level if a.level is not None else .5]*len(a.pixels)))
+            result=r.train(a.train,a.ms,a.duty,levels) if a.train is not None else r.pattern(a.ms,levels)
         elif a.actuate:result=r.actuate(a.ms,a.pixels,raw=a.raw)
         else:
             level=a.watts/FULL_SCALE_W if a.watts is not None else (.5 if a.level is None else a.level)

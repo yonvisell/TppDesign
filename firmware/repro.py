@@ -5,7 +5,7 @@ Import("env")
 epoch = "1795392000"
 env["ENV"]["SOURCE_DATE_EPOCH"] = epoch
 os.environ["SOURCE_DATE_EPOCH"] = epoch
-for variable, label in [("$PROJECT_DIR","/tpp-r2k"),("$BUILD_DIR","/tpp-build")]:
+for variable, label in [("$PROJECT_DIR","/tpp-r2l"),("$BUILD_DIR","/tpp-build")]:
     path = env.subst(variable)
     env.Append(CCFLAGS=["-ffile-prefix-map=" + path + "=" + label])
 # Library assertion strings include the configured cache spelling on macOS.

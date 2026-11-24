@@ -32,12 +32,12 @@ inline Pins group(unsigned mask){
 inline uint32_t shiftWord(Pins p){return (p.hi&255)|((p.en&511)<<8);}
 inline float wireRef(int count){return R20*2.f/count;}
 inline float massScale(int count){return .5f*count;}
-enum Mode {Simultaneous, RotateSingle, RotateGroup, TemperaturePriority};
+enum Mode {Simultaneous, RotateSingle, RotateGroup, TemperaturePriority, Staggered};
 struct Calibration {float ambient=25, r20=R20,switchOhm=.068f,series[9]{};};
 struct Pixel {float t=25,s=25,upper=25; uint64_t stamp=0,lastProbe=0;float sinceProbe=0;};
 struct State {
     struct Tuning{float g_W_K=.00020f,beta=2.f,gamma=6.f;};
-    Tuning tuning;int wires=2;Mode mode=Simultaneous;Calibration cal; Pixel cell[9]; float ceiling=450;
+    Tuning tuning;unsigned nextSite=0;int wires=2;Mode mode=Simultaneous;Calibration cal; Pixel cell[9]; float ceiling=450;
     bool armed=false,calibrated=false,cold=false,fault=false;
     void coldStart(uint64_t now){
         for(auto& p:cell)p={cal.ambient,cal.ambient,cal.ambient,now,now,0};
@@ -144,11 +144,31 @@ inline float powerBound(const State& st){return std::max(Pmax,1.08f*6.3f*6.3f/st
 inline bool headroom(const State& st,int i,unsigned us){
     return st.cell[i].upper+MarginK+powerBound(st)*(us+5)/(C20*massScale(st.wires))<st.ceiling;
 }
-template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float level,float ms,const float* levels=nullptr,uint64_t firstDeadline=UINT64_MAX,bool available=false){
+// Wait only with the outputs blank. Between waits, service local disarm and driver faults.
+template<class Hardware> Outcome waitRunning(Hardware& hw,uint64_t until){
+    while(true){
+        Outcome event=hw.service();
+        if(event!=Done)return event;
+        uint64_t now=hw.now();
+        if(now>=until)return Done;
+        hw.waitUntil(std::min(until,now+1000));
+    }
+}
+inline unsigned admissibleGroup(const State& st,unsigned due,unsigned first,float rail){
+    unsigned selected=0;
+    for(unsigned off=0;off<9&&__builtin_popcount(selected)<3;off++){
+        unsigned bit=1U<<((first+off)%9);
+        if(!(due&bit))continue;
+        Power next=predict(st,group(selected|bit),rail);
+        if(next.bus<=8&&next.pin<=5)selected|=bit;
+    }
+    return selected;
+}
+template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float level,float ms,const float* levels=nullptr,uint64_t firstDeadline=UINT64_MAX,bool available=false,uint64_t scheduled=UINT64_MAX){
     Receipt out;out.mask=mask;
-    if(!mask||mask>511||((!available||st.mode==Simultaneous)&&__builtin_popcount(mask)>3)||!std::isfinite(level)||!std::isfinite(ms)||level<0||level>1||ms<1||ms>100){out.status=Bad;return out;}
+    if(!mask||mask>511||(st.mode!=Staggered&&(!available||st.mode==Simultaneous)&&__builtin_popcount(mask)>3)||!std::isfinite(level)||!std::isfinite(ms)||level<0||level>1||ms<1||ms>100){out.status=Bad;return out;}
     const float bound=powerBound(st);
-    const unsigned span=unsigned(std::lround(ms*1000));
+    const unsigned span=unsigned(std::lround(double(ms)*1000));
     float targets[9]{},largest=0;unsigned activeMask=0,shortMask=0,frames=1,tranches[9]{};
     for(int i=0;i<9;i++)if(mask>>i&1){
         float l=levels?levels[i]:level;
@@ -175,14 +195,26 @@ template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float 
     // of the same parity pattern, which have no ADC aperture of their own.
     float currentScale[512]{};
     bool started=false;
-    const uint64_t start=hw.now(),deadline=start+span;
+    const uint64_t start=scheduled==UINT64_MAX?hw.now():scheduled,deadline=start+span;
+    const bool staggered=!available&&st.mode==Staggered;
+    unsigned cursor=staggered?st.nextSite:0;
+    if(staggered){
+        while(!(activeMask&(1U<<cursor)))cursor=(cursor+1)%9;
+        st.nextSite=(cursor+1)%9;
+    }
     auto attempt=[&](unsigned active,Pins pins,unsigned us,int site)->Outcome{
+        Outcome event=hw.service();
+        if(event!=Done)return event;
         uint64_t now=hw.now();
         if(now+us+20>deadline){
             if(available||site>=0||now+MinSlot+20>deadline)return Timing;
             us=unsigned(deadline-now-20);
         }
         for(int i=0;i<9;i++){advance(st.cell[i],st.cal.ambient,now,0,st.tuning,st.wires);if((active>>i&1)&&!headroom(st,i,us))return Temperature;}
+        if(staggered){
+            float c=Free*C20*massScale(st.wires);
+            for(int i=0;i<9;i++)if((active>>i&1)&&st.cell[i].upper+MarginK+bound*(us+5)/c>=st.ceiling)return Temperature;
+        }
         const float rail=hw.voltage();if(!(rail>=5.7f&&rail<=6.3f))return Sensor;
         Power p=predict(st,pins,rail);
         float priorScale=currentScale[active]>0?currentScale[active]:1.f;
@@ -296,7 +328,8 @@ template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float 
         }
     }
     for(unsigned f=0;!available&&f<frames&&out.status==Done;f++){
-        hw.waitUntil(start+uint64_t(f)*span/frames);
+        out.status=waitRunning(hw,start+uint64_t(f)*span/frames);
+        if(out.status!=Done)break;
         uint64_t frameStart=hw.now();
         for(auto& pixel:st.cell)advance(pixel,st.cal.ambient,frameStart,0,st.tuning,st.wires);
         float aim[9]{};unsigned probeMask=0;
@@ -308,7 +341,7 @@ template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float 
         }
         unsigned dwell[9]={};
         for(int i=0;i<9;i++)dwell[i]=ProbeUs;
-        if(__builtin_popcount(probeMask)>1){
+        if(!staggered&&__builtin_popcount(probeMask)>1){
             // Shared taps make some selected branches cooler at the same group duty.
             // Deposit part of their extra demand during their already required probe,
             // eliminating otherwise separate trailing enable/latch transitions.
@@ -325,16 +358,28 @@ template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float 
                 dwell[i]=unsigned(std::max(float(ProbeUs),std::min(std::round(want),std::floor(permitted))));
             }
         }
-        for(int i=0;i<9&&out.status==Done;i++)if(probeMask>>i&1)
-            out.status=attempt(1U<<i,isolated(i),dwell[i],i);
+        for(unsigned step=0;step<9&&out.status==Done;step++){
+            unsigned i=(cursor+step)%9;
+            if(probeMask>>i&1)out.status=attempt(1U<<i,isolated(i),dwell[i],i);
+        }
+        unsigned unvisited=activeMask;
         for(int iter=0;iter<100&&out.status==Done;iter++){
             unsigned active=0;
             for(int i=0;i<9;i++)if((activeMask>>i&1)&&aim[i]-out.dose[i]>=bound*MinSlot*.5f)active|=1U<<i;
             if(!active)break;
+            if(staggered){
+                // Give each site with a remaining budget one visit per pass. Keep
+                // the original synchronized wall window and its per-site targets.
+                unvisited&=active;
+                if(!unvisited)unvisited=active;
+                active=admissibleGroup(st,unvisited,cursor,hw.voltage());
+                if(!active){out.status=Current;break;}
+                unvisited&=~active;
+            }
             auto pins=group(active);auto p=predict(st,pins,hw.voltage());
             float scale=currentScale[active]>0?currentScale[active]:1.f;
             for(float& w:p.site)w*=scale*scale;
-            float duration=MaxSlot,weakestNeed=0,maxWithinTolerance=MaxSlot;
+            float duration=staggered?128:MaxSlot,weakestNeed=0,maxWithinTolerance=duration;
             for(int i=0;i<9;i++)if(active>>i&1){
                 float available=C20*massScale(st.wires)*(st.ceiling-MarginK-st.cell[i].upper)/bound-6.f;
                 float w=std::max(.01f,p.site[i]),need=aim[i]-out.dose[i];
@@ -346,7 +391,7 @@ template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float 
             // neediest branch while all other branches remain within one half-slot
             // energy allowance. No thermal, current or wall-time limit changes.
             uint64_t current=hw.now();
-            if(__builtin_popcount(active)>1 && (current>=deadline||deadline-current<unsigned(std::max(0.f,duration)+85)))
+            if(!staggered&&__builtin_popcount(active)>1 && (current>=deadline||deadline-current<unsigned(std::max(0.f,duration)+85)))
                 duration=std::min(weakestNeed,maxWithinTolerance);
             if(duration<0){out.status=Temperature;break;}
             unsigned us=std::clamp(unsigned(std::lround(duration)),unsigned(MinSlot),unsigned(MaxSlot));
@@ -354,9 +399,9 @@ template<class Hardware> Receipt run(State& st,Hardware& hw,unsigned mask,float 
             if(iter==99&&out.status==Done)out.status=Timing;
         }
     }
-    if(out.status==Done)hw.waitUntil(deadline);
+    if(out.status==Done)out.status=waitRunning(hw,deadline);
     out.elapsedUs=unsigned(hw.now()-start);
-    if(out.status!=Done&&out.status!=Duration&&!(out.status==Current&&!started)&&out.status!=Temperature&&out.status!=Timing&&out.status!=ProbeDue&&out.status!=Stale){
+    if(out.status!=Done&&out.status!=Duration&&out.status!=Unarmed&&!(out.status==Current&&!started)&&out.status!=Temperature&&out.status!=Timing&&out.status!=ProbeDue&&out.status!=Stale){
         st.armed=false;st.fault=true;st.cold=false;
     }
     return out;

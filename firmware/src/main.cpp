@@ -27,6 +27,8 @@ void newEpoch(){
     if(udpReady){udp.stop();udpReady=udp.begin(5054)!=0;}
 }
 void disarm(){latch({0,0});control.armed=false;newEpoch();}
+bool resetAfterReply=false;
+void usb(bool busy=false);
 bool armHardware();
 struct Hardware {
     float blankA=0,rail=0;uint64_t lastHeat=0;
@@ -37,6 +39,11 @@ struct Hardware {
         latch({0,0});
         if(nv.isKey("cal")&&(!nv.remove("cal")||nv.isKey("cal")))return false;
         return nv.putUInt("wires",n)==4&&nv.getUInt("wires",0)==unsigned(n);
+    }
+    Outcome service(){
+        if(Serial.available())usb(true);
+        if(!control.armed)return Unarmed;
+        return healthy()?Done:Fault;
     }
     float voltage(){return rail;}
     void note(const State&,unsigned,unsigned,int,const Reading&,const Power&){}
@@ -118,17 +125,23 @@ bool calibrate(float ambient,float r20){
     disarm();return enroll(control,hw,storage,ESP.getEfuseMac(),headID,ambient,r20);
 }
 void info(){
-    Serial.printf("TPP-R2K %s array_label=%lu port=5054 AP=%s key=%s station=%s rail=%.3f Ablank=%.4f cal=%d cold=%d armed=%d fault=%d Tmax=%.1f wires=%d mode=%d\n",
+    Serial.printf("TPP-R2L %s array_label=%lu port=5054 AP=%s key=%s station=%s rail=%.3f Ablank=%.4f cal=%d cold=%d armed=%d fault=%d Tmax=%.1f wires=%d mode=%d\n",
         server.addr,(unsigned long)headID,ap,pass,WiFi.localIP().toString().c_str(),hw.rail,hw.blankA,control.calibrated,control.cold,control.armed,control.fault,control.ceiling,control.wires,int(control.mode));
     if(control.calibrated){Serial.printf("A=%.2f R20=%.5f G=%.5f beta=%.3f gamma=%.3f Rseries ohm row-major",control.cal.ambient,control.cal.r20,control.tuning.g_W_K,control.tuning.beta,control.tuning.gamma);for(float r:control.cal.series)Serial.printf(" %.5f",r);Serial.println();}
 }
-void usb(){
+void usb(bool busy){
     static char line[110];static unsigned n=0;static bool overflow=false;
-    while(Serial.available()){
+    unsigned readCount=0;
+    while(Serial.available()&&(!busy||readCount<128)){
+        readCount++;
         int c=Serial.read();if(c=='\r')continue;
         if(c!='\n'){if(n+1<sizeof(line))line[n++]=c;else overflow=true;continue;}
         if(overflow){overflow=false;n=0;continue;}line[n]=0;n=0;
         float value,value2,value3;int id;char end;
+        if(busy){
+            if(!strcmp(line,"OFF")){latch({0,0});control.armed=false;resetAfterReply=true;}
+            continue;
+        }
         if(!strcmp(line,"ID")){hw.readIdle();info();}
         else if(!strcmp(line,"OFF")){disarm();info();}
         else if(sscanf(line,"UNIT %d %c",&id,&end)==1&&id>=1&&id<=999){
@@ -171,7 +184,7 @@ void setup(){
     Serial.begin(115200);nv.begin("tpp-r2i",false) /* retain setup keys; validate the separate calibration record version */;unitID=std::clamp(int(nv.getUInt("unit",1)),1,999);
     control.wires=int(nv.getUInt("wires",2));
     headID=nv.getUInt("array",1);restoreCalibration(control,storage,ESP.getEfuseMac(),headID);newEpoch();
-    snprintf(ap,sizeof(ap),"TPP-R2K-%06x",unsigned(ESP.getEfuseMac()&0xffffff));
+    snprintf(ap,sizeof(ap),"TPP-R2L-%06x",unsigned(ESP.getEfuseMac()&0xffffff));
     snprintf(pass,sizeof(pass),"%08x%08x",unsigned(esp_random()),unsigned(esp_random()));
     WiFi.persistent(false);WiFi.mode(WIFI_AP_STA);WiFi.softAP(ap,pass);udpReady=udp.begin(5054)!=0;
 }
@@ -183,4 +196,5 @@ void loop(){
     hw.readIdle();
     unsigned len=server.handle(data,n,reply,control,hw);
     udp.beginPacket(udp.remoteIP(),udp.remotePort());udp.write(reply,len);udp.endPacket();
+    if(resetAfterReply){resetAfterReply=false;newEpoch();info();}
 }

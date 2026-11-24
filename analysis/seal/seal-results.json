@@ -2,46 +2,47 @@
   "geometry": {
     "cells": 9,
     "edgecut_windows": 9,
-    "gasket_land_area_mm2": 63.38579619086531,
-    "floor_gasket_area_mm2": 180.4867159238715,
+    "gasket_land_area_mm2": 77.77645185120325,
+    "floor_gasket_area_mm2": 199.63800031169075,
     "lower_routed_gasket_aperture_min_margin_mm": 0.2749999999999999,
     "gasket_enclosed_interstitial_pockets": [
       {
         "centroid_mm": [
-          2.0999983229620676,
+          2.099998322962068,
           -2.100005278706754
         ],
-        "area_mm2": 2.2251155110297325
+        "area_mm2": 2.2251155110297303
       },
       {
         "centroid_mm": [
           2.100001509294264,
-          2.0999964244232863
+          2.099996424423287
         ],
-        "area_mm2": 2.225115511029732
+        "area_mm2": 2.225115511029734
       },
       {
         "centroid_mm": [
-          -2.099998322962069,
-          -2.100005278706754
+          -2.100036706538261,
+          -2.100013454311977
         ],
-        "area_mm2": 2.2251155110297334
+        "area_mm2": 2.2252067259267028
       },
       {
         "centroid_mm": [
-          -2.09999832296207,
-          2.0999947212932457
+          -2.0999983229620676,
+          2.0999947212932453
         ],
-        "area_mm2": 2.225115511029732
+        "area_mm2": 2.225115511029731
       }
     ],
+    "spacer_pocket_count": 2,
     "gasket_screw_count": 4,
-    "gasket_outer_land_min_mm": 0.32499999999999835,
+    "gasket_outer_land_min_mm": 0.3248097815665486,
     "gasket_adjacent_horizontal_mm": 0.75,
     "gasket_adjacent_vertical_mm": 1.2,
     "cap_horizontal_web_mm": 0.75,
     "cap_vertical_web_mm": 1.2000000000000002,
-    "floor_outer_land_min_mm": 1.535,
+    "floor_outer_land_min_mm": 1.9499999999999995,
     "wire_crossed_land_intervals_mm": [
       0.75,
       1.224,
@@ -64,7 +65,7 @@
         "floor_mm": 1.1499999999999984,
         "front_mask_opening_mm": 0.17499999999999719,
         "back_mask_opening_mm": 0.9100000000000001,
-        "lower_gasket_coverage_mm": 0.20000000000000018
+        "lower_gasket_coverage_mm": 0.49999999999999994
       },
       {
         "x": -6.950000000000002,
@@ -73,7 +74,7 @@
         "floor_mm": 1.1499999999999986,
         "front_mask_opening_mm": 0.17499999999999719,
         "back_mask_opening_mm": 1.0220786732534874,
-        "lower_gasket_coverage_mm": 0.20000000000000018
+        "lower_gasket_coverage_mm": 0.49999999999999994
       },
       {
         "x": -6.95000000000001,
@@ -82,7 +83,7 @@
         "floor_mm": 1.1499999999999984,
         "front_mask_opening_mm": 0.17499999999999719,
         "back_mask_opening_mm": 0.9100000000000001,
-        "lower_gasket_coverage_mm": 0.20000000000000018
+        "lower_gasket_coverage_mm": 0.49999999999999994
       },
       {
         "x": -2.100000000000002,
@@ -189,13 +190,13 @@
     ],
     "fastener_rim_to_contact_cell_mm": 0.4579058241200636,
     "cut_area_by_layer_mm2": {
-      "L03": 5.659431224361286,
-      "L06": 10.209431224361289,
+      "L02": 5.6594312243612865,
+      "L05": 10.209431224361289,
       "L07": 0.1418553410730451,
       "L08": 0.2827289842839928,
       "L09": 10.130361288064512
     },
-    "floor_opening_mm2": 5.659431224361286,
+    "floor_opening_mm2": 5.6594312243612865,
     "gasket_opening_mm2": 10.209431224361289,
     "cap_area_mm2": 10.130361288064512,
     "diaphragm_pressure_area_mm2": 10.130361288064512,
@@ -236,15 +237,15 @@
       "sum_gauge_kPa": 345.5248731552322,
       "face_opening_N": 3.5002917990751654,
       "gasket_opening_N": 3.527612428784502,
-      "floor_opening_N": 1.955474255928194,
-      "face_load_if_lift_reaches_grid_aperture_N": 4.04887385934584,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.513204360175623,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 7.144698275147561,
+      "floor_opening_N": 1.9554742559281943,
+      "face_load_if_lift_reaches_grid_aperture_N": 3.5002917990754634,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.470768579566586,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.845038806188786,
       "equal_share_face_opening_N": 0.8750729497687914,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.6673954021546078,
-        "0.2": 4.044362759312056,
-        "0.5": 8.798297473626954
+        "0.05": 1.847278597908832,
+        "0.2": 4.763895542328954,
+        "0.5": 10.597129431169197
       }
     },
     {
@@ -257,14 +258,14 @@
       "face_opening_N": 0.9707946136727846,
       "gasket_opening_N": 0.9783719019922842,
       "floor_opening_N": 0.5423444626337913,
-      "face_load_if_lift_reaches_grid_aperture_N": 1.1229420744670535,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.159921911852022,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.512323978796966,
+      "face_load_if_lift_reaches_grid_aperture_N": 0.9707946136728672,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.117486131242986,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.21266450983819,
       "equal_share_face_opening_N": 0.24269865341819616,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.0350211058040124,
-        "0.2": 3.4119884629614616,
-        "0.5": 8.16592317727636
+        "0.05": 1.2149043015582368,
+        "0.2": 4.131521245978359,
+        "0.5": 9.964755134818603
       }
     },
     {
@@ -277,15 +278,15 @@
       "sum_gauge_kPa": 286.60928296950584,
       "face_opening_N": 2.9034555849942096,
       "gasket_opening_N": 2.9261177627406734,
-      "floor_opening_N": 1.6220455252294208,
-      "face_load_if_lift_reaches_grid_aperture_N": 3.3584986894409186,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.429847177500928,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.995489221627322,
+      "floor_opening_N": 1.622045525229421,
+      "face_load_if_lift_reaches_grid_aperture_N": 2.9034555849944566,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.387411396891894,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.695829752668546,
       "equal_share_face_opening_N": 0.7258638962485524,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.5181863486343687,
-        "0.2": 3.8951537057918175,
-        "0.5": 8.649088420106716
+        "0.05": 1.6980695443885931,
+        "0.2": 4.614686488808715,
+        "0.5": 10.447920377648959
       }
     },
     {
@@ -297,15 +298,15 @@
       "sum_gauge_kPa": 96.10466182348463,
       "face_opening_N": 0.97357494573916,
       "gasket_opening_N": 0.9811739352273663,
-      "floor_opening_N": 0.543897723930511,
-      "face_load_if_lift_reaches_grid_aperture_N": 1.1261581531456435,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.160310227176202,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.5130190618135595,
+      "floor_opening_N": 0.5438977239305111,
+      "face_load_if_lift_reaches_grid_aperture_N": 0.9735749457392429,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.117874446567166,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.213359592854784,
       "equal_share_face_opening_N": 0.24339373643479,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.0357161888206063,
-        "0.2": 3.412683545978055,
-        "0.5": 8.166618260292953
+        "0.05": 1.2155993845748307,
+        "0.2": 4.132216328994953,
+        "0.5": 9.965450217835196
       }
     },
     {
@@ -317,15 +318,15 @@
       "sum_gauge_kPa": 87.88794680822252,
       "face_opening_N": 0.8903366540334904,
       "gasket_opening_N": 0.8972859483888711,
-      "floor_opening_N": 0.49739579041145837,
-      "face_load_if_lift_reaches_grid_aperture_N": 1.0298743680415738,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.148684743796439,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.492209488887142,
+      "floor_opening_N": 0.4973957904114584,
+      "face_load_if_lift_reaches_grid_aperture_N": 0.8903366540335661,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.106248963187403,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.192550019928367,
       "equal_share_face_opening_N": 0.2225841635083726,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.0149066158941888,
-        "0.2": 3.391873973051638,
-        "0.5": 8.145808687366536
+        "0.05": 1.1947898116484132,
+        "0.2": 4.1114067560685355,
+        "0.5": 9.944640644908779
       }
     },
     {
@@ -337,15 +338,15 @@
       "sum_gauge_kPa": 157.04832823693326,
       "face_opening_N": 1.5909563047266775,
       "gasket_opening_N": 1.603374106035887,
-      "floor_opening_N": 0.8888042125578403,
-      "face_load_if_lift_reaches_grid_aperture_N": 1.8402983989138477,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.246536849333035,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.667364401560439,
+      "floor_opening_N": 0.8888042125578404,
+      "face_load_if_lift_reaches_grid_aperture_N": 1.5909563047268127,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.204101068723999,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.367704932601663,
       "equal_share_face_opening_N": 0.39773907618166937,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.1900615285674858,
-        "0.2": 3.567028885724935,
-        "0.5": 8.320963600039832
+        "0.05": 1.36994472432171,
+        "0.2": 4.2865616687418315,
+        "0.5": 10.119795557582075
       }
     },
     {
@@ -358,15 +359,15 @@
       "sum_gauge_kPa": 483.2872037798395,
       "face_opening_N": 4.895873980188231,
       "gasket_opening_N": 4.934087468604151,
-      "floor_opening_N": 2.735130691405879,
-      "face_load_if_lift_reaches_grid_aperture_N": 5.663178190536316,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.708118469045043,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 7.4935938204258274,
+      "floor_opening_N": 2.7351306914058795,
+      "face_load_if_lift_reaches_grid_aperture_N": 4.8958739801886475,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.665682688436007,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.193934351467052,
       "equal_share_face_opening_N": 1.2239684950470577,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 2.016290947432874,
-        "0.2": 4.393258304590323,
-        "0.5": 9.14719301890522
+        "0.05": 2.1961741431870982,
+        "0.2": 5.112791087607221,
+        "0.5": 10.946024976447465
       }
     },
     {
@@ -378,15 +379,15 @@
       "sum_gauge_kPa": 159.37447449356245,
       "face_opening_N": 1.61452100671521,
       "gasket_opening_N": 1.6271227362607483,
-      "floor_opening_N": 0.9019688773150386,
-      "face_load_if_lift_reaches_grid_aperture_N": 1.86755627093179,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.249828015522334,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.6732555770575726,
+      "floor_opening_N": 0.9019688773150387,
+      "face_load_if_lift_reaches_grid_aperture_N": 1.6145210067153473,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.207392234913298,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.373596108098797,
       "equal_share_face_opening_N": 0.4036302516788025,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.1959527040646187,
-        "0.2": 3.5729200612220677,
-        "0.5": 8.326854775536965
+        "0.05": 1.3758358998188431,
+        "0.2": 4.292452844238965,
+        "0.5": 10.125686733079208
       }
     },
     {
@@ -398,15 +399,15 @@
       "sum_gauge_kPa": 155.86194247911587,
       "face_opening_N": 1.5789377883729732,
       "gasket_opening_N": 1.5912617822358888,
-      "floor_opening_N": 0.882089943955911,
-      "face_load_if_lift_reaches_grid_aperture_N": 1.8263962846085515,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.244858282182552,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.664359772472013,
+      "floor_opening_N": 0.8820899439559112,
+      "face_load_if_lift_reaches_grid_aperture_N": 1.5789377883731073,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.202422501573515,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.364700303513237,
       "equal_share_face_opening_N": 0.3947344470932433,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 1.1870568994790596,
-        "0.2": 3.564024256636509,
-        "0.5": 8.317958970951407
+        "0.05": 1.366940095233284,
+        "0.2": 4.283557039653406,
+        "0.5": 10.11679092849365
       }
     },
     {
@@ -415,15 +416,15 @@
       "sum_gauge_kPa": 540,
       "face_opening_N": 5.470395095554836,
       "gasket_opening_N": 5.513092861155096,
-      "floor_opening_N": 3.0560928611550944,
-      "face_load_if_lift_reaches_grid_aperture_N": 6.3277409353522405,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.788359011482347,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 7.6372240992674785,
+      "floor_opening_N": 3.056092861155095,
+      "face_load_if_lift_reaches_grid_aperture_N": 5.470395095555302,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.745923230873311,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.337564630308703,
       "equal_share_face_opening_N": 1.367598773888709,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 2.159921226274525,
-        "0.2": 4.536888583431974,
-        "0.5": 9.290823297746872
+        "0.05": 2.3398044220287497,
+        "0.2": 5.256421366448872,
+        "0.5": 11.089655255289115
       }
     },
     {
@@ -432,15 +433,15 @@
       "sum_gauge_kPa": 60,
       "face_opening_N": 0.6078216772838707,
       "gasket_opening_N": 0.6125658734616773,
-      "floor_opening_N": 0.33956587346167716,
-      "face_load_if_lift_reaches_grid_aperture_N": 0.703082326150249,
-      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 9.109227264558994,
-      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 6.421580744699737,
+      "floor_opening_N": 0.3395658734616772,
+      "face_load_if_lift_reaches_grid_aperture_N": 0.6078216772839223,
+      "floor_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 10.066791483949958,
+      "face_plane_squeeze_and_pressure_per_screw_N_at_q0p2": 8.121921275740961,
       "equal_share_face_opening_N": 0.15195541932096768,
       "equal_share_clamp_N_by_assumed_gasket_mean_MPa": {
-        "0.05": 0.944277871706784,
-        "0.2": 3.321245228864233,
-        "0.5": 8.075179943179132
+        "0.05": 1.1241610674610083,
+        "0.2": 4.04077801188113,
+        "0.5": 9.874011900721374
       }
     }
   ],
@@ -457,8 +458,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 1.3892938885409615e-13,
         "ambient_Q_uL_s": 0.7117860250568238,
-        "equiv_16flank_h_um": 2.2770771051090706,
-        "slip_h_um": 2.0936220227330584
+        "equiv_16flank_h_um": 2.276487643632105,
+        "slip_h_um": 2.093036584238766
       },
       {
         "case": "isothermal 25 C",
@@ -467,8 +468,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 1.297851582182138e-13,
         "ambient_Q_uL_s": 2.851879149004224,
-        "equiv_16flank_h_um": 2.2259805840134756,
-        "slip_h_um": 2.0428816250292328
+        "equiv_16flank_h_um": 2.225404349770109,
+        "slip_h_um": 2.0423094940973265
       },
       {
         "case": "isothermal 25 C",
@@ -477,8 +478,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 1.1931452107192885e-13,
         "ambient_Q_uL_s": 5.714615058100871,
-        "equiv_16flank_h_um": 2.164432911668262,
-        "slip_h_um": 1.9817837469499535
+        "equiv_16flank_h_um": 2.163872610122898,
+        "slip_h_um": 1.9812276497660548
       },
       {
         "case": "isothermal 25 C",
@@ -487,8 +488,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 1.1040743739224627e-13,
         "ambient_Q_uL_s": 8.585792281590965,
-        "equiv_16flank_h_um": 2.1091743032919643,
-        "slip_h_um": 1.9269497979838124
+        "equiv_16flank_h_um": 2.10862830640973,
+        "slip_h_um": 1.926408100446701
       },
       {
         "case": "adiabatic tangent at 25 C",
@@ -497,8 +498,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 9.923527775292584e-14,
         "ambient_Q_uL_s": 0.5084185893263028,
-        "equiv_16flank_h_um": 2.035487273944457,
-        "slip_h_um": 1.8538623627956285
+        "equiv_16flank_h_um": 2.034960352246394,
+        "slip_h_um": 1.8533398738560944
       },
       {
         "case": "adiabatic tangent at 25 C",
@@ -507,8 +508,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 9.270368444158129e-14,
         "ambient_Q_uL_s": 2.0370565350030176,
-        "equiv_16flank_h_um": 1.989811913105968,
-        "slip_h_um": 1.808579328428173
+        "equiv_16flank_h_um": 1.9892968152787789,
+        "slip_h_um": 1.8080687502098938
       },
       {
         "case": "adiabatic tangent at 25 C",
@@ -517,8 +518,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 8.522465790852062e-14,
         "ambient_Q_uL_s": 4.0818678986434795,
-        "equiv_16flank_h_um": 1.9347942312196162,
-        "slip_h_um": 1.7540569599525775
+        "equiv_16flank_h_um": 1.9342933756874954,
+        "slip_h_um": 1.7535607331730072
       },
       {
         "case": "adiabatic tangent at 25 C",
@@ -527,8 +528,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 7.886245528017593e-14,
         "ambient_Q_uL_s": 6.132708772564975,
-        "equiv_16flank_h_um": 1.8853983658475273,
-        "slip_h_um": 1.7051285171277981
+        "equiv_16flank_h_um": 1.8849102973043463,
+        "slip_h_um": 1.7046451798152227
       },
       {
         "case": "hot adiabatic tangent",
@@ -537,8 +538,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 6.232768956029884e-14,
         "ambient_Q_uL_s": 0.31932752867495817,
-        "equiv_16flank_h_um": 1.7431711824752534,
-        "slip_h_um": 1.5643827660777274
+        "equiv_16flank_h_um": 1.7427199319411713,
+        "slip_h_um": 1.563936568199911
       },
       {
         "case": "hot adiabatic tangent",
@@ -547,8 +548,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 5.822532667623259e-14,
         "ambient_Q_uL_s": 1.279434392742481,
-        "equiv_16flank_h_um": 1.7040552549123549,
-        "slip_h_um": 1.5257139006658202
+        "equiv_16flank_h_um": 1.7036141302244212,
+        "slip_h_um": 1.5252779246195833
       },
       {
         "case": "hot adiabatic tangent",
@@ -557,8 +558,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 5.352789996950782e-14,
         "ambient_Q_uL_s": 2.56373943796715,
-        "equiv_16flank_h_um": 1.6569386559443693,
-        "slip_h_um": 1.4791613450878116
+        "equiv_16flank_h_um": 1.65650972821716,
+        "slip_h_um": 1.478737686427665
       },
       {
         "case": "hot adiabatic tangent",
@@ -567,8 +568,8 @@
         "ms": 55.0,
         "G_m3_Pa_s": 4.9531927979320155e-14,
         "ambient_Q_uL_s": 3.851831497784882,
-        "equiv_16flank_h_um": 1.614636525072682,
-        "slip_h_um": 1.437391112199355
+        "equiv_16flank_h_um": 1.614218547996413,
+        "slip_h_um": 1.4369785170574743
       }
     ],
     "gaps": [
@@ -577,104 +578,104 @@
         "count": 16,
         "width_um": 40,
         "h_um": 1,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 1.1766868909726132e-14,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 1.1776011826141863e-14,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 0.01761580183399225,
-            "equal_neighbor_fraction_percent": 0.017614287603462446,
-            "ambient_loss_percent_slip": 0.028183757523447817,
-            "equal_neighbor_percent_slip": 0.02817988149959036
+            "ambient_loss_percent": 0.017629488165105123,
+            "equal_neighbor_fraction_percent": 0.01762797158074178,
+            "ambient_loss_percent_slip": 0.028205653282020737,
+            "equal_neighbor_percent_slip": 0.028201771233269893
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 0.3517129263268637,
-            "equal_neighbor_fraction_percent": 0.35110924052590325,
-            "ambient_loss_percent_slip": 0.5621324099852054,
-            "equal_neighbor_percent_slip": 0.5605902081316995
+            "ambient_loss_percent": 0.3519857159650419,
+            "equal_neighbor_fraction_percent": 0.3513810933061972,
+            "ambient_loss_percent_slip": 0.5625679293251085,
+            "equal_neighbor_percent_slip": 0.5610233366459448
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 0.9641656682670252,
-            "equal_neighbor_fraction_percent": 0.9596280919693223,
-            "ambient_loss_percent_slip": 1.5380912280718695,
-            "equal_neighbor_percent_slip": 1.5265416645207615
+            "ambient_loss_percent": 0.9649111173231972,
+            "equal_neighbor_fraction_percent": 0.9603665207191845,
+            "ambient_loss_percent_slip": 1.5392768679524438,
+            "equal_neighbor_percent_slip": 1.5277094871013865
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 0.01888807305104878,
-            "equal_neighbor_fraction_percent": 0.01888644944924425,
-            "ambient_loss_percent_slip": 0.030219050612256826,
-            "equal_neighbor_percent_slip": 0.03021489464576811
+            "ambient_loss_percent": 0.018902747667193243,
+            "equal_neighbor_fraction_percent": 0.018901121541538658,
+            "ambient_loss_percent_slip": 0.030242527097057437,
+            "equal_neighbor_percent_slip": 0.030238364670578638
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 0.37702380170955285,
-            "equal_neighbor_fraction_percent": 0.37637660372439,
-            "ambient_loss_percent_slip": 0.6024944802893062,
-            "equal_neighbor_percent_slip": 0.6008412676887595
+            "ambient_loss_percent": 0.3773161482081955,
+            "equal_neighbor_fraction_percent": 0.3766679459135871,
+            "ambient_loss_percent_slip": 0.6029610810460606,
+            "equal_neighbor_percent_slip": 0.6013053058291659
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 1.0330945095156752,
-            "equal_neighbor_fraction_percent": 1.028231139641684,
-            "ambient_loss_percent_slip": 1.6473678864236674,
-            "equal_neighbor_percent_slip": 1.6349921021252471
+            "ambient_loss_percent": 1.033892694864913,
+            "equal_neighbor_fraction_percent": 1.0290218021772568,
+            "ambient_loss_percent_slip": 1.6486363519363612,
+            "equal_neighbor_percent_slip": 1.6362414820172637
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 0.02058438430707632,
-            "equal_neighbor_fraction_percent": 0.020582614875928187,
-            "ambient_loss_percent_slip": 0.03293264582263644,
-            "equal_neighbor_percent_slip": 0.03292811659549131
+            "ambient_loss_percent": 0.020600376558288502,
+            "equal_neighbor_fraction_percent": 0.02059860437662197,
+            "ambient_loss_percent_slip": 0.03295822974206386,
+            "equal_neighbor_percent_slip": 0.03295369347479613
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 0.4107516409421752,
-            "equal_neighbor_fraction_percent": 0.4100464194219193,
-            "ambient_loss_percent_slip": 0.6562596320728087,
-            "equal_neighbor_percent_slip": 0.6544583755776567
+            "ambient_loss_percent": 0.41107003229495787,
+            "equal_neighbor_fraction_percent": 0.41036371651291703,
+            "ambient_loss_percent_slip": 0.6567675960291175,
+            "equal_neighbor_percent_slip": 0.6549635477950511
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 1.1248505158571231,
-            "equal_neighbor_fraction_percent": 1.119552607249968,
-            "ambient_loss_percent_slip": 1.7926933418028423,
-            "equal_neighbor_percent_slip": 1.779215342749907
+            "ambient_loss_percent": 1.125718786988128,
+            "equal_neighbor_fraction_percent": 1.120412685219069,
+            "ambient_loss_percent_slip": 1.7940716660410194,
+            "equal_neighbor_percent_slip": 1.7805728889369092
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 0.022280638003746578,
-            "equal_neighbor_fraction_percent": 0.022278722741326466,
-            "ambient_loss_percent_slip": 0.03564609372049832,
-            "equal_neighbor_percent_slip": 0.035641191224722056
+            "ambient_loss_percent": 0.022297947800575812,
+            "equal_neighbor_fraction_percent": 0.022296029560952498,
+            "ambient_loss_percent_slip": 0.03567378484563566,
+            "equal_neighbor_percent_slip": 0.03566887472957024
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 0.44445665045853566,
-            "equal_neighbor_fraction_percent": 0.44369339002246594,
-            "ambient_loss_percent_slip": 0.7099666510335223,
-            "equal_neighbor_percent_slip": 0.7080172882597497
+            "ambient_loss_percent": 0.44480105133223313,
+            "equal_neighbor_fraction_percent": 0.44403660664635936,
+            "ambient_loss_percent_slip": 0.7105158884592955,
+            "equal_neighbor_percent_slip": 0.7085635046797474
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 1.2164365387852594,
-            "equal_neighbor_fraction_percent": 1.2107037806123992,
-            "ambient_loss_percent_slip": 1.9375899661990825,
-            "equal_neighbor_percent_slip": 1.9230085132879402
+            "ambient_loss_percent": 1.2173746346714198,
+            "equal_neighbor_fraction_percent": 1.211633012274243,
+            "ambient_loss_percent_slip": 1.9390774955165169,
+            "equal_neighbor_percent_slip": 1.9244735693030004
           }
         ]
       },
@@ -683,104 +684,104 @@
         "count": 16,
         "width_um": 40,
         "h_um": 2,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 9.413495127780905e-14,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 9.42080946091349e-14,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 0.14083746817572518,
-            "equal_neighbor_fraction_percent": 0.1407406758396848,
-            "ambient_loss_percent_slip": 0.18304908733491887,
-            "equal_neighbor_percent_slip": 0.1828855768355984
+            "ambient_loss_percent": 0.14094682058637398,
+            "equal_neighbor_fraction_percent": 0.14084987788088668,
+            "ambient_loss_percent_slip": 0.18319118390864864,
+            "equal_neighbor_percent_slip": 0.1830274194447501
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 2.7785044054143726,
-            "equal_neighbor_fraction_percent": 2.740799510230422,
-            "ambient_loss_percent_slip": 3.5965509891043412,
-            "equal_neighbor_percent_slip": 3.5333589196747948
+            "ambient_loss_percent": 2.7806323101797426,
+            "equal_neighbor_fraction_percent": 2.7428696147004263,
+            "ambient_loss_percent_slip": 3.5992934392726994,
+            "equal_neighbor_percent_slip": 3.5360049064646333
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 7.4523049745988335,
-            "equal_neighbor_fraction_percent": 7.18065592086292,
-            "ambient_loss_percent_slip": 9.575352948213222,
-            "equal_neighbor_percent_slip": 9.126576780465742
+            "ambient_loss_percent": 7.457869015937913,
+            "equal_neighbor_fraction_percent": 7.185813690621688,
+            "ambient_loss_percent_slip": 9.582416586602294,
+            "equal_neighbor_percent_slip": 9.132977052867858
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 0.1509957737055201,
-            "equal_neighbor_fraction_percent": 0.1508919955613418,
-            "ambient_loss_percent_slip": 0.196246043324122,
-            "equal_neighbor_percent_slip": 0.19607073488420562
+            "ambient_loss_percent": 0.1511130015361739,
+            "equal_neighbor_fraction_percent": 0.15100906217471202,
+            "ambient_loss_percent_slip": 0.1963983642183087,
+            "equal_neighbor_percent_slip": 0.1962227834998083
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 2.9732474293445055,
-            "equal_neighbor_fraction_percent": 2.9328667314203436,
-            "ambient_loss_percent_slip": 3.846361821632438,
-            "equal_neighbor_percent_slip": 3.778709126719132
+            "ambient_loss_percent": 2.975519912546376,
+            "equal_neighbor_fraction_percent": 2.9350773494985045,
+            "ambient_loss_percent_slip": 3.8492871522039396,
+            "equal_neighbor_percent_slip": 3.7815312652799222
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 7.947850861150673,
-            "equal_neighbor_fraction_percent": 7.657519343601514,
-            "ambient_loss_percent_slip": 10.196518394170994,
-            "equal_neighbor_percent_slip": 9.717335818813776
+            "ambient_loss_percent": 7.953753089763005,
+            "equal_neighbor_fraction_percent": 7.662988081551355,
+            "ambient_loss_percent_slip": 10.203988551099286,
+            "equal_neighbor_percent_slip": 9.724099201162613
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 0.1645369665948082,
-            "equal_neighbor_fraction_percent": 0.164423873568605,
-            "ambient_loss_percent_slip": 0.21383655736328944,
-            "equal_neighbor_percent_slip": 0.2136455173028789
+            "ambient_loss_percent": 0.16466468999616346,
+            "equal_neighbor_fraction_percent": 0.16455142128780467,
+            "ambient_loss_percent_slip": 0.21400250226496498,
+            "equal_neighbor_percent_slip": 0.213811165504875
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 3.2316944231002176,
-            "equal_neighbor_fraction_percent": 3.187742665209999,
-            "ambient_loss_percent_slip": 4.177435930850059,
-            "equal_neighbor_percent_slip": 4.103828724306902
+            "ambient_loss_percent": 3.23415785564527,
+            "equal_neighbor_fraction_percent": 3.1901388054559296,
+            "ambient_loss_percent_slip": 4.180602110414844,
+            "equal_neighbor_percent_slip": 4.106882724957845
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 8.600382216113644,
-            "equal_neighbor_fraction_percent": 8.285086464402498,
-            "ambient_loss_percent_slip": 11.011584209109182,
-            "equal_neighbor_percent_slip": 10.491753863624146
+            "ambient_loss_percent": 8.606723719540032,
+            "equal_neighbor_fraction_percent": 8.29095807492596,
+            "ambient_loss_percent_slip": 11.019578225528848,
+            "equal_neighbor_percent_slip": 10.49898302343743
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 0.1780744871581863,
-            "equal_neighbor_fraction_percent": 0.17795207825592857,
-            "ambient_loss_percent_slip": 0.23142087180285653,
-            "equal_neighbor_percent_slip": 0.23121409794226241
+            "ambient_loss_percent": 0.17821270043139048,
+            "equal_neighbor_fraction_percent": 0.17809010137977974,
+            "ambient_loss_percent_slip": 0.2316004310964015,
+            "equal_neighbor_percent_slip": 0.23139333610994664
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 3.4887682408973775,
-            "equal_neighbor_fraction_percent": 3.4412384057073524,
-            "ambient_loss_percent_slip": 4.5062379689136955,
-            "equal_neighbor_percent_slip": 4.426661437414845
+            "ambient_loss_percent": 3.4914205635139695,
+            "equal_neighbor_fraction_percent": 3.4438179932048585,
+            "ambient_loss_percent_slip": 4.509641627198368,
+            "equal_neighbor_percent_slip": 4.429943897328281
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 9.243727472447228,
-            "equal_neighbor_fraction_percent": 8.903352276328679,
-            "ambient_loss_percent_slip": 11.811987853849592,
-            "equal_neighbor_percent_slip": 11.251284032463094
+            "ambient_loss_percent": 9.2504953365386,
+            "equal_neighbor_fraction_percent": 8.909613610460731,
+            "ambient_loss_percent_slip": 11.820485750900433,
+            "equal_neighbor_percent_slip": 11.258958552511748
           }
         ]
       },
@@ -789,104 +790,104 @@
         "count": 16,
         "width_um": 40,
         "h_um": 3,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 3.177054605626056e-13,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 3.1795231930583033e-13,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 0.47451297251351887,
-            "equal_neighbor_fraction_percent": 0.47341409876784674,
-            "ambient_loss_percent_slip": 0.5691385519207892,
-            "equal_neighbor_percent_slip": 0.5675576644170676
+            "ambient_loss_percent": 0.47488077364091774,
+            "equal_neighbor_fraction_percent": 0.4737801956011771,
+            "ambient_loss_percent_slip": 0.569579483426963,
+            "equal_neighbor_percent_slip": 0.5679961452102728
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 9.065289011459942,
-            "equal_neighbor_fraction_percent": 8.66311572932952,
-            "ambient_loss_percent_slip": 10.77507162485809,
-            "equal_neighbor_percent_slip": 10.206578147595783
+            "ambient_loss_percent": 9.071995936967669,
+            "equal_neighbor_fraction_percent": 8.669226483581074,
+            "ambient_loss_percent_slip": 10.782965291140245,
+            "equal_neighbor_percent_slip": 10.21363714774674
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 22.961350993707708,
-            "equal_neighbor_fraction_percent": 20.370025712206107,
-            "ambient_loss_percent_slip": 26.865684973627367,
-            "equal_neighbor_percent_slip": 23.313997113510574
+            "ambient_loss_percent": 22.976923123245818,
+            "equal_neighbor_fraction_percent": 20.382069549247547,
+            "ambient_loss_percent_slip": 26.883407359810064,
+            "equal_neighbor_percent_slip": 23.327013208685248
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 0.5086159961324777,
-            "equal_neighbor_fraction_percent": 0.5074379795350987,
-            "ambient_loss_percent_slip": 0.6100005892480609,
-            "equal_neighbor_percent_slip": 0.6083059113608833
+            "ambient_loss_percent": 0.5090100957618082,
+            "equal_neighbor_fraction_percent": 0.5078302523079138,
+            "ambient_loss_percent_slip": 0.6104729836359901,
+            "equal_neighbor_percent_slip": 0.6087756789537521
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 9.656899641085449,
-            "equal_neighbor_fraction_percent": 9.227378345172161,
-            "ambient_loss_percent_slip": 11.464197280289712,
-            "equal_neighbor_percent_slip": 10.857517705686742
+            "ambient_loss_percent": 9.66399775157849,
+            "equal_neighbor_fraction_percent": 9.23384104763598,
+            "ambient_loss_percent_slip": 11.472530877602537,
+            "equal_neighbor_percent_slip": 10.864962766514202
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 24.218309809522765,
-            "equal_neighbor_fraction_percent": 21.469049205441415,
-            "ambient_loss_percent_slip": 28.257978649269077,
-            "equal_neighbor_percent_slip": 24.497339300516703
+            "ambient_loss_percent": 24.234466232871867,
+            "equal_neighbor_fraction_percent": 21.481483874407324,
+            "ambient_loss_percent_slip": 28.27626438030011,
+            "equal_neighbor_percent_slip": 24.510676535154868
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 0.5540503556560994,
-            "equal_neighbor_fraction_percent": 0.5527667974242619,
-            "ambient_loss_percent_slip": 0.6644310905443263,
-            "equal_neighbor_percent_slip": 0.6625846614681445
+            "ambient_loss_percent": 0.5544794637665107,
+            "equal_neighbor_fraction_percent": 0.5531939152202203,
+            "ambient_loss_percent_slip": 0.664945354791513,
+            "equal_neighbor_percent_slip": 0.6630960640732332
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 10.433842283177498,
-            "equal_neighbor_fraction_percent": 9.967765236948749,
-            "ambient_loss_percent_slip": 12.366641573428339,
-            "equal_neighbor_percent_slip": 11.708903672389775
+            "ambient_loss_percent": 10.441445467399447,
+            "equal_neighbor_fraction_percent": 9.974680518452132,
+            "ambient_loss_percent_slip": 12.375539482071618,
+            "equal_neighbor_percent_slip": 11.716840950058543
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 25.831809223171987,
-            "equal_neighbor_fraction_percent": 22.871265310352555,
-            "ambient_loss_percent_slip": 30.03394915977151,
-            "equal_neighbor_percent_slip": 25.99390916198906
+            "ambient_loss_percent": 25.848674887321366,
+            "equal_neighbor_fraction_percent": 22.884150672094037,
+            "ambient_loss_percent_slip": 30.052902705679642,
+            "equal_neighbor_percent_slip": 26.00759114785303
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 0.5994432374419878,
-            "equal_neighbor_fraction_percent": 0.5980540999493514,
-            "ambient_loss_percent_slip": 0.7188020072168122,
-            "equal_neighbor_percent_slip": 0.7168037622200321
+            "ambient_loss_percent": 0.5999072899393498,
+            "equal_neighbor_fraction_percent": 0.598515998587251,
+            "ambient_loss_percent_slip": 0.7193580493604967,
+            "equal_neighbor_percent_slip": 0.7173567077248705
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 11.197535592867592,
-            "equal_neighbor_fraction_percent": 10.694707500264718,
-            "ambient_loss_percent_slip": 13.250874290883862,
-            "equal_neighbor_percent_slip": 12.541771190036648
+            "ambient_loss_percent": 11.205625659027806,
+            "equal_neighbor_fraction_percent": 10.70205678509051,
+            "ambient_loss_percent_slip": 13.260312143706166,
+            "equal_neighbor_percent_slip": 12.550175738964741
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 27.378033645412525,
-            "equal_neighbor_fraction_percent": 24.204566431706713,
-            "ambient_loss_percent_slip": 31.724115605872218,
-            "equal_neighbor_percent_slip": 27.402655977205193
+            "ambient_loss_percent": 27.395535951857664,
+            "equal_neighbor_fraction_percent": 24.21782811084398,
+            "ambient_loss_percent_slip": 31.743651842479935,
+            "equal_neighbor_percent_slip": 27.41659627323978
           }
         ]
       },
@@ -895,104 +896,104 @@
         "count": 16,
         "width_um": 40,
         "h_um": 5,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 1.4708586137157663e-12,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 1.4720014782677326e-12,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 2.1775361596751197,
-            "equal_neighbor_fraction_percent": 2.1543823750565445,
-            "ambient_loss_percent_slip": 2.4355581856804087,
-            "equal_neighbor_percent_slip": 2.40658978795867
+            "ambient_loss_percent": 2.1792091077552977,
+            "equal_neighbor_fraction_percent": 2.1560197199482154,
+            "ambient_loss_percent_slip": 2.43742682722331,
+            "equal_neighbor_percent_slip": 2.4084139438889807
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 35.49406130705145,
-            "equal_neighbor_fraction_percent": 29.278880263919156,
-            "ambient_loss_percent_slip": 38.785875332990535,
-            "equal_neighbor_percent_slip": 31.357403225966728
+            "ambient_loss_percent": 35.51594409283756,
+            "equal_neighbor_fraction_percent": 29.293057776306153,
+            "ambient_loss_percent_slip": 38.80911427676806,
+            "equal_neighbor_percent_slip": 31.371688659051895
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 69.85024988984958,
-            "equal_neighbor_fraction_percent": 45.5645381497775,
-            "ambient_loss_percent_slip": 73.86306036380769,
-            "equal_neighbor_percent_slip": 46.683384626745124
+            "ambient_loss_percent": 69.87813374607434,
+            "equal_neighbor_fraction_percent": 45.57287876949283,
+            "ambient_loss_percent_slip": 73.89010561442323,
+            "equal_neighbor_percent_slip": 46.6903689378251
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 2.3311678093993815,
-            "equal_neighbor_fraction_percent": 2.306364462302125,
-            "ambient_loss_percent_slip": 2.6069089250468913,
-            "equal_neighbor_percent_slip": 2.575880148131047
+            "ambient_loss_percent": 2.3329559740222883,
+            "equal_neighbor_fraction_percent": 2.3081145050607543,
+            "ambient_loss_percent_slip": 2.6089055171523823,
+            "equal_neighbor_percent_slip": 2.5778291155422686
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 37.10663601245522,
-            "equal_neighbor_fraction_percent": 30.55631888147638,
-            "ambient_loss_percent_slip": 40.45421301931677,
-            "equal_neighbor_percent_slip": 32.63976866156175
+            "ambient_loss_percent": 37.12894074036185,
+            "equal_neighbor_fraction_percent": 30.570583012984585,
+            "ambient_loss_percent_slip": 40.47779057879076,
+            "equal_neighbor_percent_slip": 32.65403200220479
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 71.29846289652009,
-            "equal_neighbor_fraction_percent": 46.27656874733754,
-            "ambient_loss_percent_slip": 75.18699338025036,
-            "equal_neighbor_percent_slip": 47.27365921854722
+            "ambient_loss_percent": 71.32555720987119,
+            "equal_neighbor_fraction_percent": 46.28407570663185,
+            "ambient_loss_percent_slip": 75.2131284120295,
+            "equal_neighbor_percent_slip": 47.27981476075665
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 2.5352609262018433,
-            "equal_neighbor_fraction_percent": 2.508256530838841,
-            "ambient_loss_percent_slip": 2.8344425060378375,
-            "equal_neighbor_percent_slip": 2.800664293095816
+            "ambient_loss_percent": 2.5372015772787138,
+            "equal_neighbor_fraction_percent": 2.5101556981432913,
+            "ambient_loss_percent_slip": 2.8366082871545184,
+            "equal_neighbor_percent_slip": 2.802778259001522
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 39.135364401569696,
-            "equal_neighbor_fraction_percent": 32.137913722702486,
-            "ambient_loss_percent_slip": 42.54216409354854,
-            "equal_neighbor_percent_slip": 34.21343492523232
+            "ambient_loss_percent": 39.158129341495794,
+            "equal_neighbor_fraction_percent": 32.15219418641967,
+            "ambient_loss_percent_slip": 42.56608865691016,
+            "equal_neighbor_percent_slip": 34.227569897349355
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 73.02602030961373,
-            "equal_neighbor_fraction_percent": 47.05139909154929,
-            "ambient_loss_percent_slip": 76.75679924699376,
-            "equal_neighbor_percent_slip": 47.90060811626115
+            "ambient_loss_percent": 73.05210018743,
+            "equal_neighbor_fraction_percent": 47.05787730062773,
+            "ambient_loss_percent_slip": 76.78179142824735,
+            "equal_neighbor_percent_slip": 47.905773388441915
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 2.7385028576495274,
-            "equal_neighbor_fraction_percent": 2.7092939694678453,
-            "ambient_loss_percent_slip": 3.0609154191492016,
-            "equal_neighbor_percent_slip": 3.0243829905206954
+            "ambient_loss_percent": 2.7405947085465177,
+            "equal_neighbor_fraction_percent": 2.711340966925948,
+            "ambient_loss_percent_slip": 3.063248791426576,
+            "equal_neighbor_percent_slip": 3.0266603463518016
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 41.03730270348485,
-            "equal_neighbor_fraction_percent": 33.59085791251414,
-            "ambient_loss_percent_slip": 44.48864915173238,
-            "equal_neighbor_percent_slip": 35.64445185081881
+            "ambient_loss_percent": 41.060427629735855,
+            "equal_neighbor_fraction_percent": 33.60505760043374,
+            "ambient_loss_percent_slip": 44.512820335398,
+            "equal_neighbor_percent_slip": 35.658364446733636
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 74.5574197585649,
-            "equal_neighbor_fraction_percent": 47.66499050812354,
-            "ambient_loss_percent_slip": 78.13979482120119,
-            "equal_neighbor_percent_slip": 48.38338394396903
+            "ambient_loss_percent": 74.58253434956177,
+            "equal_neighbor_fraction_percent": 47.670542967301515,
+            "ambient_loss_percent_slip": 78.16372298973245,
+            "equal_neighbor_percent_slip": 48.3876888098334
           }
         ]
       },
@@ -1001,104 +1002,104 @@
         "count": 16,
         "width_um": 40,
         "h_um": 10,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 1.176686890972613e-11,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 1.1776011826141861e-11,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 16.123246999896836,
-            "equal_neighbor_fraction_percent": 14.848222493397166,
-            "ambient_loss_percent_slip": 17.001692309485904,
-            "equal_neighbor_percent_slip": 15.58356138337814
+            "ambient_loss_percent": 16.134683350958966,
+            "equal_neighbor_fraction_percent": 14.857844890255098,
+            "ambient_loss_percent_slip": 17.013685284858383,
+            "equal_neighbor_percent_slip": 15.59354767398764
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 96.86404556956246,
-            "equal_neighbor_fraction_percent": 49.95649734812122,
-            "ambient_loss_percent_slip": 97.44903644863906,
-            "equal_neighbor_percent_slip": 49.971497137642146
+            "ambient_loss_percent": 96.87241960487644,
+            "equal_neighbor_fraction_percent": 49.95673489684316,
+            "ambient_loss_percent_slip": 97.45625546210613,
+            "equal_neighbor_percent_slip": 49.971662090572266
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 99.99236835411529,
-            "equal_neighbor_fraction_percent": 49.999999808256455,
-            "ambient_loss_percent_slip": 99.99567276959851,
-            "equal_neighbor_percent_slip": 49.999999940055986
+            "ambient_loss_percent": 99.99242422265073,
+            "equal_neighbor_fraction_percent": 49.99999981112204,
+            "ambient_loss_percent_slip": 99.99570634096354,
+            "equal_neighbor_percent_slip": 49.99999994100517
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 17.08890750316514,
-            "equal_neighbor_fraction_percent": 15.731633852101403,
-            "ambient_loss_percent_slip": 18.008668987967813,
-            "equal_neighbor_percent_slip": 16.499691823541763
+            "ambient_loss_percent": 17.100889156546618,
+            "equal_neighbor_fraction_percent": 15.7416919496246,
+            "ambient_loss_percent_slip": 18.021218053512555,
+            "equal_neighbor_percent_slip": 16.510114356729176
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 97.06912372942188,
-            "equal_neighbor_fraction_percent": 49.97385203536056,
-            "ambient_loss_percent_slip": 97.6167999105112,
-            "equal_neighbor_percent_slip": 49.98338325473919
+            "ambient_loss_percent": 97.07696666377316,
+            "equal_neighbor_fraction_percent": 49.97400510174051,
+            "ambient_loss_percent_slip": 97.62355574508142,
+            "equal_neighbor_percent_slip": 49.983486344927655
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 99.99288246388619,
-            "equal_neighbor_fraction_percent": 49.99999995271138,
-            "ambient_loss_percent_slip": 99.99596428469621,
-            "equal_neighbor_percent_slip": 49.99999998640735
+            "ambient_loss_percent": 99.9929345690748,
+            "equal_neighbor_fraction_percent": 49.99999995346874,
+            "ambient_loss_percent_slip": 99.99599559452975,
+            "equal_neighbor_percent_slip": 49.999999986638
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 18.34238995985108,
-            "equal_neighbor_fraction_percent": 16.8750771302653,
-            "ambient_loss_percent_slip": 19.313900744909407,
-            "equal_neighbor_percent_slip": 17.68337728890918
+            "ambient_loss_percent": 18.355055910702035,
+            "equal_neighbor_fraction_percent": 16.885672818955182,
+            "ambient_loss_percent_slip": 19.327144944997478,
+            "equal_neighbor_percent_slip": 17.69433454922443
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 97.30418371134442,
-            "equal_neighbor_fraction_percent": 49.986736216276896,
-            "ambient_loss_percent_slip": 97.80892704315661,
-            "equal_neighbor_percent_slip": 49.99190737758882
+            "ambient_loss_percent": 97.31141505462423,
+            "equal_neighbor_fraction_percent": 49.98682081280664,
+            "ambient_loss_percent_slip": 97.81515043066557,
+            "equal_neighbor_percent_slip": 49.991962078805535
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 99.99346907598368,
-            "equal_neighbor_fraction_percent": 49.99999999268629,
-            "ambient_loss_percent_slip": 99.99629690912298,
-            "equal_neighbor_percent_slip": 49.99999999812047
+            "ambient_loss_percent": 99.99351688705256,
+            "equal_neighbor_fraction_percent": 49.99999999281385,
+            "ambient_loss_percent_slip": 99.99632563848886,
+            "equal_neighbor_percent_slip": 49.99999999815521
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 19.55853560897667,
-            "equal_neighbor_fraction_percent": 17.980366779372726,
-            "ambient_loss_percent_slip": 20.578227334033862,
-            "equal_neighbor_percent_slip": 18.82523892168551
+            "ambient_loss_percent": 19.571840062726398,
+            "equal_neighbor_fraction_percent": 17.991452962567784,
+            "ambient_loss_percent_slip": 20.59211725863258,
+            "equal_neighbor_percent_slip": 18.836680085017303
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 97.50433888742462,
-            "equal_neighbor_fraction_percent": 49.9932718297168,
-            "ambient_loss_percent_slip": 97.9723876554614,
-            "equal_neighbor_percent_slip": 49.99605876262396
+            "ambient_loss_percent": 97.51104706158223,
+            "equal_neighbor_fraction_percent": 49.993318266786666,
+            "ambient_loss_percent_slip": 97.97815635697107,
+            "equal_neighbor_percent_slip": 49.996087590733524
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 99.99396635601137,
-            "equal_neighbor_fraction_percent": 49.99999999886885,
-            "ambient_loss_percent_slip": 99.99657887860249,
-            "equal_neighbor_percent_slip": 49.999999999740105
+            "ambient_loss_percent": 99.99401052685026,
+            "equal_neighbor_fraction_percent": 49.999999998890196,
+            "ambient_loss_percent_slip": 99.9966054204635,
+            "equal_neighbor_percent_slip": 49.999999999745306
           }
         ]
       },
@@ -1107,23 +1108,23 @@
         "count": 16,
         "width_um": 40,
         "h_um": 20,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 9.413495127780905e-11,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 9.420809460913489e-11,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 75.18505882213482,
-            "equal_neighbor_fraction_percent": 47.01607230469848,
-            "ambient_loss_percent_slip": 76.19406707176954,
-            "equal_neighbor_percent_slip": 47.258029082908735
+            "ambient_loss_percent": 75.21172736904116,
+            "equal_neighbor_fraction_percent": 47.022600575988434,
+            "ambient_loss_percent_slip": 76.22041182479654,
+            "equal_neighbor_percent_slip": 47.26420776292689
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999999988975,
+            "ambient_loss_percent": 99.99999999989208,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.9999999999517,
+            "ambient_loss_percent_slip": 99.99999999995275,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -1137,17 +1138,17 @@
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 76.46336598301289,
-            "equal_neighbor_fraction_percent": 47.56579495493019,
-            "ambient_loss_percent_slip": 77.4359957406439,
-            "equal_neighbor_percent_slip": 47.77679877631396
+            "ambient_loss_percent": 76.48909033183449,
+            "equal_neighbor_fraction_percent": 47.57150478887127,
+            "ambient_loss_percent_slip": 77.46137266567395,
+            "equal_neighbor_percent_slip": 47.782169923142625
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999999989718,
+            "ambient_loss_percent": 99.99999999989936,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.99999999995495,
+            "ambient_loss_percent_slip": 99.99999999995593,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -1161,17 +1162,17 @@
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 77.97607510464415,
-            "equal_neighbor_fraction_percent": 48.144551197683676,
-            "ambient_loss_percent_slip": 78.90344067908254,
-            "equal_neighbor_percent_slip": 48.31913302501044
+            "ambient_loss_percent": 78.00062181634706,
+            "equal_neighbor_fraction_percent": 48.14929391349733,
+            "ambient_loss_percent_slip": 78.92761633428731,
+            "equal_neighbor_percent_slip": 48.323558216112566
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999999990565,
+            "ambient_loss_percent": 99.99999999990766,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.99999999995866,
+            "ambient_loss_percent_slip": 99.99999999995957,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -1185,17 +1186,17 @@
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 79.30608171994591,
-            "equal_neighbor_fraction_percent": 48.58570243908177,
-            "ambient_loss_percent_slip": 80.19167090353324,
-            "equal_neighbor_percent_slip": 48.72916866115868
+            "ambient_loss_percent": 79.32953902955555,
+            "equal_neighbor_fraction_percent": 48.58961508224425,
+            "ambient_loss_percent_slip": 80.2147404820763,
+            "equal_neighbor_percent_slip": 48.7327897280814
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999999991283,
+            "ambient_loss_percent": 99.99999999991468,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.9999999999618,
+            "ambient_loss_percent_slip": 99.99999999996264,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -1213,16 +1214,16 @@
         "count": 16,
         "width_um": 40,
         "h_um": 32,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 3.855767604339059e-10,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 3.8587635551901656e-10,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 99.65110326417891,
-            "equal_neighbor_fraction_percent": 49.99951613776804,
-            "ambient_loss_percent_slip": 99.6860817970991,
-            "equal_neighbor_percent_slip": 49.999610323182964
+            "ambient_loss_percent": 99.65262736584361,
+            "equal_neighbor_fraction_percent": 49.99952045912846,
+            "ambient_loss_percent_slip": 99.68747874306585,
+            "equal_neighbor_percent_slip": 49.999613868331906
           },
           {
             "pg_kPa": 5.0,
@@ -1243,10 +1244,10 @@
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 99.67453204401811,
-            "equal_neighbor_fraction_percent": 49.99978986045549,
-            "ambient_loss_percent_slip": 99.70716863419365,
-            "equal_neighbor_percent_slip": 49.99983339074595
+            "ambient_loss_percent": 99.67595413347178,
+            "equal_neighbor_fraction_percent": 49.99979187212584,
+            "ambient_loss_percent_slip": 99.70847201748886,
+            "equal_neighbor_percent_slip": 49.999835015458984
           },
           {
             "pg_kPa": 20.0,
@@ -1267,10 +1268,10 @@
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 99.70127803303124,
-            "equal_neighbor_fraction_percent": 49.99993088761674,
-            "ambient_loss_percent_slip": 99.73123987687794,
-            "equal_neighbor_percent_slip": 49.99994633491095
+            "ambient_loss_percent": 99.70258360810634,
+            "equal_neighbor_fraction_percent": 49.99993160835102,
+            "ambient_loss_percent_slip": 99.73243640733163,
+            "equal_neighbor_percent_slip": 49.99994690499144
           },
           {
             "pg_kPa": 40.0,
@@ -1291,10 +1292,10 @@
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 99.72396201406058,
-            "equal_neighbor_fraction_percent": 49.99997726976361,
-            "ambient_loss_percent_slip": 99.75165431959377,
-            "equal_neighbor_percent_slip": 49.99998271439483
+            "ambient_loss_percent": 99.72516872126992,
+            "equal_neighbor_fraction_percent": 49.999977526231554,
+            "ambient_loss_percent_slip": 99.75276018947127,
+            "equal_neighbor_percent_slip": 49.99998291306618
           },
           {
             "pg_kPa": 60.0,
@@ -2061,104 +2062,104 @@
         "count": 1,
         "width_um": 500,
         "h_um": 1,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 9.192866335723542e-15,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 9.200009239173332e-15,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 0.013762616749235512,
-            "equal_neighbor_fraction_percent": 0.013761692500942514,
-            "ambient_loss_percent_slip": 0.02201925572852259,
-            "equal_neighbor_percent_slip": 0.02201688984664897
+            "ambient_loss_percent": 0.013773309617559626,
+            "equal_neighbor_fraction_percent": 0.013772383932534056,
+            "ambient_loss_percent_slip": 0.022036362870492265,
+            "equal_neighbor_percent_slip": 0.02203399331100432
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 0.27488411932721224,
-            "equal_neighbor_fraction_percent": 0.2745153771925961,
-            "ambient_loss_percent_slip": 0.43944306553083123,
-            "equal_neighbor_percent_slip": 0.43850062945130486
+            "ambient_loss_percent": 0.2750974045564569,
+            "equal_neighbor_fraction_percent": 0.2747280899531294,
+            "ambient_loss_percent_slip": 0.43978374505747597,
+            "equal_neighbor_percent_slip": 0.4388398470544471
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 0.7540709650482924,
-            "equal_neighbor_fraction_percent": 0.7512956297606492,
-            "ambient_loss_percent_slip": 1.2037164052309035,
-            "equal_neighbor_percent_slip": 1.1966434208572985
+            "ambient_loss_percent": 0.7546546126123377,
+            "equal_neighbor_fraction_percent": 0.7518749789414702,
+            "ambient_loss_percent_slip": 1.2046459081334726,
+            "equal_neighbor_percent_slip": 1.1975619939725508
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 0.014756639324442489,
-            "equal_neighbor_fraction_percent": 0.014755648317047025,
-            "ambient_loss_percent_slip": 0.023609483787456753,
-            "equal_neighbor_percent_slip": 0.02360694702511107
+            "ambient_loss_percent": 0.014768104384788039,
+            "equal_neighbor_fraction_percent": 0.014767111836870052,
+            "ambient_loss_percent_slip": 0.02362782611325942,
+            "equal_neighbor_percent_slip": 0.023625285407662483
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 0.2946823917252428,
-            "equal_neighbor_fraction_percent": 0.29428705871474625,
-            "ambient_loss_percent_slip": 0.4710375603756978,
-            "equal_neighbor_percent_slip": 0.4700272333562637
+            "ambient_loss_percent": 0.294910993196118,
+            "equal_neighbor_fraction_percent": 0.29451504647056376,
+            "ambient_loss_percent_slip": 0.47140261765350466,
+            "equal_neighbor_percent_slip": 0.4703907235429698
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 0.8081025541395226,
-            "equal_neighbor_fraction_percent": 0.8051276869508304,
-            "ambient_loss_percent_slip": 1.2895478937221871,
-            "equal_neighbor_percent_slip": 1.281967848692587
+            "ambient_loss_percent": 0.8087276811312161,
+            "equal_neighbor_fraction_percent": 0.8057482072665527,
+            "ambient_loss_percent_slip": 1.290542809432782,
+            "equal_neighbor_percent_slip": 1.2829510540675007
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 0.016081972013926027,
-            "equal_neighbor_fraction_percent": 0.01608089199396056,
-            "ambient_loss_percent_slip": 0.02572970917581463,
-            "equal_neighbor_percent_slip": 0.02572694457103057
+            "ambient_loss_percent": 0.01609446661583469,
+            "equal_neighbor_fraction_percent": 0.016093384916970103,
+            "ambient_loss_percent_slip": 0.02574969829103324,
+            "equal_neighbor_percent_slip": 0.025746929388870153
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 0.3210678632066588,
-            "equal_neighbor_fraction_percent": 0.32063707220660825,
-            "ambient_loss_percent_slip": 0.5131323741335292,
-            "equal_neighbor_percent_slip": 0.5120315116818415
+            "ambient_loss_percent": 0.3213168673871225,
+            "equal_neighbor_fraction_percent": 0.32088540766874774,
+            "ambient_loss_percent_slip": 0.5135298868495175,
+            "equal_neighbor_percent_slip": 0.5124273170503724
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 0.8800532230428648,
-            "equal_neighbor_fraction_percent": 0.8768122423825624,
-            "ambient_loss_percent_slip": 1.403758157362045,
-            "equal_neighbor_percent_slip": 1.3955017470136355
+            "ambient_loss_percent": 0.8807335149869089,
+            "equal_neighbor_fraction_percent": 0.8774875164301159,
+            "ambient_loss_percent_slip": 1.4048399348466245,
+            "equal_neighbor_percent_slip": 1.396570772780359
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 0.017407269568581185,
-            "equal_neighbor_fraction_percent": 0.017406100535088998,
-            "ambient_loss_percent_slip": 0.027849844637750643,
-            "equal_neighbor_percent_slip": 0.027846852186698592
+            "ambient_loss_percent": 0.017420793657418887,
+            "equal_neighbor_fraction_percent": 0.017419622806671274,
+            "ambient_loss_percent_slip": 0.027871480402641424,
+            "equal_neighbor_percent_slip": 0.027868483300055553
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 0.34743937336816355,
-            "equal_neighbor_fraction_percent": 0.3469731170182132,
-            "ambient_loss_percent_slip": 0.5551915957545783,
-            "equal_neighbor_percent_slip": 0.5540001679527501
+            "ambient_loss_percent": 0.34770875862933925,
+            "equal_neighbor_fraction_percent": 0.3472417785407057,
+            "ambient_loss_percent_slip": 0.5556215088848404,
+            "equal_neighbor_percent_slip": 0.5544282334099128
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 0.9518995861217849,
-            "equal_neighbor_fraction_percent": 0.9483923423040787,
-            "ambient_loss_percent_slip": 1.5177044386313843,
-            "equal_neighbor_percent_slip": 1.508771062684302
+            "ambient_loss_percent": 0.9526348824134279,
+            "equal_neighbor_fraction_percent": 0.9491222091335901,
+            "ambient_loss_percent_slip": 1.5188726737682012,
+            "equal_neighbor_percent_slip": 1.5099255033471835
           }
         ]
       },
@@ -2167,104 +2168,104 @@
         "count": 1,
         "width_um": 500,
         "h_um": 2,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 7.354293068578834e-14,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 7.360007391338665e-14,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 0.11004663863922737,
-            "equal_neighbor_fraction_percent": 0.10998754322631428,
-            "ambient_loss_percent_slip": 0.1430364411907581,
-            "equal_neighbor_percent_slip": 0.1429366026428777
+            "ambient_loss_percent": 0.11013209719633599,
+            "equal_neighbor_fraction_percent": 0.11007290996308662,
+            "ambient_loss_percent_slip": 0.14314749972741403,
+            "equal_neighbor_percent_slip": 0.14304750607939504
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 2.1775361596751197,
-            "equal_neighbor_fraction_percent": 2.1543823750565445,
-            "ambient_loss_percent_slip": 2.821285848822397,
-            "equal_neighbor_percent_slip": 2.7824103712524417
+            "ambient_loss_percent": 2.1792091077552977,
+            "equal_neighbor_fraction_percent": 2.156019719948216,
+            "ambient_loss_percent_slip": 2.8234460284582874,
+            "equal_neighbor_percent_slip": 2.784510969217316
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 5.872178569696196,
-            "equal_neighbor_fraction_percent": 5.703598542085418,
-            "ambient_loss_percent_slip": 7.564128073136067,
-            "equal_neighbor_percent_slip": 7.2842555954788475
+            "ambient_loss_percent": 5.876601409360271,
+            "equal_neighbor_fraction_percent": 5.7077671028826344,
+            "ambient_loss_percent_slip": 7.569772069734126,
+            "equal_neighbor_percent_slip": 7.289481276471917
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 0.11798669148666008,
-            "equal_neighbor_fraction_percent": 0.11792333014703273,
-            "ambient_loss_percent_slip": 0.15335311037152355,
-            "equal_neighbor_percent_slip": 0.1532460662602648
+            "ambient_loss_percent": 0.11807830873585834,
+            "equal_neighbor_fraction_percent": 0.11801484894993412,
+            "ambient_loss_percent_slip": 0.15347216682284337,
+            "equal_neighbor_percent_slip": 0.1533649564225619
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 2.3311678093993815,
-            "equal_neighbor_fraction_percent": 2.3063644623021258,
-            "ambient_loss_percent_slip": 3.0189342776638095,
-            "equal_neighbor_percent_slip": 2.9773006923097087
+            "ambient_loss_percent": 2.3329559740222883,
+            "equal_neighbor_fraction_percent": 2.308114505060755,
+            "ambient_loss_percent_slip": 3.0212410862717642,
+            "equal_neighbor_percent_slip": 2.979543730918795
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 6.269771135027479,
-            "equal_neighbor_fraction_percent": 6.08947080542483,
-            "ambient_loss_percent_slip": 8.066461609329368,
-            "equal_neighbor_percent_slip": 7.767356039753406
+            "ambient_loss_percent": 6.274473473850961,
+            "equal_neighbor_fraction_percent": 6.093901539164411,
+            "ambient_loss_percent_slip": 8.07244769066614,
+            "equal_neighbor_percent_slip": 7.772895813543164
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 0.1285714652812575,
-            "equal_neighbor_fraction_percent": 0.1285024158143947,
-            "ambient_loss_percent_slip": 0.16710535372332913,
-            "equal_neighbor_percent_slip": 0.16698870170070101
+            "ambient_loss_percent": 0.12867129107148045,
+            "equal_neighbor_fraction_percent": 0.12860213432319215,
+            "ambient_loss_percent_slip": 0.1672350689148172,
+            "equal_neighbor_percent_slip": 0.16711823568350895
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 2.5352609262018433,
-            "equal_neighbor_fraction_percent": 2.508256530838842,
-            "ambient_loss_percent_slip": 3.2812182619287533,
-            "equal_neighbor_percent_slip": 3.235903725640073
+            "ambient_loss_percent": 2.5372015772787138,
+            "equal_neighbor_fraction_percent": 2.5101556981432918,
+            "ambient_loss_percent_slip": 3.2837186993657452,
+            "equal_neighbor_percent_slip": 3.238334800906407
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 6.794698964413914,
-            "equal_neighbor_fraction_percent": 6.598743398743863,
-            "ambient_loss_percent_slip": 8.727807788956321,
-            "equal_neighbor_percent_slip": 8.40300157600432
+            "ambient_loss_percent": 6.799766438806209,
+            "equal_neighbor_fraction_percent": 6.603516107276844,
+            "ambient_loss_percent_slip": 8.734238024816998,
+            "equal_neighbor_percent_slip": 8.408948067350945
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 0.13915399591796218,
-            "equal_neighbor_fraction_percent": 0.13907925784915298,
-            "ambient_loss_percent_slip": 0.18085380930344952,
-            "equal_neighbor_percent_slip": 0.1807275483281465
+            "ambient_loss_percent": 0.13926202676682875,
+            "equal_neighbor_fraction_percent": 0.13918717258035732,
+            "ambient_loss_percent_slip": 0.1809941773572299,
+            "equal_neighbor_percent_slip": 0.18086772025118797
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 2.7385028576495274,
-            "equal_neighbor_fraction_percent": 2.709293969467846,
-            "ambient_loss_percent_slip": 3.542087385668835,
-            "equal_neighbor_percent_slip": 3.4930845622477418
+            "ambient_loss_percent": 2.7405947085465177,
+            "equal_neighbor_fraction_percent": 2.7113409669259485,
+            "ambient_loss_percent_slip": 3.544779331355108,
+            "equal_neighbor_percent_slip": 3.4957015372482094
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 7.313779915269203,
-            "equal_neighbor_fraction_percent": 7.1021094685237065,
-            "ambient_loss_percent_slip": 9.379706821014889,
-            "equal_neighbor_percent_slip": 9.029079981006333
+            "ambient_loss_percent": 7.3192041188839045,
+            "equal_neighbor_fraction_percent": 7.107215619915511,
+            "ambient_loss_percent_slip": 9.386567951671076,
+            "equal_neighbor_percent_slip": 9.035419686223698
           }
         ]
       },
@@ -2273,104 +2274,104 @@
         "count": 1,
         "width_um": 500,
         "h_um": 3,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 2.482073910645357e-13,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 2.4840024945768e-13,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 0.3709106560347619,
-            "equal_neighbor_fraction_percent": 0.37023926485795783,
-            "ambient_loss_percent_slip": 0.4449235725023537,
-            "equal_neighbor_percent_slip": 0.443957480967106
+            "ambient_loss_percent": 0.3711983070760927,
+            "equal_neighbor_fraction_percent": 0.37052587406937965,
+            "ambient_loss_percent_slip": 0.44526849107251465,
+            "equal_neighbor_percent_slip": 0.44430090095998664
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 7.156835230515535,
-            "equal_neighbor_fraction_percent": 6.906323510155494,
-            "ambient_loss_percent_slip": 8.52414433241988,
-            "equal_neighbor_percent_slip": 8.168613878598686
+            "ambient_loss_percent": 7.162187491617555,
+            "equal_neighbor_fraction_percent": 6.911300510597833,
+            "ambient_loss_percent_slip": 8.530470333730012,
+            "equal_neighbor_percent_slip": 8.174411269945663
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 18.447203893414688,
-            "equal_neighbor_fraction_percent": 16.776931109579028,
-            "ambient_loss_percent_slip": 21.6982111647263,
-            "equal_neighbor_percent_slip": 19.38504007943974
+            "ambient_loss_percent": 18.460096845489737,
+            "equal_neighbor_fraction_percent": 16.787481843819744,
+            "ambient_loss_percent_slip": 21.713054034754343,
+            "equal_neighbor_percent_slip": 19.396706673450847
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 0.3975975756777883,
-            "equal_neighbor_fraction_percent": 0.39687779812935653,
-            "ambient_loss_percent_slip": 0.4769102101058742,
-            "equal_neighbor_percent_slip": 0.47587452594985535
+            "ambient_loss_percent": 0.3979058404735669,
+            "equal_neighbor_fraction_percent": 0.3971849460995533,
+            "ambient_loss_percent_slip": 0.47727980683064386,
+            "equal_neighbor_percent_slip": 0.4762425162985493
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 7.634354402081522,
-            "equal_neighbor_fraction_percent": 7.366578658116661,
-            "ambient_loss_percent_slip": 9.083967149287552,
-            "equal_neighbor_percent_slip": 8.704167784838718
+            "ambient_loss_percent": 7.640034390544292,
+            "equal_neighbor_fraction_percent": 7.3718581639117655,
+            "ambient_loss_percent_slip": 9.090667322986313,
+            "equal_neighbor_percent_slip": 8.710304347526133
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 19.51966035964885,
-            "equal_neighbor_fraction_percent": 17.743629064253806,
-            "ambient_loss_percent_slip": 22.906582879693836,
-            "equal_neighbor_percent_slip": 20.450876392294077
+            "ambient_loss_percent": 19.533123334366444,
+            "equal_neighbor_fraction_percent": 17.754612651998823,
+            "ambient_loss_percent_slip": 22.92201037021434,
+            "equal_neighbor_percent_slip": 20.4629500756047
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 0.43315790357848494,
-            "equal_neighbor_fraction_percent": 0.43237360232347855,
-            "ambient_loss_percent_slip": 0.519527100500583,
-            "equal_neighbor_percent_slip": 0.5183986114699044
+            "ambient_loss_percent": 0.433493618964087,
+            "equal_neighbor_fraction_percent": 0.43270810086946215,
+            "ambient_loss_percent_slip": 0.5199295519974445,
+            "equal_neighbor_percent_slip": 0.5187993128248191
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 8.263457725990175,
-            "equal_neighbor_fraction_percent": 7.972614663082378,
-            "ambient_loss_percent_slip": 9.819824995466032,
-            "equal_neighbor_percent_slip": 9.407589157413176
+            "ambient_loss_percent": 8.269563864369456,
+            "equal_neighbor_fraction_percent": 7.978286590141477,
+            "ambient_loss_percent_slip": 9.827009259069419,
+            "equal_neighbor_percent_slip": 9.414162987812439
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 20.906481485234142,
-            "equal_neighbor_fraction_percent": 18.988946855140647,
-            "ambient_loss_percent_slip": 24.46089922601041,
-            "equal_neighbor_percent_slip": 21.81449519719543
+            "ambient_loss_percent": 20.920652327219514,
+            "equal_neighbor_fraction_percent": 19.00045475801974,
+            "ambient_loss_percent_slip": 24.477041176714774,
+            "equal_neighbor_percent_slip": 21.82704597433758
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 0.4686928488461639,
-            "equal_neighbor_fraction_percent": 0.4678440058561207,
-            "ambient_loss_percent_slip": 0.5621075084676352,
-            "equal_neighbor_percent_slip": 0.5608861835163281
+            "ambient_loss_percent": 0.4690559755468726,
+            "equal_neighbor_fraction_percent": 0.4682058156613488,
+            "ambient_loss_percent_slip": 0.5625427583402565,
+            "equal_neighbor_percent_slip": 0.5613195394092548
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 8.88404936516951,
-            "equal_neighbor_fraction_percent": 8.570035838936219,
-            "ambient_loss_percent_slip": 10.543866680173853,
-            "equal_neighbor_percent_slip": 10.099028651893578
+            "ambient_loss_percent": 8.890569636499912,
+            "equal_neighbor_fraction_percent": 8.576087958744479,
+            "ambient_loss_percent_slip": 10.551518679343708,
+            "equal_neighbor_percent_slip": 10.106023065801857
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 22.246317401698334,
-            "equal_neighbor_fraction_percent": 20.186186813484312,
-            "ambient_loss_percent_slip": 25.953779617393803,
-            "equal_neighbor_percent_slip": 23.11518637453778
+            "ambient_loss_percent": 22.26114080489149,
+            "equal_neighbor_fraction_percent": 20.198162148325075,
+            "ambient_loss_percent_slip": 25.970568029895126,
+            "equal_neighbor_percent_slip": 23.128144463860576
           }
         ]
       },
@@ -2379,104 +2380,104 @@
         "count": 1,
         "width_um": 500,
         "h_um": 5,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 1.1491082919654424e-12,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 1.150001154896666e-12,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 1.7053848976505637,
-            "equal_neighbor_fraction_percent": 1.6911855062820618,
-            "ambient_loss_percent_slip": 1.908020425987178,
-            "equal_neighbor_percent_slip": 1.8902450243810358
+            "ambient_loss_percent": 1.7066983485765963,
+            "equal_neighbor_fraction_percent": 1.6924770706050232,
+            "ambient_loss_percent_slip": 1.9094883855438893,
+            "equal_neighbor_percent_slip": 1.8916856135028752
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 29.023217374353493,
-            "equal_neighbor_fraction_percent": 24.87549484373605,
-            "ambient_loss_percent_slip": 31.873594314936504,
-            "equal_neighbor_percent_slip": 26.86695416766682
+            "ambient_loss_percent": 29.04205852463686,
+            "equal_neighbor_fraction_percent": 24.88892579800959,
+            "ambient_loss_percent_slip": 31.893834635212816,
+            "equal_neighbor_percent_slip": 26.880804055701223
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 60.86788751082592,
-            "equal_neighbor_fraction_percent": 42.465218485980785,
-            "ambient_loss_percent_slip": 65.00813100784195,
-            "equal_neighbor_percent_slip": 43.99597153288006
+            "ambient_loss_percent": 60.89622689175365,
+            "equal_neighbor_fraction_percent": 42.476290064588476,
+            "ambient_loss_percent_slip": 65.03648302126068,
+            "equal_neighbor_percent_slip": 44.00585163292889
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 1.8263267948075645,
-            "equal_neighbor_fraction_percent": 1.8111127095197972,
-            "ambient_loss_percent_slip": 2.0430340728857965,
-            "equal_neighbor_percent_slip": 2.0239900853692006
+            "ambient_loss_percent": 1.8277316605806115,
+            "equal_neighbor_fraction_percent": 1.8124941332208957,
+            "ambient_loss_percent_slip": 2.0446037417609197,
+            "equal_neighbor_percent_slip": 2.0255304424378333
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 30.480722622866274,
-            "equal_neighbor_fraction_percent": 26.093946686730003,
-            "ambient_loss_percent_slip": 33.40686842520113,
-            "equal_neighbor_percent_slip": 28.11974247530562
+            "ambient_loss_percent": 30.50010335900055,
+            "equal_neighbor_fraction_percent": 26.107649180541248,
+            "ambient_loss_percent_slip": 33.4276046580678,
+            "equal_neighbor_percent_slip": 28.1337883000183
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 62.51602410709918,
-            "equal_neighbor_fraction_percent": 43.42797551823737,
-            "ambient_loss_percent_slip": 66.57764106438717,
-            "equal_neighbor_percent_slip": 44.84834616713905
+            "ambient_loss_percent": 62.54390439923042,
+            "equal_neighbor_fraction_percent": 43.43832946102159,
+            "ambient_loss_percent_slip": 66.60537465450209,
+            "equal_neighbor_percent_slip": 44.85743546236772
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 1.9871204603270298,
-            "equal_neighbor_fraction_percent": 1.9705526538786673,
-            "ambient_loss_percent_slip": 2.2224751820396516,
-            "equal_neighbor_percent_slip": 2.2017386392533203
+            "ambient_loss_percent": 1.988646507985703,
+            "equal_neighbor_fraction_percent": 1.9720531837003754,
+            "ambient_loss_percent_slip": 2.2241795857068425,
+            "equal_neighbor_percent_slip": 2.203411140113688
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 32.333429530848164,
-            "equal_neighbor_fraction_percent": 27.62712963402399,
-            "ambient_loss_percent_slip": 35.3470024319827,
-            "equal_neighbor_percent_slip": 29.685229964080108
+            "ambient_loss_percent": 32.353440049213724,
+            "equal_neighbor_fraction_percent": 27.64110489256132,
+            "ambient_loss_percent_slip": 35.36830333709564,
+            "equal_neighbor_percent_slip": 29.69944185277666
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 64.50906446759956,
-            "equal_neighbor_fraction_percent": 44.52307007253367,
-            "ambient_loss_percent_slip": 68.46366385220124,
-            "equal_neighbor_percent_slip": 45.79965226245118
+            "ambient_loss_percent": 64.53630328279151,
+            "equal_neighbor_fraction_percent": 44.53247316317911,
+            "ambient_loss_percent_slip": 68.49057311218165,
+            "equal_neighbor_percent_slip": 45.807728181275124
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 2.1473882755786544,
-            "equal_neighbor_fraction_percent": 2.1294650679855116,
-            "ambient_loss_percent_slip": 2.40126007985203,
-            "equal_neighbor_percent_slip": 2.378828644240519
+            "ambient_loss_percent": 2.1490347053368386,
+            "equal_neighbor_fraction_percent": 2.131083900327915,
+            "ambient_loss_percent_slip": 2.4030982228887,
+            "equal_neighbor_percent_slip": 2.380632288181232
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 34.089949596856584,
-            "equal_neighbor_fraction_percent": 29.061983931286544,
-            "ambient_loss_percent_slip": 37.17728847128959,
-            "equal_neighbor_percent_slip": 31.138710038191235
+            "ambient_loss_percent": 34.110499199449215,
+            "equal_neighbor_fraction_percent": 29.076140552134643,
+            "ambient_loss_percent_slip": 37.1990577371035,
+            "equal_neighbor_percent_slip": 31.152992262983492
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 66.30086318141184,
-            "equal_neighbor_fraction_percent": 45.43568933536122,
-            "ambient_loss_percent_slip": 70.14820009305221,
-            "equal_neighbor_percent_slip": 46.57528986055075
+            "ambient_loss_percent": 66.32744463482413,
+            "equal_neighbor_fraction_percent": 45.444170880909425,
+            "ambient_loss_percent_slip": 70.17429815861831,
+            "equal_neighbor_percent_slip": 46.58241663795109
           }
         ]
       },
@@ -2485,104 +2486,104 @@
         "count": 1,
         "width_um": 500,
         "h_um": 10,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 9.19286633572354e-12,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 9.200009239173329e-12,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 12.839429292237025,
-            "equal_neighbor_fraction_percent": 12.031712507935467,
-            "ambient_loss_percent_slip": 13.553982133116438,
-            "equal_neighbor_percent_slip": 12.65365802871222
+            "ambient_loss_percent": 12.848721248099093,
+            "equal_neighbor_fraction_percent": 12.039832582507227,
+            "ambient_loss_percent_slip": 13.563749141468639,
+            "equal_neighbor_percent_slip": 12.6621242605437
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 93.34077212955933,
-            "equal_neighbor_fraction_percent": 49.79676892985292,
-            "ambient_loss_percent_slip": 94.33349289736502,
-            "equal_neighbor_percent_slip": 49.85393999539573
+            "ambient_loss_percent": 93.35468069381355,
+            "equal_neighbor_fraction_percent": 49.797636444830715,
+            "ambient_loss_percent_slip": 94.34603431051718,
+            "equal_neighbor_percent_slip": 49.85460079284783
           },
           {
             "pg_kPa": 5.0,
             "ms": 55,
-            "ambient_loss_percent": 99.93960711605379,
-            "equal_neighbor_fraction_percent": 49.99998670233835,
-            "ambient_loss_percent_slip": 99.9612316489493,
-            "equal_neighbor_percent_slip": 49.99999463878042
+            "ambient_loss_percent": 99.93995279993813,
+            "equal_neighbor_fraction_percent": 49.999986857853045,
+            "ambient_loss_percent_slip": 99.96146682849022,
+            "equal_neighbor_percent_slip": 49.99999470521782
           },
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 13.640398230802898,
-            "equal_neighbor_fraction_percent": 12.779246902536176,
-            "ambient_loss_percent_slip": 14.392166848495913,
-            "equal_neighbor_percent_slip": 13.432601450428857
+            "ambient_loss_percent": 13.65017907059739,
+            "equal_neighbor_fraction_percent": 12.787782060702718,
+            "ambient_loss_percent_slip": 14.402437223783371,
+            "equal_neighbor_percent_slip": 13.441489845707153
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 93.76141797353512,
-            "equal_neighbor_fraction_percent": 49.86345586856636,
-            "ambient_loss_percent_slip": 94.69499516280902,
-            "equal_neighbor_percent_slip": 49.90418109107373
+            "ambient_loss_percent": 93.77450656777917,
+            "equal_neighbor_fraction_percent": 49.86408072986846,
+            "ambient_loss_percent_slip": 94.70678137482524,
+            "equal_neighbor_percent_slip": 49.90464582883729
           },
           {
             "pg_kPa": 20.0,
             "ms": 55,
-            "ambient_loss_percent": 99.94367351174809,
-            "equal_neighbor_fraction_percent": 49.999995545455,
-            "ambient_loss_percent_slip": 99.96384254048756,
-            "equal_neighbor_percent_slip": 49.99999831812641
+            "ambient_loss_percent": 99.94399593296222,
+            "equal_neighbor_fraction_percent": 49.99999560128995,
+            "ambient_loss_percent_slip": 99.96406188733246,
+            "equal_neighbor_percent_slip": 49.99999834046409
           },
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 14.685734459627643,
-            "equal_neighbor_fraction_percent": 13.753115403583523,
-            "ambient_loss_percent_slip": 15.48478492759634,
-            "equal_neighbor_percent_slip": 14.44597889016826
+            "ambient_loss_percent": 14.696137302117506,
+            "equal_neighbor_fraction_percent": 13.76217377711891,
+            "ambient_loss_percent_slip": 15.495693872461802,
+            "equal_neighbor_percent_slip": 14.45539715450431
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 94.2460350104871,
-            "equal_neighbor_fraction_percent": 49.91965041842505,
-            "ambient_loss_percent_slip": 95.11087288026152,
-            "equal_neighbor_percent_slip": 49.94538091298708
+            "ambient_loss_percent": 94.25816913765316,
+            "equal_neighbor_fraction_percent": 49.92005106589944,
+            "ambient_loss_percent_slip": 95.12178272821227,
+            "equal_neighbor_percent_slip": 49.94566955797398
           },
           {
             "pg_kPa": 40.0,
             "ms": 55,
-            "ambient_loss_percent": 99.94831372400341,
-            "equal_neighbor_fraction_percent": 49.99999896364763,
-            "ambient_loss_percent_slip": 99.96682176678934,
-            "equal_neighbor_percent_slip": 49.99999964149131
+            "ambient_loss_percent": 99.94860959760862,
+            "equal_neighbor_fraction_percent": 49.999998977796515,
+            "ambient_loss_percent_slip": 99.96702304631641,
+            "equal_neighbor_percent_slip": 49.999999646677416
           },
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 15.706066887607207,
-            "equal_neighbor_fraction_percent": 14.701502962457324,
-            "ambient_loss_percent_slip": 16.549864181930975,
-            "equal_neighbor_percent_slip": 15.43127301318004
+            "ambient_loss_percent": 15.717059344645678,
+            "equal_neighbor_fraction_percent": 14.711051313795284,
+            "ambient_loss_percent_slip": 16.561376434107487,
+            "equal_neighbor_percent_slip": 15.441184935823635
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 94.66078837977469,
-            "equal_neighbor_fraction_percent": 49.95271817842711,
-            "ambient_loss_percent_slip": 95.46628640386928,
-            "equal_neighbor_percent_slip": 49.96886580425978
+            "ambient_loss_percent": 94.67209730831983,
+            "equal_neighbor_fraction_percent": 49.952973319694635,
+            "ambient_loss_percent_slip": 95.47644088390898,
+            "equal_neighbor_percent_slip": 49.969043861482405
           },
           {
             "pg_kPa": 60.0,
             "ms": 55,
-            "ambient_loss_percent": 99.9522475975658,
-            "equal_neighbor_fraction_percent": 49.999999758892045,
-            "ambient_loss_percent_slip": 99.96934741409366,
-            "equal_neighbor_percent_slip": 49.99999992358018
+            "ambient_loss_percent": 99.95252096275028,
+            "equal_neighbor_fraction_percent": 49.99999976245309,
+            "ambient_loss_percent_slip": 99.96953337616368,
+            "equal_neighbor_percent_slip": 49.99999992477605
           }
         ]
       },
@@ -2591,23 +2592,23 @@
         "count": 1,
         "width_um": 500,
         "h_um": 20,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 7.354293068578831e-11,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 7.360007391338663e-11,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 66.4016059100726,
-            "equal_neighbor_fraction_percent": 44.47187258635855,
-            "ambient_loss_percent_slip": 67.47600541951275,
-            "equal_neighbor_percent_slip": 44.82528679204233
+            "ambient_loss_percent": 66.42987941789112,
+            "equal_neighbor_fraction_percent": 44.48132367803958,
+            "ambient_loss_percent_slip": 67.50418812319433,
+            "equal_neighbor_percent_slip": 44.834398846327645
           },
           {
             "pg_kPa": 5.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999995473271,
+            "ambient_loss_percent": 99.99999995548235,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.99999997624388,
+            "ambient_loss_percent_slip": 99.999999976649,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -2621,17 +2622,17 @@
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 67.9394383998134,
-            "equal_neighbor_fraction_percent": 45.28489662998839,
-            "ambient_loss_percent_slip": 68.98762900258076,
-            "equal_neighbor_percent_slip": 45.607347430722214
+            "ambient_loss_percent": 67.96704209386253,
+            "equal_neighbor_fraction_percent": 45.29353952189986,
+            "ambient_loss_percent_slip": 69.01510333631482,
+            "equal_neighbor_percent_slip": 45.61564058977147
           },
           {
             "pg_kPa": 20.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999995778238,
+            "ambient_loss_percent": 99.99999995848152,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.99999997784434,
+            "ambient_loss_percent_slip": 99.99999997822215,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -2645,17 +2646,17 @@
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 69.78349192678206,
-            "equal_neighbor_fraction_percent": 46.186046002887196,
-            "ambient_loss_percent_slip": 70.79730743978747,
-            "equal_neighbor_percent_slip": 46.46940734169971
+            "ambient_loss_percent": 69.81021343393905,
+            "equal_neighbor_fraction_percent": 46.19366442679558,
+            "ambient_loss_percent_slip": 70.82385658385186,
+            "equal_neighbor_percent_slip": 46.47667110194634
           },
           {
             "pg_kPa": 40.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999996126209,
+            "ambient_loss_percent": 99.99999996190361,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.99999997967048,
+            "ambient_loss_percent_slip": 99.99999998001715,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -2669,17 +2670,17 @@
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 71.42695132238705,
-            "equal_neighbor_fraction_percent": 46.91496793376623,
-            "ambient_loss_percent_slip": 72.40742880469047,
-            "equal_neighbor_percent_slip": 47.16228763321171
+            "ambient_loss_percent": 71.45281400843679,
+            "equal_neighbor_fraction_percent": 46.921637701356005,
+            "ambient_loss_percent_slip": 72.43308411105384,
+            "equal_neighbor_percent_slip": 47.168606548336555
           },
           {
             "pg_kPa": 60.0,
             "ms": 20,
-            "ambient_loss_percent": 99.99999996421187,
+            "ambient_loss_percent": 99.99999996480453,
             "equal_neighbor_fraction_percent": 50.0,
-            "ambient_loss_percent_slip": 99.99999998121851,
+            "ambient_loss_percent_slip": 99.99999998153879,
             "equal_neighbor_percent_slip": 50.0
           },
           {
@@ -2697,16 +2698,16 @@
         "count": 1,
         "width_um": 500,
         "h_um": 32,
-        "length_mm": 0.24499999999999833,
-        "G_m3_Pa_s": 3.0123184408898903e-10,
+        "length_mm": 0.2448097815665486,
+        "G_m3_Pa_s": 3.0146590274923173e-10,
         "scenarios": [
           {
             "pg_kPa": 5.0,
             "ms": 1,
-            "ambient_loss_percent": 98.80321694243545,
-            "equal_neighbor_fraction_percent": 49.993952323727676,
-            "ambient_loss_percent_slip": 98.89804430356686,
-            "equal_neighbor_percent_slip": 49.9948933318925
+            "ambient_loss_percent": 98.80730409508658,
+            "equal_neighbor_fraction_percent": 49.99399456168427,
+            "ambient_loss_percent_slip": 98.90187795951645,
+            "equal_neighbor_percent_slip": 49.994929664044
           },
           {
             "pg_kPa": 5.0,
@@ -2727,10 +2728,10 @@
           {
             "pg_kPa": 20.0,
             "ms": 1,
-            "ambient_loss_percent": 98.88294393456412,
-            "equal_neighbor_fraction_percent": 49.996847835332844,
-            "ambient_loss_percent_slip": 98.97151986842448,
-            "equal_neighbor_percent_slip": 49.99737062744257
+            "ambient_loss_percent": 98.88676187811522,
+            "equal_neighbor_fraction_percent": 49.99687143490987,
+            "ambient_loss_percent_slip": 98.97510055510052,
+            "equal_neighbor_percent_slip": 49.99739068068074
           },
           {
             "pg_kPa": 20.0,
@@ -2751,10 +2752,10 @@
           {
             "pg_kPa": 40.0,
             "ms": 1,
-            "ambient_loss_percent": 98.97407073121047,
-            "equal_neighbor_fraction_percent": 49.998677783076914,
-            "ambient_loss_percent_slip": 99.05548986904577,
-            "equal_neighbor_percent_slip": 49.998914895787
+            "ambient_loss_percent": 98.97758043632963,
+            "equal_neighbor_fraction_percent": 49.998688567805935,
+            "ambient_loss_percent_slip": 99.05878099165587,
+            "equal_neighbor_percent_slip": 49.99892391175368
           },
           {
             "pg_kPa": 40.0,
@@ -2775,10 +2776,10 @@
           {
             "pg_kPa": 60.0,
             "ms": 1,
-            "ambient_loss_percent": 99.05145111027775,
-            "equal_neighbor_fraction_percent": 49.999445378723415,
-            "ambient_loss_percent_slip": 99.12678341649355,
-            "equal_neighbor_percent_slip": 49.999552193107924
+            "ambient_loss_percent": 99.05469862536297,
+            "equal_neighbor_fraction_percent": 49.9994502737357,
+            "ambient_loss_percent_slip": 99.12982830076729,
+            "equal_neighbor_percent_slip": 49.999556219162095
           },
           {
             "pg_kPa": 60.0,

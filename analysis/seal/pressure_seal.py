@@ -140,7 +140,7 @@ def main():
     geom=read_geometry()
     volume=geom["net_volume_mm3"]["4"]*1e-9
     traces=json.loads((ROOT/"supplement/equal-power.json").read_text())
-    assert "R2K" in traces["geometry"]["basis"]
+    assert "R2L" in traces["geometry"]["basis"]
     assert abs(traces["geometry"]["gas_volumes_by_strand_count_mm3"]["4"]-volume*1e9)<.0001
     short_land=geom["gasket_outer_land_min_mm"]-.08
     shared_land=geom["gasket_adjacent_horizontal_mm"]-.08

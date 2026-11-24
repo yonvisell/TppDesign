@@ -1,9 +1,9 @@
 {
   "chip": "ESP32-C6",
   "target": "seeed_xiao_esp32c6",
-  "image": "R2K-ESP32C6.bin",
-  "sha256": "5a51c2f725a26fc151c087547b52590e3fdf8f56d76cbb9da3d3ee3872be3771",
-  "bytes": 1102736,
+  "image": "R2L-ESP32C6.bin",
+  "sha256": "23edff9248b86b62772b2d074fd72c12178c844adc44c8886ceb9d5fe77d5d47",
+  "bytes": 1104640,
   "flash_address": 0,
   "components": [
     {
@@ -24,24 +24,24 @@
     {
       "offset": "0x10000",
       "name": "firmware.bin",
-      "sha256": "a24582b9fcc033bfe54118b20e5e28815ffeb011b17dab72b6d952ed060bec88"
+      "sha256": "5ec26d7db2c0b49fc34abd22d0b4390fd38ad17eaed381ecde02a119fc250f05"
     }
   ],
   "source_sha256": {
     "calibration.h": "e17c4b664c83a6c04bc33221a7aa9ebdddbdb652d80cdb7f420f318a883d65da",
-    "control.h": "8a1aa0f21d2b1a16032e667862019de4d5715e08f1ab09c3ca12794d4ce3d804",
-    "main.cpp": "e50efa6c94ff05453c6d0355c8e9370194655ac85c728cf198cc8809eeeb890a",
-    "osc.h": "c6be7f4e4beb1c2a3cf532e1f2ee93c5281e8cac030226579d16244832eab623",
+    "control.h": "c40d1bf0e17775d8a9d651d8e571c66d390ab8acbf0597c875efef1aa250cf63",
+    "main.cpp": "f98f6f836a2dbefbf213c65ac8e8309a30fd33aec0f840f250839e0382466eee",
+    "osc.h": "4194f716ca245727e10416eafa4e8e0125cd5eff2c6f1eab1ef4c8d9bdc692ac",
     "path_limits.h": "dfcb926773d5a2525e47a718875bc79773e5a3dd96571eb79378dcff54b084b6"
   },
   "build_recipe_sha256": {
-    "platformio.ini": "b8f481f169345ad24d025081ef22b8cb4b275103141eef3c9511ab119db2744e",
-    "repro.py": "098feccfefbac702b5dcc3ebbe0ef8c5f1cc2171cb57f23e59c45eed3771d295",
-    "package_image.py": "9414cb378fee9c89c64373a0a03874221372eedbdbe8dff15a693498d1973ca9"
+    "platformio.ini": "6ce9cb5f082426084b482b45448d1deddbfd10ade5436028bec73f7aa53e096c",
+    "repro.py": "8251a4417161a9761aff08872631ff397c06f3ad092b51582ebac52b9dd7ef7e",
+    "package_image.py": "a2668b3d89afec59db16dad7d60023790490b871af5c5ad8606b64a0dda04a22"
   },
   "target_flashed": false,
   "application_identity_strings": [
-    "TPP-R2K",
+    "TPP-R2L",
     "/guard",
     "/receipt",
     "CAL COLD",
@@ -53,9 +53,12 @@
     "guard_required",
     "/config/max_age_ms",
     "/config/guard",
-    "WIRES"
+    "WIRES",
+    "/train",
+    "/train/receipt",
+    "staggered"
   ],
   "material_sha256": "ab7f37be6d9db86dc117256d195f9a222b0ddd1890411beb302526a3c8f9db7f",
-  "calibration_envelope_sha256": "c0c8f019e016745d53ebe0f80768982108eb4da0afedd67c2d6345a1554e93f8",
-  "electrical_source_sha256": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a"
+  "calibration_envelope_sha256": "4c62331ba61d90573fcaebb49f880ddd58b7b998cb2aa41034c892d075c381fa",
+  "electrical_source_sha256": "365500cdf2ad6a675f81475733589de27bd5ce6a68a890e87c9b2c5385ca817e"
 }

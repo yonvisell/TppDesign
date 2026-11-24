@@ -2,7 +2,7 @@
   "drive": "4.20 W per pixel absorbed in the entire wire pitch, held constant for 2.00 ms; common electrical energy 8.40 mJ. Average over ideal fast PWM cycles.",
   "geometry": {
     "gas_volume_mm3": 15.462736077403077,
-    "basis": "R2K nominal enclosure; initially flat diaphragm, room-temperature air, net gas volumes include the displacement of each selected strand count.",
+    "basis": "R2L assembled cavity with a flat resting diaphragm. Net gas volumes account for the installed heater wires at each count.",
     "pitch_mm": 4.2,
     "wire_free_mm": 2.9,
     "roof_copper_bore_mm": 0.6,

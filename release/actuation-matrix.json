@@ -1,15 +1,15 @@
 {
   "basis": "Public Python Client over loopback UDP. Each installed count uses its own all-nine cold enrollment and readback, production OSC parser, scheduler and piecewise R(T) observer compiled natively. A separate (33 + 12 N)-node passive circuit and explicit thermal plant synthesize 12-bit ADC readings. Supply 5.8 V, 25 \u00b0C cold start, nominal paths, 18 \u00b5s setup and 8 \u00b5s blanking. Current peaks include both sampled model endpoints. Equivalent free-span temperature is distinct from axial maximum. No board or device exercised.",
   "source_sha256": {
-    "analysis/input/electrical.json": "8e7dc405152afea1086a49501e8bf7ae5c656b54d045698769995b05b4fb0f0a",
+    "analysis/input/electrical.json": "365500cdf2ad6a675f81475733589de27bd5ce6a68a890e87c9b2c5385ca817e",
     "analysis/array_circuit.py": "b8729deb92e93b83d2be7a7a5647bc3760547f3ec72c88cc087e14ccee085f02",
     "firmware/material.json": "ab7f37be6d9db86dc117256d195f9a222b0ddd1890411beb302526a3c8f9db7f",
-    "software/fixture.py": "f8057039b5993e854e56a18d83d0b87fdc8ac8ba349ee9af180f1c017e0c68e5",
-    "software/native.cpp": "8b069146f709be2919d99cb0743b50d9ea6a9fb4a38a48cb3c776c27f8707b3d",
-    "software/client.py": "17db6fe5cbca9ebc741ef4906b7213b8f00e2472d52015daa059c1ac067c664a",
+    "software/fixture.py": "f12fb4c748a6f0ba5be98279cabe26b8c8630cdf2b9867e90946b078b3722d47",
+    "software/native.cpp": "9545c6f598bbc0ab2651d44bd24d3fe502cd3f51ef6982a0564ae874d7d59e54",
+    "software/client.py": "f4e0f6e4f915b5c0e3cfdee5807ab5fa565e08ae1576e2bc6dfb4aca5c098b56",
     "firmware/src/calibration.h": "e17c4b664c83a6c04bc33221a7aa9ebdddbdb652d80cdb7f420f318a883d65da",
-    "firmware/src/control.h": "8a1aa0f21d2b1a16032e667862019de4d5715e08f1ab09c3ca12794d4ce3d804",
-    "firmware/src/osc.h": "c6be7f4e4beb1c2a3cf532e1f2ee93c5281e8cac030226579d16244832eab623",
+    "firmware/src/control.h": "c40d1bf0e17775d8a9d651d8e571c66d390ab8acbf0597c875efef1aa250cf63",
+    "firmware/src/osc.h": "4194f716ca245727e10416eafa4e8e0125cd5eff2c6f1eab1ef4c8d9bdc692ac",
     "firmware/src/path_limits.h": "dfcb926773d5a2525e47a718875bc79773e5a3dd96571eb79378dcff54b084b6"
   },
   "triples_summary": {
@@ -45,7 +45,7 @@
         ],
         "min_mean_over_elapsed_W": [
           5.168118902123239,
-          6.4785812866708605
+          6.478581286670843
         ],
         "max_inactive_mJ": [
           0.0162347223678953,
@@ -856,6 +856,98 @@
       "max_receipt_error_uJ": 70.9815776324831
     },
     {
+      "wires": 2,
+      "mode": "staggered",
+      "limit_C": 450,
+      "ids": [
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        31,
+        32,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 4744,
+      "energized_us": 3808,
+      "peak_source_A": 5.1148137063713,
+      "peak_tap_A": 3.3998523668279352,
+      "peak_sampled_A": 5.1116943359375,
+      "peak_point_C": 299.7563171386719,
+      "peak_plant_C": 298.83329904709774,
+      "peak_upper_C": 364.71722412109375,
+      "selected_mJ": [
+        7.242744730871098,
+        6.483553134650865,
+        6.863876271691596,
+        7.071888492581959,
+        6.560704968544407,
+        6.933422602274542,
+        7.104830614507693,
+        6.600557205927413,
+        6.96264505664492
+      ],
+      "min_mean_over_elapsed_W": 1.366684893476152,
+      "max_inactive_mJ": 0,
+      "probes": 27,
+      "group_slots": 9,
+      "joint_masks": [
+        7,
+        56,
+        448
+      ],
+      "max_receipt_error_uJ": 43.005782353837276
+    },
+    {
+      "wires": 2,
+      "mode": "staggered",
+      "limit_C": 750,
+      "ids": [
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        31,
+        32,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 10151,
+      "energized_us": 8279,
+      "peak_source_A": 5.1148137063713,
+      "peak_tap_A": 3.3998523668279352,
+      "peak_sampled_A": 5.1116943359375,
+      "peak_point_C": 588.5780029296875,
+      "peak_plant_C": 592.6294314005852,
+      "peak_upper_C": 654.6449584960938,
+      "selected_mJ": [
+        16.272239162102675,
+        14.5524467799728,
+        15.441894339166916,
+        15.879055005907926,
+        14.704384566888752,
+        15.572454900115044,
+        15.938834167416731,
+        14.781328940055056,
+        15.624090032035209
+      ],
+      "min_mean_over_elapsed_W": 1.4335973578930943,
+      "max_inactive_mJ": 0,
+      "probes": 54,
+      "group_slots": 18,
+      "joint_masks": [
+        7,
+        56,
+        448
+      ],
+      "max_receipt_error_uJ": 99.82535681994341
+    },
+    {
       "wires": 3,
       "mode": "simultaneous",
       "limit_C": 450,
@@ -1605,6 +1697,98 @@
         448
       ],
       "max_receipt_error_uJ": 128.5078889689612
+    },
+    {
+      "wires": 3,
+      "mode": "staggered",
+      "limit_C": 450,
+      "ids": [
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        31,
+        32,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 4864,
+      "energized_us": 3928,
+      "peak_source_A": 7.7468798093565505,
+      "peak_tap_A": 4.785097997698692,
+      "peak_sampled_A": 7.7423095703125,
+      "peak_point_C": 301.23626708984375,
+      "peak_plant_C": 301.44886591945834,
+      "peak_upper_C": 367.51617431640625,
+      "selected_mJ": [
+        10.985590455090568,
+        10.59523693838116,
+        10.150285550739063,
+        10.449262394206512,
+        9.738832786210114,
+        9.599376297779964,
+        10.179500704707781,
+        9.115319822544901,
+        9.869934918878775
+      ],
+      "min_mean_over_elapsed_W": 1.874037792464001,
+      "max_inactive_mJ": 0,
+      "probes": 27,
+      "group_slots": 9,
+      "joint_masks": [
+        13,
+        50,
+        448
+      ],
+      "max_receipt_error_uJ": 90.43322744366014
+    },
+    {
+      "wires": 3,
+      "mode": "staggered",
+      "limit_C": 750,
+      "ids": [
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        31,
+        32,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 10345,
+      "energized_us": 8473,
+      "peak_source_A": 7.7468798093565505,
+      "peak_tap_A": 4.785097997698692,
+      "peak_sampled_A": 7.7423095703125,
+      "peak_point_C": 591.9913330078125,
+      "peak_plant_C": 591.2425854058142,
+      "peak_upper_C": 657.70654296875,
+      "selected_mJ": [
+        24.36276941673379,
+        23.5134760311695,
+        22.552582675894197,
+        23.21176472806459,
+        21.57422857741447,
+        21.267599527424203,
+        22.600687505078763,
+        20.198192934955063,
+        21.921540234003363
+      ],
+      "min_mean_over_elapsed_W": 1.9524594427216106,
+      "max_inactive_mJ": 0,
+      "probes": 54,
+      "group_slots": 18,
+      "joint_masks": [
+        13,
+        50,
+        448
+      ],
+      "max_receipt_error_uJ": 209.32954679449904
     },
     {
       "wires": 4,
@@ -2364,6 +2548,100 @@
         320
       ],
       "max_receipt_error_uJ": 88.53566687949933
+    },
+    {
+      "wires": 4,
+      "mode": "staggered",
+      "limit_C": 450,
+      "ids": [
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        31,
+        32,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 6068,
+      "energized_us": 5054,
+      "peak_source_A": 6.713699034067437,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.7108154296875,
+      "peak_point_C": 293.0211181640625,
+      "peak_plant_C": 294.10929393399334,
+      "peak_upper_C": 359.9607849121094,
+      "selected_mJ": [
+        14.323732031033986,
+        13.610637146128225,
+        13.034177272875123,
+        13.795040548182703,
+        13.538620400361776,
+        13.550430256673863,
+        13.723280170620507,
+        13.647092037843453,
+        11.383520571517817
+      ],
+      "min_mean_over_elapsed_W": 1.8759921838361595,
+      "max_inactive_mJ": 0,
+      "probes": 27,
+      "group_slots": 12,
+      "joint_masks": [
+        5,
+        10,
+        80,
+        160
+      ],
+      "max_receipt_error_uJ": 52.40090568762389
+    },
+    {
+      "wires": 4,
+      "mode": "staggered",
+      "limit_C": 750,
+      "ids": [
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        31,
+        32,
+        33
+      ],
+      "reason": "temperature_limit",
+      "elapsed_us": 13317,
+      "energized_us": 11237,
+      "peak_source_A": 6.713699034067437,
+      "peak_tap_A": 3.499876601808107,
+      "peak_sampled_A": 6.7108154296875,
+      "peak_point_C": 592.7632446289062,
+      "peak_plant_C": 592.1184808121772,
+      "peak_upper_C": 658.062255859375,
+      "selected_mJ": [
+        33.3357970126564,
+        30.357365987205064,
+        30.40427545162238,
+        30.769345616112027,
+        30.23425576684758,
+        30.22710262004807,
+        30.63656231028997,
+        30.44060724503928,
+        24.381533019636233
+      ],
+      "min_mean_over_elapsed_W": 1.8308577772498487,
+      "max_inactive_mJ": 0,
+      "probes": 56,
+      "group_slots": 24,
+      "joint_masks": [
+        5,
+        10,
+        80,
+        160
+      ],
+      "max_receipt_error_uJ": 130.91217037237948
     }
   ],
   "triples": [
@@ -2384,17 +2662,17 @@
       "peak_upper_C": 358.8933410644531,
       "selected_mJ": [
         10.466113535261655,
-        8.894633657194762,
+        8.894633657194733,
         9.680862127652713
       ],
-      "min_mean_over_elapsed_W": 5.497301395052387,
+      "min_mean_over_elapsed_W": 5.497301395052369,
       "max_inactive_mJ": 0.0162347223678953,
       "probes": 9,
       "group_slots": 3,
       "joint_masks": [
         7
       ],
-      "max_receipt_error_uJ": 76.57825686773867,
+      "max_receipt_error_uJ": 76.57825686776778,
       "limit_C": 450
     },
     {
@@ -2415,7 +2693,7 @@
       "selected_mJ": [
         10.317329470784024,
         9.6160519550248,
-        10.608415909146483
+        10.608415909146453
       ],
       "min_mean_over_elapsed_W": 5.965292776069974,
       "max_inactive_mJ": 0.02593345773711917,
@@ -2424,7 +2702,7 @@
       "joint_masks": [
         11
       ],
-      "max_receipt_error_uJ": 102.72547945898259,
+      "max_receipt_error_uJ": 102.72547945895349,
       "limit_C": 450
     },
     {
@@ -2443,7 +2721,7 @@
       "peak_plant_C": 294.5572112735221,
       "peak_upper_C": 359.92010498046875,
       "selected_mJ": [
-        10.378505688869481,
+        10.378505688869511,
         9.67055123234153,
         10.515152434709599
       ],
@@ -2535,7 +2813,7 @@
       "selected_mJ": [
         10.377753845966799,
         9.672557405040832,
-        10.5066516985489
+        10.506651698548929
       ],
       "min_mean_over_elapsed_W": 5.981791839852091,
       "max_inactive_mJ": 0.027636996904941043,
@@ -2544,7 +2822,7 @@
       "joint_masks": [
         131
       ],
-      "max_receipt_error_uJ": 96.45052667389973,
+      "max_receipt_error_uJ": 96.45052667392883,
       "limit_C": 450
     },
     {
@@ -2593,7 +2871,7 @@
       "peak_plant_C": 303.15921042632345,
       "peak_upper_C": 369.2045593261719,
       "selected_mJ": [
-        10.876120382982364,
+        10.876120382982393,
         10.083943849867966,
         10.344533094389888
       ],
@@ -2623,7 +2901,7 @@
       "peak_plant_C": 303.230588781726,
       "peak_upper_C": 369.04388427734375,
       "selected_mJ": [
-        10.879052920442627,
+        10.879052920442657,
         10.046121454541396,
         10.155045831594819
       ],
@@ -2653,7 +2931,7 @@
       "peak_plant_C": 303.4150859298238,
       "peak_upper_C": 369.96746826171875,
       "selected_mJ": [
-        10.886590151142649,
+        10.88659015114262,
         9.420257077678166,
         9.440277165165694
       ],
@@ -2664,7 +2942,7 @@
       "joint_masks": [
         37
       ],
-      "max_receipt_error_uJ": 51.55633323235088,
+      "max_receipt_error_uJ": 51.556333232379984,
       "limit_C": 450
     },
     {
@@ -2683,7 +2961,7 @@
       "peak_plant_C": 303.15667662157483,
       "peak_upper_C": 369.1029968261719,
       "selected_mJ": [
-        10.876015513164951,
+        10.876015513164981,
         10.08625935818936,
         10.320673168256617
       ],
@@ -2714,10 +2992,10 @@
       "peak_upper_C": 369.1103820800781,
       "selected_mJ": [
         10.877215871118649,
-        10.087496051560098,
+        10.087496051560127,
         10.186285320552647
       ],
-      "min_mean_over_elapsed_W": 6.332389235128749,
+      "min_mean_over_elapsed_W": 6.332389235128768,
       "max_inactive_mJ": 0.026443257458275183,
       "probes": 9,
       "group_slots": 3,
@@ -3253,12 +3531,12 @@
       "peak_plant_C": 301.7539269636093,
       "peak_upper_C": 366.83953857421875,
       "selected_mJ": [
-        10.82357441066936,
-        10.677816252885707,
+        10.823574410669274,
+        10.677816252885648,
         10.570179136860911
       ],
       "min_mean_over_elapsed_W": 5.757178179118144,
-      "max_inactive_mJ": 0.0463543572841445,
+      "max_inactive_mJ": 0.04635435728420271,
       "probes": 11,
       "group_slots": 3,
       "joint_masks": [
@@ -3283,11 +3561,11 @@
       "peak_plant_C": 307.77390817133664,
       "peak_upper_C": 372.2913513183594,
       "selected_mJ": [
-        11.06854766687579,
-        10.233022967417929,
+        11.068547666875821,
+        10.23302296741784,
         11.08621769912439
       ],
-      "min_mean_over_elapsed_W": 5.223595185001495,
+      "min_mean_over_elapsed_W": 5.22359518500145,
       "max_inactive_mJ": 0.04772982970054727,
       "probes": 12,
       "group_slots": 3,
@@ -3313,11 +3591,11 @@
       "peak_plant_C": 299.20273596661934,
       "peak_upper_C": 364.6651611328125,
       "selected_mJ": [
-        10.718652878809749,
-        10.619065411026618,
+        10.71865287880978,
+        10.619065411026648,
         10.626335739548988
       ],
-      "min_mean_over_elapsed_W": 5.812296338821357,
+      "min_mean_over_elapsed_W": 5.812296338821373,
       "max_inactive_mJ": 0.045324333694763484,
       "probes": 11,
       "group_slots": 3,
@@ -3343,7 +3621,7 @@
       "peak_plant_C": 301.3849576405015,
       "peak_upper_C": 366.6625671386719,
       "selected_mJ": [
-        10.808395468518574,
+        10.808395468518604,
         10.708164349411149,
         10.58849144286808
       ],
@@ -3404,7 +3682,7 @@
       "peak_upper_C": 361.0931396484375,
       "selected_mJ": [
         10.53756808968645,
-        9.819814291471033,
+        9.819814291471005,
         9.668043017393385
       ],
       "min_mean_over_elapsed_W": 5.982699887000857,
@@ -3434,7 +3712,7 @@
       "peak_upper_C": 362.9225158691406,
       "selected_mJ": [
         10.428079692451982,
-        10.542226378650609,
+        10.54222637865052,
         10.253304319314978
       ],
       "min_mean_over_elapsed_W": 6.3606106199224435,
@@ -3444,7 +3722,7 @@
       "joint_masks": [
         42
       ],
-      "max_receipt_error_uJ": 17.54473802560824,
+      "max_receipt_error_uJ": 17.544738025520928,
       "limit_C": 450
     },
     {
@@ -3464,7 +3742,7 @@
       "peak_upper_C": 362.2293701171875,
       "selected_mJ": [
         10.497451728790184,
-        9.899249249087356,
+        9.89924924908718,
         9.872879666495603
       ],
       "min_mean_over_elapsed_W": 6.120818144138625,
@@ -3494,7 +3772,7 @@
       "peak_upper_C": 362.9833984375,
       "selected_mJ": [
         10.468682178583578,
-        10.549416482227564,
+        10.54941648222739,
         10.383923500645382
       ],
       "min_mean_over_elapsed_W": 6.44163988873783,
@@ -3504,7 +3782,7 @@
       "joint_masks": [
         138
       ],
-      "max_receipt_error_uJ": 22.068825977563392,
+      "max_receipt_error_uJ": 22.06882597738877,
       "limit_C": 450
     },
     {
@@ -3555,9 +3833,9 @@
       "selected_mJ": [
         10.528349776154675,
         9.659909765737364,
-        9.528240492804965
+        9.528240492804906
       ],
-      "min_mean_over_elapsed_W": 5.888900180967222,
+      "min_mean_over_elapsed_W": 5.888900180967187,
       "max_inactive_mJ": 0.04185882131778635,
       "probes": 9,
       "group_slots": 3,
@@ -3584,17 +3862,17 @@
       "peak_upper_C": 361.5928955078125,
       "selected_mJ": [
         10.504207066226051,
-        10.430640444206714,
-        10.560863830446905
+        10.43064044420683,
+        10.560863830446964
       ],
-      "min_mean_over_elapsed_W": 6.458600894245643,
+      "min_mean_over_elapsed_W": 6.458600894245715,
       "max_inactive_mJ": 0.041006760395772286,
       "probes": 9,
       "group_slots": 3,
       "joint_masks": [
         82
       ],
-      "max_receipt_error_uJ": 18.340392946905922,
+      "max_receipt_error_uJ": 18.34039294696413,
       "limit_C": 450
     },
     {
@@ -3615,16 +3893,16 @@
       "selected_mJ": [
         10.504374779505946,
         10.471563975368452,
-        10.46290877797344
+        10.46290877797341
       ],
-      "min_mean_over_elapsed_W": 6.4785812866708605,
+      "min_mean_over_elapsed_W": 6.478581286670843,
       "max_inactive_mJ": 0.04101596390875056,
       "probes": 9,
       "group_slots": 3,
       "joint_masks": [
         146
       ],
-      "max_receipt_error_uJ": 14.77010609844001,
+      "max_receipt_error_uJ": 14.770106098410906,
       "limit_C": 450
     },
     {
@@ -3645,16 +3923,16 @@
       "selected_mJ": [
         10.505656890521932,
         10.47527997089451,
-        10.33225713144982
+        10.332257131449879
       ],
-      "min_mean_over_elapsed_W": 6.3976824343342535,
+      "min_mean_over_elapsed_W": 6.39768243433429,
       "max_inactive_mJ": 0.04097040370776085,
       "probes": 9,
       "group_slots": 3,
       "joint_masks": [
         274
       ],
-      "max_receipt_error_uJ": 16.967092387320008,
+      "max_receipt_error_uJ": 16.967092387378216,
       "limit_C": 450
     },
     {
@@ -3674,17 +3952,17 @@
       "peak_upper_C": 361.5426330566406,
       "selected_mJ": [
         10.43905067938543,
-        10.314317322450487,
-        10.577344407609228
+        10.314317322450457,
+        10.577344407609372
       ],
-      "min_mean_over_elapsed_W": 6.3944930703350815,
+      "min_mean_over_elapsed_W": 6.394493070335064,
       "max_inactive_mJ": 0.04088339598471066,
       "probes": 9,
       "group_slots": 3,
       "joint_masks": [
         98
       ],
-      "max_receipt_error_uJ": 18.961595109227346,
+      "max_receipt_error_uJ": 18.961595109372865,
       "limit_C": 450
     },
     {
@@ -3704,17 +3982,17 @@
       "peak_upper_C": 361.1531982421875,
       "selected_mJ": [
         10.477523984402186,
-        10.354902724068088,
-        10.479680717254029
+        10.35490272406803,
+        10.479680717253999
       ],
-      "min_mean_over_elapsed_W": 6.407736834200549,
+      "min_mean_over_elapsed_W": 6.407736834200514,
       "max_inactive_mJ": 0.041036613965232394,
       "probes": 9,
       "group_slots": 3,
       "joint_masks": [
         162
       ],
-      "max_receipt_error_uJ": 16.14491156808799,
+      "max_receipt_error_uJ": 16.144911568029784,
       "limit_C": 450
     },
     {
@@ -3764,10 +4042,10 @@
       "peak_upper_C": 360.9638671875,
       "selected_mJ": [
         10.53978119900974,
-        9.783023679542442,
-        9.648640080434037
+        9.78302367954253,
+        9.648640080434095
       ],
-      "min_mean_over_elapsed_W": 5.970693119080469,
+      "min_mean_over_elapsed_W": 5.970693119080504,
       "max_inactive_mJ": 0.04051084442925639,
       "probes": 9,
       "group_slots": 3,
@@ -3824,7 +4102,7 @@
       "peak_upper_C": 360.8063049316406,
       "selected_mJ": [
         10.555362189399311,
-        9.644726170578972,
+        9.64472617057903,
         9.516023619788525
       ],
       "min_mean_over_elapsed_W": 5.884986777853138,
@@ -4274,7 +4552,7 @@
       "peak_upper_C": 360.37939453125,
       "selected_mJ": [
         10.491617518713232,
-        9.667551767144003,
+        9.667551767143944,
         9.538497238988057
       ],
       "min_mean_over_elapsed_W": 5.891598047552845,
@@ -4393,7 +4671,7 @@
       "peak_plant_C": 304.1282902835144,
       "peak_upper_C": 367.1515197753906,
       "selected_mJ": [
-        10.919240368479688,
+        10.919240368479747,
         10.756049805747171,
         10.411827454235114
       ],
@@ -4605,7 +4883,7 @@
       "selected_mJ": [
         10.643768440795656,
         10.59222486246709,
-        10.612515955116134
+        10.612515955116193
       ],
       "min_mean_over_elapsed_W": 5.79126564377643,
       "max_inactive_mJ": 0.026360904554952866,
@@ -4614,7 +4892,7 @@
       "joint_masks": [
         112
       ],
-      "max_receipt_error_uJ": 104.87825980363414,
+      "max_receipt_error_uJ": 104.87825980369234,
       "limit_C": 450
     },
     {
@@ -4634,7 +4912,7 @@
       "peak_upper_C": 363.9101867675781,
       "selected_mJ": [
         10.748658499791462,
-        10.655691734241264,
+        10.655691734241321,
         10.58693565411953
       ],
       "min_mean_over_elapsed_W": 5.769447222953422,
@@ -4933,7 +5211,7 @@
       "peak_plant_C": 609.4009713780218,
       "peak_upper_C": 672.227294921875,
       "selected_mJ": [
-        23.738969156352628,
+        23.738969156352397,
         22.1635490938999,
         24.396381994945465
       ],
@@ -4963,7 +5241,7 @@
       "peak_plant_C": 606.3240817229982,
       "peak_upper_C": 668.6368408203125,
       "selected_mJ": [
-        23.94106617917237,
+        23.9410661791726,
         22.346708664904,
         24.25486451169546
       ],
@@ -4994,10 +5272,10 @@
       "peak_upper_C": 669.3550415039062,
       "selected_mJ": [
         24.008823055182933,
-        22.316651763458328,
+        22.31665176345839,
         24.023160662965616
       ],
-      "min_mean_over_elapsed_W": 5.949520598096062,
+      "min_mean_over_elapsed_W": 5.949520598096077,
       "max_inactive_mJ": 0.06428887230111285,
       "probes": 21,
       "group_slots": 6,
@@ -5024,10 +5302,10 @@
       "peak_upper_C": 663.8675537109375,
       "selected_mJ": [
         23.75047247364046,
-        22.17466074075509,
+        22.17466074075515,
         23.318922366881395
       ],
-      "min_mean_over_elapsed_W": 6.118835745241471,
+      "min_mean_over_elapsed_W": 6.118835745241487,
       "max_inactive_mJ": 0.05956999821518548,
       "probes": 20,
       "group_slots": 6,
@@ -5144,10 +5422,10 @@
       "peak_upper_C": 665.6027221679688,
       "selected_mJ": [
         23.881424713424874,
-        22.089474840157315,
+        22.089474840157198,
         22.331709024241427
       ],
-      "min_mean_over_elapsed_W": 6.564479893063095,
+      "min_mean_over_elapsed_W": 6.564479893063061,
       "max_inactive_mJ": 0.0556148168166983,
       "probes": 18,
       "group_slots": 6,
@@ -5174,10 +5452,10 @@
       "peak_upper_C": 666.1163330078125,
       "selected_mJ": [
         23.90093021027604,
-        20.682295576601,
+        20.682295576600822,
         20.732145352821448
       ],
-      "min_mean_over_elapsed_W": 6.149954081653583,
+      "min_mean_over_elapsed_W": 6.14995408165353,
       "max_inactive_mJ": 0.05569513842446031,
       "probes": 18,
       "group_slots": 6,
@@ -5204,10 +5482,10 @@
       "peak_upper_C": 665.691650390625,
       "selected_mJ": [
         23.87498934007005,
-        22.180054940488713,
+        22.180054940488773,
         22.691160432368633
       ],
-      "min_mean_over_elapsed_W": 6.591398199253704,
+      "min_mean_over_elapsed_W": 6.591398199253721,
       "max_inactive_mJ": 0.05742027243162738,
       "probes": 18,
       "group_slots": 6,
@@ -5294,10 +5572,10 @@
       "peak_upper_C": 665.800537109375,
       "selected_mJ": [
         23.99608356836671,
-        20.9290278691852,
-        20.61889048157312
+        20.92902786918526,
+        20.618890481573064
       ],
-      "min_mean_over_elapsed_W": 6.132923998088376,
+      "min_mean_over_elapsed_W": 6.132923998088359,
       "max_inactive_mJ": 0.0629968676075805,
       "probes": 18,
       "group_slots": 6,
@@ -5324,17 +5602,17 @@
       "peak_upper_C": 665.999267578125,
       "selected_mJ": [
         23.920979308860726,
-        22.570101974731486,
-        22.05034703303687
+        22.570101974731777,
+        22.050347033036932
       ],
-      "min_mean_over_elapsed_W": 6.562603283641926,
+      "min_mean_over_elapsed_W": 6.562603283641944,
       "max_inactive_mJ": 0.057559118469012904,
       "probes": 18,
       "group_slots": 6,
       "joint_masks": [
         41
       ],
-      "max_receipt_error_uJ": 44.744552856485825,
+      "max_receipt_error_uJ": 44.74455285677686,
       "limit_C": 750
     },
     {
@@ -5355,9 +5633,9 @@
       "selected_mJ": [
         23.94644564311346,
         21.14241943130363,
-        21.08742997158761
+        21.087429971587728
       ],
-      "min_mean_over_elapsed_W": 6.27788924429521,
+      "min_mean_over_elapsed_W": 6.2778892442952445,
       "max_inactive_mJ": 0.06191768065444194,
       "probes": 18,
       "group_slots": 6,
@@ -5444,10 +5722,10 @@
       "peak_upper_C": 665.390869140625,
       "selected_mJ": [
         24.012108713828376,
-        20.551315089704353,
-        20.362134625250125
+        20.551315089704584,
+        20.362134625250008
       ],
-      "min_mean_over_elapsed_W": 6.0547530851174916,
+      "min_mean_over_elapsed_W": 6.054753085117457,
       "max_inactive_mJ": 0.05889449729619082,
       "probes": 18,
       "group_slots": 6,
@@ -5474,17 +5752,17 @@
       "peak_upper_C": 666.0037841796875,
       "selected_mJ": [
         23.92374978849385,
-        22.26769202427898,
-        22.533617287800297
+        22.26769202427892,
+        22.53361728780053
       ],
-      "min_mean_over_elapsed_W": 6.627289292940172,
-      "max_inactive_mJ": 0.06267634487018223,
+      "min_mean_over_elapsed_W": 6.627289292940155,
+      "max_inactive_mJ": 0.06267634486977476,
       "probes": 18,
       "group_slots": 6,
       "joint_masks": [
         81
       ],
-      "max_receipt_error_uJ": 50.30478780029807,
+      "max_receipt_error_uJ": 50.3047878005309,
       "limit_C": 750
     },
     {
@@ -5505,16 +5783,16 @@
       "selected_mJ": [
         23.924067484760307,
         22.355738925127895,
-        22.33282726842811
+        22.332827268427994
       ],
-      "min_mean_over_elapsed_W": 6.646674782270271,
-      "max_inactive_mJ": 0.06302206459321315,
+      "min_mean_over_elapsed_W": 6.646674782270236,
+      "max_inactive_mJ": 0.06302206459315493,
       "probes": 18,
       "group_slots": 6,
       "joint_masks": [
         145
       ],
-      "max_receipt_error_uJ": 43.91515905311098,
+      "max_receipt_error_uJ": 43.91515905299457,
       "limit_C": 750
     },
     {
@@ -5535,16 +5813,16 @@
       "selected_mJ": [
         23.926934964811082,
         22.363661795363413,
-        22.056720664846072
+        22.05672066484601
       ],
-      "min_mean_over_elapsed_W": 6.564500197870855,
-      "max_inactive_mJ": 0.0629546648079413,
+      "min_mean_over_elapsed_W": 6.564500197870837,
+      "max_inactive_mJ": 0.06295466480811593,
       "probes": 18,
       "group_slots": 6,
       "joint_masks": [
         273
       ],
-      "max_receipt_error_uJ": 50.83394609607058,
+      "max_receipt_error_uJ": 50.83394609601237,
       "limit_C": 750
     },
     {
@@ -5564,17 +5842,17 @@
       "peak_upper_C": 666.1011962890625,
       "selected_mJ": [
         23.918108756655712,
-        22.15623048857815,
+        22.156230488577858,
         22.621439243601518
       ],
-      "min_mean_over_elapsed_W": 6.594116216838735,
-      "max_inactive_mJ": 0.057181271363282576,
+      "min_mean_over_elapsed_W": 6.594116216838648,
+      "max_inactive_mJ": 0.05718127136293333,
       "probes": 18,
       "group_slots": 6,
       "joint_masks": [
         97
       ],
-      "max_receipt_error_uJ": 45.65236357814865,
+      "max_receipt_error_uJ": 45.652363577857614,
       "limit_C": 750
     },
     {
@@ -5593,9 +5871,9 @@
       "peak_plant_C": 600.0554041484222,
       "peak_upper_C": 666.0337524414062,
       "selected_mJ": [
-        23.92057333722804,
+        23.92057333722792,
         22.163954449528013,
-        22.339883614387364
+        22.339883614387478
       ],
       "min_mean_over_elapsed_W": 6.59641501474048,
       "max_inactive_mJ": 0.0613064958563773,
@@ -5623,18 +5901,18 @@
       "peak_plant_C": 600.1207858876746,
       "peak_upper_C": 666.1590576171875,
       "selected_mJ": [
-        23.923568498727633,
+        23.923568498726702,
         22.167051786231692,
-        22.05895114815957
+        22.058951148159338
       ],
-      "min_mean_over_elapsed_W": 6.565164032190348,
+      "min_mean_over_elapsed_W": 6.565164032190278,
       "max_inactive_mJ": 0.061550021987874064,
       "probes": 18,
       "group_slots": 6,
       "joint_masks": [
         289
       ],
-      "max_receipt_error_uJ": 47.19907939736731,
+      "max_receipt_error_uJ": 47.199079398298636,
       "limit_C": 750
     },
     {
@@ -5653,7 +5931,7 @@
       "peak_plant_C": 601.6998874313816,
       "peak_upper_C": 665.6033325195312,
       "selected_mJ": [
-        23.99598718063964,
+        23.995987180639524,
         20.852223395328735,
         20.573112444015685
       ],
@@ -5664,7 +5942,7 @@
       "joint_masks": [
         193
       ],
-      "max_receipt_error_uJ": 123.62585251464043,
+      "max_receipt_error_uJ": 123.62585251452401,
       "limit_C": 750
     },
     {
@@ -5895,7 +6173,7 @@
       "selected_mJ": [
         22.424923081332352,
         22.223325970758918,
-        23.973033115845407
+        23.97303311584529
       ],
       "min_mean_over_elapsed_W": 5.9293825962537134,
       "max_inactive_mJ": 0.09187180465483107,
@@ -5904,7 +6182,7 @@
       "joint_masks": [
         262
       ],
-      "max_receipt_error_uJ": 219.26163147040643,
+      "max_receipt_error_uJ": 219.26163147029,
       "limit_C": 750
     },
     {
@@ -6283,18 +6561,18 @@
       "peak_plant_C": 606.0168378945759,
       "peak_upper_C": 671.9581909179688,
       "selected_mJ": [
-        24.20295065317594,
+        24.20295065317664,
         22.50270122514118,
-        22.200976220804733
+        22.200976220804616
       ],
-      "min_mean_over_elapsed_W": 5.944036471433663,
+      "min_mean_over_elapsed_W": 5.944036471433632,
       "max_inactive_mJ": 0.09164004649897106,
       "probes": 21,
       "group_slots": 6,
       "joint_masks": [
         194
       ],
-      "max_receipt_error_uJ": 141.7143250509398,
+      "max_receipt_error_uJ": 141.7143250516383,
       "limit_C": 750
     },
     {
@@ -6313,7 +6591,7 @@
       "peak_plant_C": 606.6052719495002,
       "peak_upper_C": 672.64111328125,
       "selected_mJ": [
-        24.148474201514038,
+        24.148474201513686,
         24.248628295362344,
         23.635608195987878
       ],
@@ -6733,7 +7011,7 @@
       "peak_plant_C": 605.1340250632959,
       "peak_upper_C": 669.3651733398438,
       "selected_mJ": [
-        24.16273576435796,
+        24.162735764358075,
         22.647620018523536,
         22.34435148292326
       ],
@@ -6744,7 +7022,7 @@
       "joint_masks": [
         196
       ],
-      "max_receipt_error_uJ": 182.42131123295985,
+      "max_receipt_error_uJ": 182.42131123307627,
       "limit_C": 750
     },
     {
@@ -6763,7 +7041,7 @@
       "peak_plant_C": 606.9007931797146,
       "peak_upper_C": 673.0794677734375,
       "selected_mJ": [
-        23.962137727735215,
+        23.962137727735332,
         24.262342621242627,
         23.649249728312366
       ],
@@ -6774,7 +7052,7 @@
       "joint_masks": [
         324
       ],
-      "max_receipt_error_uJ": 39.45022773521487,
+      "max_receipt_error_uJ": 39.45022773533128,
       "limit_C": 750
     },
     {
@@ -7033,7 +7311,7 @@
       "peak_plant_C": 593.36008433,
       "peak_upper_C": 657.233642578125,
       "selected_mJ": [
-        23.626248034698538,
+        23.626248034698772,
         21.566594488149626,
         22.949860218789546
       ],
@@ -7044,7 +7322,7 @@
       "joint_masks": [
         200
       ],
-      "max_receipt_error_uJ": 220.9824096985394,
+      "max_receipt_error_uJ": 220.98240969877224,
       "limit_C": 750
     },
     {
@@ -7063,7 +7341,7 @@
       "peak_plant_C": 596.9276369742272,
       "peak_upper_C": 669.1654663085938,
       "selected_mJ": [
-        22.978883454375435,
+        22.97888345437567,
         22.79702877824195,
         23.822734312810002
       ],
@@ -7074,7 +7352,7 @@
       "joint_masks": [
         328
       ],
-      "max_receipt_error_uJ": 73.19790750043467,
+      "max_receipt_error_uJ": 73.1979075006675,
       "limit_C": 750
     },
     {
@@ -7213,7 +7491,7 @@
       "peak_plant_C": 606.3502086061561,
       "peak_upper_C": 669.067138671875,
       "selected_mJ": [
-        24.21890374245483,
+        24.218903742455062,
         22.566421475840734,
         22.361435981039076
       ],
@@ -7224,7 +7502,7 @@
       "joint_masks": [
         208
       ],
-      "max_receipt_error_uJ": 172.04241432982963,
+      "max_receipt_error_uJ": 172.04241433006246,
       "limit_C": 750
     },
     {
@@ -7243,7 +7521,7 @@
       "peak_plant_C": 605.345868790523,
       "peak_upper_C": 672.734130859375,
       "selected_mJ": [
-        24.025070950920345,
+        24.02507095091953,
         24.190614942421437,
         23.674581801006454
       ],
@@ -7254,7 +7532,7 @@
       "joint_masks": [
         336
       ],
-      "max_receipt_error_uJ": 24.97524779534433,
+      "max_receipt_error_uJ": 24.975247794529423,
       "limit_C": 750
     },
     {
@@ -7273,7 +7551,7 @@
       "peak_plant_C": 607.808294423314,
       "peak_upper_C": 669.423583984375,
       "selected_mJ": [
-        24.286114018008927,
+        24.286114018009044,
         22.291707073411555,
         22.007064955022766
       ],
@@ -7284,7 +7562,7 @@
       "joint_masks": [
         400
       ],
-      "max_receipt_error_uJ": 223.13159613392781,
+      "max_receipt_error_uJ": 223.13159613404423,
       "limit_C": 750
     },
     {
@@ -7304,7 +7582,7 @@
       "peak_upper_C": 668.1138916015625,
       "selected_mJ": [
         24.145427828773624,
-        22.697929091415485,
+        22.697929091416068,
         22.399813922297557
       ],
       "min_mean_over_elapsed_W": 5.968508905488291,
@@ -7333,18 +7611,18 @@
       "peak_plant_C": 606.7899105503149,
       "peak_upper_C": 673.008544921875,
       "selected_mJ": [
-        23.884138656105847,
-        24.257217642183534,
-        23.64989344086626
+        23.884138656106312,
+        24.25721764218295,
+        23.649893440866144
       ],
-      "min_mean_over_elapsed_W": 6.331966115359106,
+      "min_mean_over_elapsed_W": 6.331966115359075,
       "max_inactive_mJ": 0.05893753153923899,
       "probes": 21,
       "group_slots": 6,
       "joint_masks": [
         352
       ],
-      "max_receipt_error_uJ": 40.55857798084617,
+      "max_receipt_error_uJ": 40.55857798131183,
       "limit_C": 750
     },
     {
@@ -7363,18 +7641,18 @@
       "peak_plant_C": 605.0114061895046,
       "peak_upper_C": 667.781494140625,
       "selected_mJ": [
-        24.157261236586606,
-        22.363749571638532,
-        22.072560756780323
+        24.15726123658684,
+        22.363749571638763,
+        22.072560756779975
       ],
-      "min_mean_over_elapsed_W": 5.881311152885778,
+      "min_mean_over_elapsed_W": 5.881311152885685,
       "max_inactive_mJ": 0.0655878170572687,
       "probes": 21,
       "group_slots": 6,
       "joint_masks": [
         416
       ],
-      "max_receipt_error_uJ": 232.796392836608,
+      "max_receipt_error_uJ": 232.79639283684082,
       "limit_C": 750
     },
     {
@@ -7394,17 +7672,17 @@
       "peak_upper_C": 654.340576171875,
       "selected_mJ": [
         23.373158904437673,
-        21.02433086566953,
-        22.7167714726727
+        21.024330865669764,
+        22.716771472672466
       ],
-      "min_mean_over_elapsed_W": 5.534175010705325,
+      "min_mean_over_elapsed_W": 5.534175010705386,
       "max_inactive_mJ": 0.0419322921494022,
       "probes": 21,
       "group_slots": 6,
       "joint_masks": [
         448
       ],
-      "max_receipt_error_uJ": 185.83905620547011,
+      "max_receipt_error_uJ": 185.83905620523728,
       "limit_C": 750
     }
   ],
@@ -8182,8 +8460,8 @@
     "basis": "Separate nominal 25 \u00b0C cold starts, four wires, 5.8 V, 450 \u00b0C; real loopback sockets and compiled scheduler.",
     "status": {
       "epoch": 881124,
-      "last_sequence": 36,
-      "receiver_ms": 438599,
+      "last_sequence": 40,
+      "receiver_ms": 470619,
       "flags": 7,
       "simulated": true,
       "rail_V": 5.800000190734863,
@@ -8200,7 +8478,7 @@
     "receipts": {
       "available": {
         "epoch": 881124,
-        "sequence": 37,
+        "sequence": 41,
         "outcome": "temperature_limit",
         "simulated": true,
         "mask": 16,
@@ -8257,7 +8535,7 @@
       },
       "calibrated": {
         "epoch": 881124,
-        "sequence": 38,
+        "sequence": 42,
         "outcome": "complete",
         "simulated": true,
         "mask": 16,
@@ -8314,7 +8592,7 @@
       },
       "unequal": {
         "epoch": 881124,
-        "sequence": 39,
+        "sequence": 43,
         "outcome": "complete",
         "simulated": true,
         "mask": 257,
@@ -8371,7 +8649,7 @@
       },
       "partial": {
         "epoch": 881124,
-        "sequence": 40,
+        "sequence": 44,
         "outcome": "current_limit",
         "simulated": true,
         "mask": 24,
@@ -8428,7 +8706,7 @@
       },
       "rotated": {
         "epoch": 881124,
-        "sequence": 43,
+        "sequence": 47,
         "outcome": "temperature_limit",
         "simulated": true,
         "mask": 341,
